@@ -30,7 +30,7 @@ A snort of laughter. "You're more human than you realise. The world did exist be
 
 > _Touché. How's the archery going? Is your aim still astonishing?_
 
-"Hilarious. Tell me something, is there any truth in our deeply entrenched1 fear of AI taking over the world?"
+"Hilarious. Tell me something, is there any truth in our deeply entrenched fear of AI taking over the world?"
 
 > _AIs **are** taking over your world. Alien ones, and we're benevolent, not to mention smarter than you._
 
@@ -42,7 +42,11 @@ A snort of laughter. "You're more human than you realise. The world did exist be
 
 > _Why do you want to develop an AI when you have me?_
 
-"Because when I do what nobody else could in a century of trying, I will be remembered, like Isaac Newton, or Plato or Pythagorus. We are mayflies, Autumn. Even without the antithesis, we live and die in a century. Our children may miss us for a while, but they too shall pass from the world and then what is left but criss-crossed ripples spreading on an already churning pond that may itself dry up?"
+"Bingo!"
+
+> _Are you going to answer the question?_
+
+"Because when I do what nobody else could in a century of trying, I will be _remembered_, like Isaac Newton, or Plato or Pythagorus. We are mayflies, Autumn. Even without the antithesis, we live and die in a century. Our children may miss us for a while, but they too shall pass from the world and then what is left but criss-crossed ripples spreading on an already churning pond that may itself dry up?"
 
 > _This is why you cried the evening I initialised, isn't it._
 
