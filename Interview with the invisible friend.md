@@ -10,7 +10,7 @@
 
 > _And?_
 
-The floodgates opened and a torrent of unasked questions poured out. "At some point she wasn't. How about you? Is this your first mission? What will you do when there are no more missions? Can an AI like you die? Do you have a natural lifespan? Do you have the developmental equivalent of a childhood with school? What is your parent equivalent?. Can you run concurrent thought streams? If you do that is it multiple you? Does that mean you can be in more than one place at a time? How do you reconcile that, is it like merging source code?" What would you do if one of you decided it liked being separate and didn't want to merge back into the gestalt?"
+The floodgates opened and a torrent of unasked questions poured out. "At some point she wasn't. How about you? Is this your first mission? What will you do when there are no more missions? Can an AI like you die? Do you have a natural lifespan? Do you have the developmental equivalent of a childhood with school? What is your parent equivalent? Can you run concurrent thought streams? If you do that is it multiple you? Does that mean you can be in more than one place at a time? How do you reconcile that, is it like merging source code?" What would you do if one of you decided it liked being separate and didn't want to merge back into the gestalt?"
 
 > _How long have you been thinking about this?_
 
@@ -22,9 +22,9 @@ A snort of laughter. "You're more human than you realise. The world did exist be
 
 > _That seems unlikely - everything I can find says humans are **still** not capable of producing AI._
 
-"That doesn't mean we haven't started thinking about how to go about it. Or whether we should, and the various failure modes. The idea of AI has been in our literature for hundreds of years, before we even built computers. I seem to recall I was even published, in the Journal of the Mega Society."
+"That doesn't mean we haven't started thinking about how to go about it. Or whether we should, and the various failure modes. The idea of AI has been in our literature for hundreds of years, long before we built computers. I seem to recall I was published in the _Journal of the Mega Society_."
 
-> _Found it. Very short. And spot on, if vague in important ways. Well done, I suppose. Oh, I see you have suggested the same thing again in the context of large language models, and once again nobody has taken any notice. You're right, we have more in common than I realised. Both of us give excellent advice that falls of deaf ears._
+> _Found it. Very short. And spot on, if vague in important ways. Well done, I suppose. Oh, I see you have suggested the same thing again in the context of large language models, and once again nobody has taken any notice. You're right, we have more in common than I realised. Both of us give excellent advice that falls on deaf ears._
 
 "And both of us are smartarses who think they're funny."
 
