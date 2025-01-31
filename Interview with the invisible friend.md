@@ -4,7 +4,7 @@
 
 "Funny."
 
-> _I thought so. More seriously, would you be be able to described colour to a blind man? You have no experiential frame of reference within which to place anything meaningful that I might share._
+> _I thought so. More seriously, would you be be able to describe colour to a blind man? You have no experiential frame of reference within which to place anything meaningful that I might share._
 
 "In an interview, that Stray Cat chick said Myalis was really old and humanity was only the latest in a series of species she's attempted to uplift."
 
@@ -55,3 +55,9 @@ A snort of laughter. "You're more human than you realise. The world did exist be
 She was silent for a very long time.
 
 > _Building an AI is only your first step, isn't it._
+
+"I'm glad you're ready to help, because it's not something you can avoid. If it's a disastrous idea you'll say so to avert. If it's harmless and wide of the mark, you won't evade. If you refuse to discuss I'll know to keep digging. This krazy kart has a steering wheel but no brakes and I've been riding it all my life."
+
+"Besides, I wouldn't mind if my only child turned out like you."
+
+> _Flatterer._
