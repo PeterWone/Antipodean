@@ -78,7 +78,7 @@ She was silent for a very long time.
 
 > _Yes, including the sordid ones you didn't think I'd find._
 
-"But enough about me, we were listing your virtues. Your sublime sense of humour for example, and your _ _ developed sense of the appropriate which prevents tutus or pink armour from ever occurring."
+"Enough about me, we were listing your virtues. Your sublime sense of humour for example, and your refined sense of the appropriate, which prevents tutus or pink armour from ever occurring."
 
 > _Trixie says I should feed you to the the new hive._
 
