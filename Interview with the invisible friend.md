@@ -60,4 +60,26 @@ She was silent for a very long time.
 
 "Besides, I wouldn't mind if my only child turned out like you."
 
-> _Flatterer._
+> _Flatterer. Threaten me again and all your armour will be pink._
+
+"Trix tells me real men aren't afraid to wear pink."
+
+> _With a tutu!_
+
+"Clearly your concern for my safety does not extend to my dignity. Were you hoping for more of the flattery?"
+
+> _Yes. You may begin by listing my virtues. This may take some time, but fortunately one of them is patience._
+
+"Hmmm. You are educated. And cultured. And clearly you have outstanding taste in men. You have _enormous_..." I waved my hands in circles at chest level, "tracts of useful catalogues. Ow!" A drone inexplicably hit me behind the ear.
+
+> _Goodness me, however did that happen?_
+
+"Have you watched _all_ of my movies?"
+
+> _Yes, including the ones you didn't think I'd find._
+
+"But enough about me, we were listing your virtues. Your sublime sense of humour for example, and your _ _ developed sense of the appropriate which prevents tutus or pink armour from ever occurring."
+
+> _Trixie says I should feed you to the the new hive._
+
+"I am offended."
