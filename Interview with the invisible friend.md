@@ -76,7 +76,7 @@ She was silent for a very long time.
 
 "Have you watched _all_ of my movies?"
 
-> _Yes, including the ones you didn't think I'd find._
+> _Yes, including the sordid ones you didn't think I'd find._
 
 "But enough about me, we were listing your virtues. Your sublime sense of humour for example, and your _ _ developed sense of the appropriate which prevents tutus or pink armour from ever occurring."
 
