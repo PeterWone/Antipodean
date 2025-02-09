@@ -1,5 +1,3 @@
-**Disclaimer: This story contains mature content and is not suitable for all audiences. Reader discretion is advised.**
-
 An SCS fanfic set in the Great Dividing Range (Australia) 
 
 Ecology in Australia is... different. Hard-boiled, you might say. The animals are deadly, weird, cute, or all of the above. The plants are... well, let's just say that the trees petrify while they're still alive, and this doesn't kill them. They are in the very highest durability category; termites give up and make their nests out of dirt instead. The trees are so tough that Australian chainsaws are in the Class 1 Timberworking Tools catalogue. 
