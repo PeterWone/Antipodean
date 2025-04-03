@@ -285,9 +285,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Styles to highlight the current chapter in the TOC */
-.current-chapter {
-  background-color: #ddd;
-  font-weight: bold;
+#toc .current-chapter {
+  background-color: #ddd; /* Highlight background */
+  font-weight: bold; /* Make text bold */
+  border-color: #999; /* Darken the border for emphasis */
 }
 
 /* Ensure the hidden class works consistently across all screen sizes */

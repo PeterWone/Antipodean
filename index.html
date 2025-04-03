@@ -126,9 +126,9 @@
     }
 
     function highlightCurrentChapter() {
-      const tocLinks = toc.querySelectorAll('li');
-      tocLinks.forEach((link, index) => {
-        link.classList.toggle('current-chapter', index === currentIndex);
+      const tocItems = toc.querySelectorAll('.toc-item'); // Select all TOC items
+      tocItems.forEach((item, index) => {
+        item.classList.toggle('current-chapter', index === currentIndex); // Highlight the current chapter
       });
     }
 
