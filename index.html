@@ -38,13 +38,17 @@
           link.addEventListener('click', (e) => {
             e.preventDefault();
             loadContent(file.name);
+            localStorage.setItem('lastSelectedPage', file.name); // Save the last selected page
           });
           listItem.appendChild(link);
           toc.appendChild(listItem);
         });
 
-        // Preselect the blurb (first chapter file alphabetically)
-        if (markdownFiles.length > 0) {
+        // Load the last selected page or the blurb (first chapter file alphabetically)
+        const lastSelectedPage = localStorage.getItem('lastSelectedPage');
+        if (lastSelectedPage && markdownFiles.some(file => file.name === lastSelectedPage)) {
+          loadContent(lastSelectedPage);
+        } else if (markdownFiles.length > 0) {
           loadContent(markdownFiles[0].name);
         }
       } catch (error) {
