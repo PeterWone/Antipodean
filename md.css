@@ -26,7 +26,7 @@ body {
   /* Remove flex behavior */
   width: 100%;
   /* Full width */
-  height: calc(100vh - 3.5em);
+  height: calc(100vh - 4.5em);
   /* Adjust height to account for the navbar */
   overflow-y: auto;
   /* Enable vertical scrolling */
@@ -90,7 +90,7 @@ body {
   /* Remove flex behavior */
   width: 100%;
   /* Full width */
-  height: calc(100vh - 3.5em);
+  height: calc(100vh - 4em);
   /* Adjust height to account for the navbar */
   overflow-y: auto;
   /* Enable vertical scrolling */
@@ -98,8 +98,8 @@ body {
   padding-top: 0;
   /* Remove extra padding */
   box-sizing: border-box;
-  column-width: 400px;
-  /* Set the width of each column to 400px */
+  column-width: 90vw;
+  /* Set column width to 90% of the viewport width */
   column-gap: 1.5em;
   column-fill: auto;
   /* Disable column balancing */
@@ -108,10 +108,13 @@ body {
   top: 3.5em;
   /* Position below the navbar */
   left: 0;
+  scroll-snap-type: x mandatory;
+  /* Enable horizontal snapping */
 }
 
 #content>* {
-  /* Remove the rule to allow breaking */
+  scroll-snap-align: start;
+  /* Snap to the start of each column */
 }
 
 h1 {
