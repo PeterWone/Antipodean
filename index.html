@@ -8,9 +8,9 @@
 <body>
   <div id="navbar-container">
     <div id="navbar">
-      <button id="prev-chapter" class="nav-button no-print">Previous</button>
+      <button id="prev-chapter" class="nav-button no-print">&lt;</button> <!-- Use < for Previous -->
       <h1 id="chapter-title" class="toggle-toc">Antipodean</h1>
-      <button id="next-chapter" class="nav-button no-print">Next</button>
+      <button id="next-chapter" class="nav-button no-print">&gt;</button> <!-- Use > for Next -->
     </div>
   </div>
   <div id="toc" class="hidden">
@@ -39,6 +39,27 @@
       if (e.deltaY !== 0) {
         e.preventDefault();
         content.scrollLeft += e.deltaY;
+      }
+    });
+
+    // Add touch support for horizontal scrolling
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    content.addEventListener('touchstart', (e) => {
+      const touch = e.touches[0];
+      touchStartX = touch.clientX;
+      touchStartY = touch.clientY;
+    });
+
+    content.addEventListener('touchmove', (e) => {
+      const touch = e.touches[0];
+      const deltaX = touchStartX - touch.clientX;
+      const deltaY = touchStartY - touch.clientY;
+
+      if (Math.abs(deltaY) > Math.abs(deltaX)) {
+        e.preventDefault();
+        content.scrollLeft += deltaY;
       }
     });
 
@@ -138,6 +159,21 @@
         currentChapter.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
     }
+
+    function adjustTitle() {
+      const navbar = document.getElementById('navbar');
+      const titleElement = document.getElementById('chapter-title');
+      const fullTitle = `${repoName} — ${chapterTitle.textContent.split('—').pop().trim()}`; // Full title with book and chapter
+      const chapterOnlyTitle = chapterTitle.textContent.split('—').pop().trim(); // Chapter-only title
+
+      titleElement.textContent = fullTitle;
+      if (titleElement.scrollWidth > navbar.clientWidth) {
+        titleElement.textContent = chapterOnlyTitle; // Use only the chapter title if it overflows
+      }
+    }
+
+    chapterTitle.addEventListener('DOMSubtreeModified', adjustTitle); // Adjust title dynamically when it changes
+    window.addEventListener('resize', adjustTitle); // Adjust title on window resize
 
     prevButton.addEventListener('click', () => {
       if (currentIndex > 0) {
