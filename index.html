@@ -84,8 +84,9 @@
   <h2>Markdown Documents</h2>
   <ul id="markdown-links"></ul>
   <script>
-    // Fetch markdown files from the GitHub repository
+    // Fetch markdown files from the GitHub repository and link to GitHub Pages
     const repoUrl = "https://api.github.com/repos/PeterWone/Antipodean/contents/";
+    const githubPagesBaseUrl = "https://peterwone.github.io/Antipodean/";
     const list = document.getElementById('markdown-links');
 
     fetch(repoUrl)
@@ -96,7 +97,7 @@
           .forEach(file => {
             const listItem = document.createElement('li');
             const link = document.createElement('a');
-            link.href = file.download_url;
+            link.href = githubPagesBaseUrl + file.name.replace('.md', '.html');
             link.textContent = file.name;
             listItem.appendChild(link);
             list.appendChild(listItem);
