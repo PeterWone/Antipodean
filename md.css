@@ -46,7 +46,7 @@ body {
   padding: 5px; /* Add padding for spacing */
   border: 1px solid #ccc; /* Add a border for better visibility */
   border-radius: 5px; /* Round the corners */
-  text-align: center;
+  /* text-align: center; */
   cursor: pointer; /* Indicate interactivity */
 }
 
