@@ -67,6 +67,8 @@
             e.preventDefault();
             loadContent(index);
             localStorage.setItem('lastSelectedPage', file.name); // Save the last selected page
+            toc.classList.add('hidden'); // Hide TOC
+            content.classList.remove('hidden'); // Show content
           });
           listItem.appendChild(link);
           toc.appendChild(listItem);
