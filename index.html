@@ -6,115 +6,65 @@
 </head>
 
 <body>
+  <div id="toc">
+    <h2>Table of Contents</h2>
+    <ul id="markdown-links"></ul>
+  </div>
+  <div id="content"></div>
 
-  <h1>Antipodean</h1>
-
-  <p>An SCS fanfic set in the Great Dividing Range (Australia) </p>
-  <p>
-    Ecology in Australia is... different. Hard-boiled, you might say. The animals are deadly, weird, cute, or all of the
-    above. The plants are... well, let&#39;s just say that the trees petrify while they&#39;re still alive, and this
-    doesn&#39;t kill them. They are at the very top of the scale for durability of timber; rot barely touches them,
-    termites give up and make their nests out of dirt instead. The trees are so tough that Australian chainsaws are in
-    the Class 1 Timberworking Tools catalogue. </p>
-  <p>
-    As a result, Australia suffers a lot less from incursions than northern nations. Hives are sickly and slow-growing,
-    maladapted at a fundamental level to an environment starved of several critical nutrients. Over many millions of
-    years, local flora and fauns have adapted to the the near absence of nutrients; they too are very low in trace
-    minerals that are the lynchpin of the qualities that make antithesis the terrifying threat they normally are &mdash;
-    fast-moving and fast-growing. From an antithesis point of view Australian plants make a poor meal; tough and not
-    especially nourishing. </p>
-  <p>
-    The relatively low impact of antithesis down under left the Australian government largely intact. </p>
-  <p>
-    This was not the blessing you might imagine. In some ways, a factual description of Australia resembles the synopsis
-    for a Judge Dredd comic book: a vast wasteland with almost all of the population jammed into a handful of cities in
-    which a high-handed and intrusive ruling group is not shy about telling people what to think. At one time, the
-    population returned the favor by treating the government with contempt and mentally simplifying the law to
-    &quot;look after your mates&quot; and &quot;it&#39;s only a crime if you get caught,&quot; but the rise of the
-    internet brought with it ubiquitous surveillance. </p>
-  <p>
-    State-controlled media became blatant instruments of propaganda, and cities became luxury prisons. Many of the
-    inmates were quite happy with this until state-sponsored corporate corruption made them poor, with the
-    &quot;protective&quot; system frequently arresting people for vagrancy, which is the crime of being broke and
-    homeless[1]. </p>
-  <p>
-    A contradiction of this culture is that despite deeply ingrained lack of trust for politicians, a majority accept at
-    face value the proposition that rules exist for the common good, and therefore it is acceptable to force others to
-    trade freedom for safety.</p>
-  <p>
-    A vile thing pretending to virtue, the government exploits this relentlessly, encouraging mass media finger-wagging
-    at those who refuse to toe the line. Vanguard activities are reported as irresponsible vigilantism, with news
-    reports focussing on property damage and the casual disregard of vanguards for rules and regulations. &quot;Tall
-    poppy syndrome&quot; takes it from there, and the experience of Australasian vanguard is a far cry from the hero
-    worship of the northern hemisphere.</p>
-  <p>
-    Our... hero? ...had some luck and happened to hold unencumbered outright freehold title to twenty hectares of forest
-    surrounded by similar or larger blocks owned by people of like mind. He and his partner removed themselves from the
-    endless surveillance and overpriced substandard produce, to grow their own food, because it <em>does</em> grow on
-    trees. Without pesticides or herbicides, yields are lower, but it doesn&#39;t matter when you only need enough for
-    two. </p>
-  <p>
-    Inevitably it turned out to be something of a mission, as these things do. And then the skies opened, raining
-    murder-weeds.</p>
-  <p>
-    A man with a big chainsaw isn&#39;t the softest target. Chainsaw chaps are, well, they&#39;ll stop an
-    <em>Australian</em> chainsaw. When he goes on a weed killing rampage, checking on neighbors and generally protecting
-    his world, a dizzy headache and an invisible friend aren&#39;t far away.
-  </p>
-  <p>
-    One of the neighbors with a dark past doesn&#39;t need a lot of protecting, and goes with him to check on others and
-    clear the weeds.</p>
-  <p>
-    AI Autumn (née Myxoma) knows about project Safe Arbor (Tarnished Honor) and realizes the Australian ecology already
-    exhibits all these characteristics. Reporting this to the Protectors for consideration, she finds herself running a
-    study on resistant ecosystems, allowing limited development of hives to measure and monitor the struggle between two
-    extraordinary ecologies. It wouldn&#39;t work in the equally rapacious but nutrient rich African ecologies, but
-    Australia&#39;s dearth of key minerals significantly hinders antithesis growth, making such a study possible, if not
-    exactly safe.</p>
-  <p>
-    Large-scale field trials require field workers, and government and corporations glom onto the study like a fat kid
-    on a cupcake, loudly proclaiming their enthusiasm. Autumn wasn&#39;t born yesterday: they hope to make off with
-    Vanguard technology. She expects to have a lovely time playing games of deception, pulling the mental wings off
-    flies with her superior intellect. But humans are cunning, and they have played this game for a very long time.</p>
-  <p>
-    [1] Vagrancy is a real offence. In Australia 2025 it is defined as &quot;Being in a public place without visible
-    means of support&quot; <em>ie</em> broke and homeless. Hurrah for the commonwealth that rules for our protection and
-    wellbeing.</p>
-
-  <h2>Markdown Documents</h2>
-  <ul id="markdown-links"></ul>
   <script>
     // Fetch markdown files from the GitHub repository and link to GitHub Pages
     const repoUrl = "https://api.github.com/repos/PeterWone/Antipodean/contents/";
     const githubPagesBaseUrl = "https://peterwone.github.io/Antipodean/";
-    const list = document.getElementById('markdown-links');
+    const toc = document.getElementById('markdown-links');
+    const content = document.getElementById('content');
 
-    fetch(repoUrl)
-      .then(response => response.json())
-      .then(files => {
-        files
-          .filter(file => file.name.endsWith('.md'))
-          .forEach(file => {
-            const listItem = document.createElement('li');
-            const link = document.createElement('a');
-            // Convert .md to .html for GitHub Pages
-            link.href = githubPagesBaseUrl + file.name.replace(/\.md$/, '.html'); 
-            link.textContent = file.name
-              .replace(/\.md$/, '') // Remove extension
-              .replace(/\.(?=[a-zA-Z])/, ' ') // Period followed by a letter becomes a space
-              .replace(/-/g, ' '); // Replace dashes with spaces
-            listItem.appendChild(link);
-            list.appendChild(listItem);
+    async function fetchMarkdownFiles() {
+      try {
+        const response = await fetch(repoUrl);
+        const files = await response.json();
+        const markdownFiles = files.filter(file => file.name.endsWith('.md')).sort((a, b) => a.name.localeCompare(b.name));
+
+        markdownFiles.forEach(file => {
+          const listItem = document.createElement('li');
+          const link = document.createElement('a');
+          link.href = "#";
+          link.textContent = file.name
+            .replace(/\.md$/, '') // Remove extension
+            .replace(/\.(?=[a-zA-Z])/g, ' ') // Period followed by a letter becomes a space
+            .replace(/-/g, ' '); // Replace dashes with spaces
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            loadContent(file.name);
           });
-      })
-      .catch(error => {
+          listItem.appendChild(link);
+          toc.appendChild(listItem);
+        });
+
+        // Preselect the blurb (first chapter file alphabetically)
+        if (markdownFiles.length > 0) {
+          loadContent(markdownFiles[0].name);
+        }
+      } catch (error) {
         console.error("Error fetching markdown files:", error);
-      });
+      }
+    }
+
+    async function loadContent(fileName) {
+      try {
+        const response = await fetch(githubPagesBaseUrl + fileName.replace(/\.md$/, '.html'));
+        const html = await response.text();
+        content.innerHTML = html;
+      } catch (error) {
+        console.error("Error loading content:", error);
+      }
+    }
+
+    fetchMarkdownFiles();
   </script>
 
   <script src="js/smartquotes.min.js"></script>
   <script>smartquotes();</script>
-
 </body>
 
 </html>
