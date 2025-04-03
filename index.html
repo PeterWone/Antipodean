@@ -21,9 +21,8 @@
   <div id="hidden-content" style="display: none;"></div> <!-- Hidden div for temporary content -->
 
   <script>
-    const repoUrl = `https://api.github.com/repos/${location.pathname.split('/')[1]}/contents/`; // Use only the repo name
-    const githubPagesBaseUrl = `https://${location.hostname}/${location.pathname.split('/')[1]}/`;
-    const repoName = location.pathname.split('/')[1]; // Extract the repository name directly
+    const repoUrl = "https://api.github.com/repos/PeterWone/Antipodean/contents/";
+    const githubPagesBaseUrl = "https://peterwone.github.io/Antipodean/";
     const toc = document.getElementById('toc');
     const content = document.getElementById('content');
     const hiddenContent = document.getElementById('hidden-content');
@@ -56,41 +55,23 @@
         const files = await response.json();
         markdownFiles = files.filter(file => file.name.endsWith('.md')).sort((a, b) => a.name.localeCompare(b.name));
 
-        const arcs = {}; // Object to group files by arcs
-        markdownFiles.forEach(file => {
-          const match = file.name.match(/^(\d+)-/); // Match leading numbers
-          const arcNumber = match ? Math.ceil(parseInt(match[1]) / 10) : 1; // Group by tens
-          const arcName = `Arc ${arcNumber}`;
-          if (!arcs[arcName]) {
-            arcs[arcName] = [];
-          }
-          arcs[arcName].push(file);
-        });
-
-        Object.entries(arcs).forEach(([arcName, files]) => {
-          const arcHeader = document.createElement('h3');
-          arcHeader.textContent = arcName;
-          toc.appendChild(arcHeader);
-
-          const arcList = document.createElement('ul');
-          files.forEach((file, index) => {
-            const listItem = document.createElement('li');
-            const link = document.createElement('a');
-            link.href = "#";
-            link.textContent = file.name
-              .replace(/^\(d+\.\d+\)./, '$1 &mdash; ') // Separate leading numbers with mdash
-              .replace(/\.md$/, '') // Remove extension
-              .replace(/-/g, ' '); // Replace dashes with spaces
-            link.addEventListener('click', (e) => {
-              e.preventDefault();
-              loadContent(index);
-              toc.classList.add('hidden'); // Hide TOC
-              content.classList.remove('hidden'); // Show content
-            });
-            listItem.appendChild(link);
-            arcList.appendChild(listItem);
+        markdownFiles.forEach((file, index) => {
+          const listItem = document.createElement('li');
+          const link = document.createElement('a');
+          link.href = "#";
+          link.textContent = file.name
+            .replace(/\.md$/, '') // Remove extension
+            .replace(/\.(?=[a-zA-Z])/g, ' ') // Period followed by a letter becomes a space
+            .replace(/-/g, ' '); // Replace dashes with spaces
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            loadContent(index);
+            localStorage.setItem('lastSelectedPage', file.name); // Save the last selected page
+            toc.classList.add('hidden'); // Hide TOC
+            content.classList.remove('hidden'); // Show content
           });
-          toc.appendChild(arcList);
+          listItem.appendChild(link);
+          toc.appendChild(listItem);
         });
 
         // Load the last selected page or the blurb (first chapter file alphabetically)
@@ -122,12 +103,10 @@
         }
         content.innerHTML = markdownBody ? markdownBody.innerHTML : '<p>Content not found.</p>'; // Extract and set content
         hiddenContent.innerHTML = ''; // Clear the hidden div
-
-        const chapterTitleText = fileName
+        chapterTitle.textContent = fileName
           .replace(/\.md$/, '') // Remove extension
           .replace(/\.(?=[a-zA-Z])/g, ' ') // Period followed by a letter becomes a space
           .replace(/-/g, ' '); // Replace dashes with spaces
-        chapterTitle.textContent = `${repoName} — ${chapterTitleText}`; // Set full title dynamically
         updateNavButtons();
         highlightCurrentChapter();
         content.scrollTop = 0; // Scroll content pane to the top
