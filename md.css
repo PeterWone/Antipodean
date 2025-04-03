@@ -35,6 +35,39 @@ body {
   box-sizing: border-box;
 }
 
+#toc ul {
+  list-style-type: none; /* Remove bullets */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap into columns */
+  gap: 10px; /* Add spacing between items */
+}
+
+#toc li {
+  flex: 1 1 calc(33.333% - 10px); /* Create columns (3 per row) */
+  box-sizing: border-box;
+}
+
+#toc h3 {
+  width: 100%; /* Ensure headers span the full width */
+  margin-top: 20px;
+}
+
+#toc a {
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Use inherited text color */
+  display: block;
+  padding: 5px;
+  border: 1px solid #ccc; /* Add a border for better visibility */
+  border-radius: 5px;
+  text-align: center;
+}
+
+#toc a:hover {
+  background-color: #f0f0f0; /* Add hover effect */
+}
+
 #content {
   flex: none; /* Remove flex behavior */
   width: 100%; /* Full width */

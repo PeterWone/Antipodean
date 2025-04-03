@@ -21,7 +21,9 @@
   <div id="hidden-content" style="display: none;"></div> <!-- Hidden div for temporary content -->
 
   <script>
-    const githubPagesBaseUrl = location.href.split('/').slice(0, -1).join('/') + '/'; // Use location.href to get the base URL
+      // const repoUrl = "https://api.github.com/repos/PeterWone/Antipodean/contents/";
+      // const githubPagesBaseUrl = "https://peterwone.github.io/Antipodean/";
+    const githubPagesBaseUrl = `${location.origin}${location.pathname.split('/').slice(0, 2).join('/')}/`; // Extract base URL dynamically
     const repoName = githubPagesBaseUrl.split('/').slice(-2, -1)[0]; // Extract the repository name from the URL
     const repoUrl = `https://api.github.com/repos/${repoName}/contents/`; // Construct the GitHub API URL
     const toc = document.getElementById('toc');
