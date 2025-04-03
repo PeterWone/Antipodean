@@ -9,9 +9,8 @@
   <div id="navbar-container">
     <div id="navbar">
       <button id="prev-chapter" class="nav-button no-print">Previous</button>
-      <h1 id="chapter-title">Antipodean</h1>
+      <h1 id="chapter-title" class="toggle-toc">Antipodean</h1>
       <button id="next-chapter" class="nav-button no-print">Next</button>
-      <div id="hamburger-menu" class="no-print">&#9776;</div>
     </div>
   </div>
   <div id="toc">
@@ -27,17 +26,19 @@
     const toc = document.getElementById('toc');
     const content = document.getElementById('content');
     const hiddenContent = document.getElementById('hidden-content');
-    const hamburgerMenu = document.getElementById('hamburger-menu');
     const prevButton = document.getElementById('prev-chapter');
     const nextButton = document.getElementById('next-chapter');
     const chapterTitle = document.getElementById('chapter-title');
     let markdownFiles = [];
     let currentIndex = 0;
 
-    // Toggle between TOC and content on small screens
-    hamburgerMenu.addEventListener('click', () => {
+    // Toggle between TOC and content when the title is clicked
+    chapterTitle.addEventListener('click', () => {
       toc.classList.toggle('hidden');
       content.classList.toggle('hidden');
+      if (!toc.classList.contains('hidden')) {
+        scrollToCurrentChapter(); // Ensure the current chapter is visible
+      }
     });
 
     async function fetchMarkdownFiles() {
@@ -91,6 +92,8 @@
           .replace(/\.(?=[a-zA-Z])/g, ' ') // Period followed by a letter becomes a space
           .replace(/-/g, ' '); // Replace dashes with spaces
         updateNavButtons();
+        highlightCurrentChapter();
+        content.scrollTop = 0; // Scroll content pane to the top
       } catch (error) {
         console.error("Error loading content:", error);
       }
@@ -99,6 +102,20 @@
     function updateNavButtons() {
       prevButton.disabled = currentIndex === 0;
       nextButton.disabled = currentIndex === markdownFiles.length - 1;
+    }
+
+    function highlightCurrentChapter() {
+      const tocLinks = toc.querySelectorAll('li');
+      tocLinks.forEach((link, index) => {
+        link.classList.toggle('current-chapter', index === currentIndex);
+      });
+    }
+
+    function scrollToCurrentChapter() {
+      const currentChapter = toc.querySelector('.current-chapter');
+      if (currentChapter) {
+        currentChapter.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
     }
 
     prevButton.addEventListener('click', () => {
