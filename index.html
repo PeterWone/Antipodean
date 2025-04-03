@@ -39,18 +39,6 @@
       if (e.deltaY !== 0) {
         e.preventDefault();
         content.scrollLeft += e.deltaY;
-
-        // Smooth snapping after scrolling stops
-        clearTimeout(content.snapTimeout);
-        content.snapTimeout = setTimeout(() => {
-          const scrollLeft = content.scrollLeft;
-          const columnWidth = content.offsetWidth;
-          const targetColumn = Math.round(scrollLeft / columnWidth);
-          content.scrollTo({
-            left: targetColumn * columnWidth,
-            behavior: 'smooth',
-          });
-        }, 100); // Adjust timeout as needed
       }
     });
 

@@ -5,8 +5,10 @@ body {
   background-color: white;
   font-family: serif;
   font-size: 14pt;
-  widows: 1; /* Disable widow control */
-  orphans: 1; /* Disable orphan control */
+  widows: 1;
+  /* Disable widow control */
+  orphans: 1;
+  /* Disable orphan control */
 }
 
 body {
@@ -14,71 +16,101 @@ body {
   flex-direction: row;
   margin: 0;
   height: 100vh;
-  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-x: auto;
+  /* Enable horizontal scrolling */
   overflow-y: hidden;
 }
 
 #toc {
-  flex: none; /* Remove flex behavior */
-  width: 100%; /* Full width */
-  height: calc(100vh - 3.5em); /* Adjust height to account for the navbar */
-  overflow-y: auto; /* Enable vertical scrolling */
+  flex: none;
+  /* Remove flex behavior */
+  width: 100%;
+  /* Full width */
+  height: calc(100vh - 3.5em);
+  /* Adjust height to account for the navbar */
+  overflow-y: auto;
+  /* Enable vertical scrolling */
   padding: 1em;
-  padding-top: 0; /* Remove extra padding */
+  padding-top: 0;
+  /* Remove extra padding */
   box-sizing: border-box;
-  column-width: 300px; /* Set the width of each column to 300px */
-  column-gap: 1.5em; /* Add spacing between columns */
-  column-fill: auto; /* Disable column balancing */
-  position: fixed; /* Fix position to avoid being under the navbar */
-  top: 3.5em; /* Position below the navbar */
+  column-width: 300px;
+  /* Set the width of each column to 300px */
+  column-gap: 1.5em;
+  /* Add spacing between columns */
+  column-fill: auto;
+  /* Disable column balancing */
+  position: fixed;
+  /* Fix position to avoid being under the navbar */
+  top: 3.5em;
+  /* Position below the navbar */
   left: 0;
 }
 
-#toc > * {
-  break-inside: avoid; /* Prevent breaking items across columns */
+#toc>* {
+  break-inside: avoid;
+  /* Prevent breaking items across columns */
 }
 
 #toc h3 {
-  width: 100%; /* Ensure headers span the full width */
+  width: 100%;
+  /* Ensure headers span the full width */
   margin-top: 20px;
 }
 
 #toc .toc-item {
-  margin: 0; /* Remove default margin */
-  padding: 5px; /* Add padding for spacing */
-  border: 1px solid #ccc; /* Add a border for better visibility */
-  border-radius: 5px; /* Round the corners */
+  margin: 0;
+  /* Remove default margin */
+  padding: 5px;
+  /* Add padding for spacing */
+  border: 1px solid #ccc;
+  /* Add a border for better visibility */
+  border-radius: 5px;
+  /* Round the corners */
   /* text-align: center; */
-  cursor: pointer; /* Indicate interactivity */
+  cursor: pointer;
+  /* Indicate interactivity */
 }
 
 #toc .toc-item a {
-  text-decoration: none; /* Remove underline from links */
-  color: inherit; /* Use inherited text color */
+  text-decoration: none;
+  /* Remove underline from links */
+  color: inherit;
+  /* Use inherited text color */
   display: block;
 }
 
 #toc .toc-item:hover {
-  background-color: #f0f0f0; /* Add hover effect */
+  background-color: #f0f0f0;
+  /* Add hover effect */
 }
 
 #content {
-  flex: none; /* Remove flex behavior */
-  width: 100%; /* Full width */
-  height: calc(100vh - 3.5em); /* Adjust height to account for the navbar */
-  overflow-y: auto; /* Enable vertical scrolling */
+  flex: none;
+  /* Remove flex behavior */
+  width: 100%;
+  /* Full width */
+  height: calc(100vh - 3.5em);
+  /* Adjust height to account for the navbar */
+  overflow-y: auto;
+  /* Enable vertical scrolling */
   padding: 1em;
-  padding-top: 0; /* Remove extra padding */
+  padding-top: 0;
+  /* Remove extra padding */
   box-sizing: border-box;
-  column-width: 400px; /* Set the width of each column to 400px */
+  column-width: 400px;
+  /* Set the width of each column to 400px */
   column-gap: 1.5em;
-  column-fill: auto; /* Disable column balancing */
-  position: fixed; /* Fix position to avoid being under the navbar */
-  top: 3.5em; /* Position below the navbar */
+  column-fill: auto;
+  /* Disable column balancing */
+  position: fixed;
+  /* Fix position to avoid being under the navbar */
+  top: 3.5em;
+  /* Position below the navbar */
   left: 0;
 }
 
-#content > * {
+#content>* {
   /* Remove the rule to allow breaking */
 }
 
@@ -184,55 +216,66 @@ body {
   font-family: 'Libre Baskerville', 'Times New Roman', Times, serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 @media (max-width: 1200px) {
   #toc {
-    flex: 0 0 30vw; /* Adjust TOC width for smaller screens */
+    flex: 0 0 30vw;
+    /* Adjust TOC width for smaller screens */
   }
 
   #content {
-    flex: 0 0 70vw; /* Adjust content width for smaller screens */
+    flex: 0 0 70vw;
+    /* Adjust content width for smaller screens */
   }
 }
 
 @media (max-width: 768px) {
   #toc {
-    flex: 0 0 40vw; /* Adjust TOC width for even smaller screens */
+    flex: 0 0 40vw;
+    /* Adjust TOC width for even smaller screens */
   }
 
   #content {
-    flex: 0 0 60vw; /* Adjust content width for even smaller screens */
+    flex: 0 0 60vw;
+    /* Adjust content width for even smaller screens */
   }
 }
 
 @media (max-width: 480px) {
   body {
-    flex-direction: column; /* Stack TOC and content vertically on very small screens */
+    flex-direction: column;
+    /* Stack TOC and content vertically on very small screens */
   }
 
   #toc,
   #content {
-    flex: none; /* Remove flex behavior */
-    width: 100%; /* Full width */
-    height: calc(100vh - 3.5em); /* Use full height minus the navbar */
-    overflow-y: auto; /* Enable vertical scrolling */
-    overflow-x: hidden; /* Disable horizontal scrolling */
-    position: relative; /* Ensure proper stacking */
+    flex: 0 0 auto;
+    width: 100%;
+    height: 50%;
+    /* Split height equally */
   }
 }
 
 /* Styles for the chapter title */
 #chapter-title {
-  cursor: pointer; /* Change cursor to indicate interactivity */
+  cursor: pointer;
+  /* Change cursor to indicate interactivity */
 }
 
 /* Styles for the navbar container */
 #navbar-container {
-  width: 100%; /* Ensure the navbar container spans the full width */
-  overflow: hidden; /* Prevent clipping */
+  width: 100%;
+  /* Ensure the navbar container spans the full width */
+  overflow: hidden;
+  /* Prevent clipping */
 }
 
 /* Styles for the navbar */
@@ -243,13 +286,15 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0; /* Ensure the navbar stretches to the right edge */
+  right: 0;
+  /* Ensure the navbar stretches to the right edge */
   background-color: #333;
   color: white;
   padding: 0.5em 1em;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  overflow: hidden; /* Prevent content overflow */
+  overflow: hidden;
+  /* Prevent content overflow */
 }
 
 #navbar h1 {
@@ -257,9 +302,12 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.5em;
   flex-grow: 1;
   text-align: center;
-  white-space: nowrap; /* Prevent wrapping */
-  overflow: hidden; /* Hide overflowing text */
-  text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+  white-space: nowrap;
+  /* Prevent wrapping */
+  overflow: hidden;
+  /* Hide overflowing text */
+  text-overflow: ellipsis;
+  /* Add ellipsis for overflowing text */
 }
 
 .nav-button {
@@ -277,9 +325,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-button:hover {
-  background-color: #777; /* Change background color on hover */
-  color: white; /* Ensure text remains visible */
-  cursor: pointer; /* Show pointer cursor */
+  background-color: #777;
+  /* Change background color on hover */
+  color: white;
+  /* Ensure text remains visible */
+  cursor: pointer;
+  /* Show pointer cursor */
 }
 
 @media (max-width: 480px) {
@@ -295,28 +346,16 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Styles to highlight the current chapter in the TOC */
 #toc .current-chapter {
-  background-color: #ddd; /* Highlight background */
-  font-weight: bold; /* Make text bold */
-  border-color: #999; /* Darken the border for emphasis */
+  background-color: #ddd;
+  /* Highlight background */
+  font-weight: bold;
+  /* Make text bold */
+  border-color: #999;
+  /* Darken the border for emphasis */
 }
 
 /* Ensure the hidden class works consistently across all screen sizes */
 .hidden {
-  display: none !important; /* Ensure hidden elements are not displayed */
-}
-
-#content, #toc {
-  scroll-snap-type: x mandatory; /* Enable horizontal snapping */
-  overflow-x: auto; /* Ensure horizontal scrolling is enabled */
-  overflow-y: hidden; /* Disable vertical scrolling */
-  display: flex; /* Ensure children are laid out in a row for snapping */
-  margin-top: 4em; /* Add margin to account for the navbar */
-  height: calc(100vh - 4em); /* Adjust height to account for the navbar */
-  position: relative; /* Ensure proper stacking */
-}
-
-#content > *, #toc > * {
-  scroll-snap-align: start; /* Snap to the start of each column */
-  flex-shrink: 0; /* Prevent children from shrinking */
-  width: 100%; /* Ensure children take up full width */
+  display: none !important;
+  /* Ensure hidden elements are not displayed */
 }
