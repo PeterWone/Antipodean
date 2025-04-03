@@ -304,8 +304,13 @@ h1, h2, h3, h4, h5, h6 {
 
 #content, #toc {
   scroll-snap-type: x mandatory; /* Enable horizontal snapping */
+  overflow-x: auto; /* Ensure horizontal scrolling is enabled */
+  overflow-y: hidden; /* Disable vertical scrolling */
+  display: flex; /* Ensure children are laid out in a row for snapping */
 }
 
 #content > *, #toc > * {
   scroll-snap-align: start; /* Snap to the start of each column */
+  flex-shrink: 0; /* Prevent children from shrinking */
+  width: 100%; /* Ensure children take up full width */
 }
