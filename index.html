@@ -97,10 +97,11 @@
           .forEach(file => {
             const listItem = document.createElement('li');
             const link = document.createElement('a');
-            link.href = githubPagesBaseUrl + file.name.replace('.md', '.html');
+            // Convert .md to .html for GitHub Pages
+            link.href = githubPagesBaseUrl + file.name.replace(/\.md$/, '.html'); 
             link.textContent = file.name
-              .replace('.md', '') // Remove extension
-              .replace(/\.(?=\w)/g, ' ') // Period followed by a letter becomes a space
+              .replace(/\.md$/, '') // Remove extension
+              .replace(/\.(?=[a-zA-Z])/, ' ') // Period followed by a letter becomes a space
               .replace(/-/g, ' '); // Replace dashes with spaces
             listItem.appendChild(link);
             list.appendChild(listItem);
