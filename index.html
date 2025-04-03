@@ -80,6 +80,33 @@
     [1] Vagrancy is a real offence. In Australia 2025 it is defined as &quot;Being in a public place without visible
     means of support&quot; <em>ie</em> broke and homeless. Hurrah for the commonwealth that rules for our protection and
     wellbeing.</p>
+
+  <h2>Markdown Documents</h2>
+  <ul id="markdown-links"></ul>
+  <script>
+    // Fetch markdown files from the GitHub repository
+    const repoUrl = "https://api.github.com/repos/PeterWone/Antipodean/contents/";
+    const list = document.getElementById('markdown-links');
+
+    fetch(repoUrl)
+      .then(response => response.json())
+      .then(files => {
+        files
+          .filter(file => file.name.endsWith('.md'))
+          .forEach(file => {
+            const listItem = document.createElement('li');
+            const link = document.createElement('a');
+            link.href = file.download_url;
+            link.textContent = file.name;
+            listItem.appendChild(link);
+            list.appendChild(listItem);
+          });
+      })
+      .catch(error => {
+        console.error("Error fetching markdown files:", error);
+      });
+  </script>
+
   <script src="js/smartquotes.min.js"></script>
   <script>smartquotes();</script>
 
