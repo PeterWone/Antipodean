@@ -9,27 +9,26 @@ body {
 
 body {
   display: flex;
-  flex-direction: row; /* Ensure divs are side by side */
+  flex-direction: row;
   margin: 0;
   height: 100vh;
-  overflow: hidden;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-y: hidden;
 }
 
 #toc {
-  width: 30%;
+  flex: 0 0 25vw; /* Fixed width of roughly a quarter of the screen */
   overflow-y: auto;
   border-right: 1px solid #ccc;
   padding: 1em;
   box-sizing: border-box;
-  flex-shrink: 0; /* Prevent shrinking */
 }
 
 #content {
-  width: 70%;
+  flex: 0 0 75vw; /* Remaining width for content */
   overflow-y: auto;
   padding: 1em;
   box-sizing: border-box;
-  flex-grow: 1; /* Allow content to grow */
 }
 
 h1 {
@@ -136,4 +135,131 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+@media (max-width: 1200px) {
+  #toc {
+    flex: 0 0 30vw; /* Adjust TOC width for smaller screens */
+  }
+
+  #content {
+    flex: 0 0 70vw; /* Adjust content width for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  #toc {
+    flex: 0 0 40vw; /* Adjust TOC width for even smaller screens */
+  }
+
+  #content {
+    flex: 0 0 60vw; /* Adjust content width for even smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    flex-direction: column; /* Stack TOC and content vertically on very small screens */
+  }
+
+  #toc,
+  #content {
+    flex: 0 0 auto;
+    width: 100%;
+    height: 50%; /* Split height equally */
+  }
+}
+
+/* Styles for the hamburger menu */
+#hamburger-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #333;
+  color: white;
+  padding: 0.5em 1em;
+  font-size: 1.5em;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  #hamburger-menu {
+    display: block; /* Show hamburger menu on very small screens */
+  }
+
+  #toc,
+  #content {
+    flex: 0 0 auto;
+    width: 100%;
+    height: 100%; /* Full height for toggled views */
+  }
+
+  #toc.hidden,
+  #content.hidden {
+    display: none; /* Hide the inactive section */
+  }
+
+  body {
+    flex-direction: column; /* Stack TOC and content vertically */
+  }
+}
+
+/* Styles for the navbar */
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  padding: 0.5em 1em;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#navbar h1 {
+  margin: 0;
+  font-size: 1.5em;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.nav-button {
+  background-color: #555;
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.nav-button:disabled {
+  background-color: #777;
+  cursor: not-allowed;
+}
+
+#hamburger-menu {
+  font-size: 1.5em;
+  cursor: pointer;
+  margin-left: 1em;
+}
+
+@media (max-width: 480px) {
+  #navbar h1 {
+    font-size: 1.2em;
+  }
+
+  .nav-button {
+    font-size: 0.9em;
+    padding: 0.3em 0.8em;
+  }
 }
