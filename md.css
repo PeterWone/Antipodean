@@ -215,9 +215,12 @@ h1, h2, h3, h4, h5, h6 {
 
   #toc,
   #content {
-    flex: 0 0 auto;
-    width: 100%;
-    height: 50%; /* Split height equally */
+    flex: none; /* Remove flex behavior */
+    width: 100%; /* Full width */
+    height: calc(100vh - 3.5em); /* Use full height minus the navbar */
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Disable horizontal scrolling */
+    position: relative; /* Ensure proper stacking */
   }
 }
 
@@ -307,6 +310,9 @@ h1, h2, h3, h4, h5, h6 {
   overflow-x: auto; /* Ensure horizontal scrolling is enabled */
   overflow-y: hidden; /* Disable vertical scrolling */
   display: flex; /* Ensure children are laid out in a row for snapping */
+  margin-top: 4em; /* Add margin to account for the navbar */
+  height: calc(100vh - 4em); /* Adjust height to account for the navbar */
+  position: relative; /* Ensure proper stacking */
 }
 
 #content > *, #toc > * {
