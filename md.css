@@ -238,6 +238,12 @@ h1, h2, h3, h4, h5, h6 {
   cursor: not-allowed;
 }
 
+.nav-button:hover {
+  background-color: #777; /* Change background color on hover */
+  color: white; /* Ensure text remains visible */
+  cursor: pointer; /* Show pointer cursor */
+}
+
 @media (max-width: 480px) {
   #navbar h1 {
     font-size: 1.2em;
