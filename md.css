@@ -210,6 +210,12 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* Styles for the navbar container */
+#navbar-container {
+  width: 100%; /* Ensure the navbar container spans the full width */
+  overflow: hidden; /* Prevent clipping */
+}
+
 /* Styles for the navbar */
 #navbar {
   display: flex;
@@ -218,7 +224,7 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  right: 0; /* Ensure the navbar stretches to the right edge */
   background-color: #333;
   color: white;
   padding: 0.5em 1em;
