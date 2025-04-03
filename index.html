@@ -21,9 +21,9 @@
   <div id="hidden-content" style="display: none;"></div> <!-- Hidden div for temporary content -->
 
   <script>
-    const repoUrl = `https://api.github.com/repos/${location.hostname.split('.')[0]}/${location.pathname.split('/')[1]}/contents/`; // Dynamically construct repoUrl
+    const repoUrl = `https://api.github.com/repos/${location.pathname.split('/')[1]}/contents/`; // Use only the repo name
     const githubPagesBaseUrl = `https://${location.hostname}/${location.pathname.split('/')[1]}/`;
-    const repoName = repoUrl.split('/')[4]; // Extract the repository name dynamically
+    const repoName = location.pathname.split('/')[1]; // Extract the repository name directly
     const toc = document.getElementById('toc');
     const content = document.getElementById('content');
     const hiddenContent = document.getElementById('hidden-content');
@@ -78,7 +78,7 @@
             const link = document.createElement('a');
             link.href = "#";
             link.textContent = file.name
-              .replace(/^\d+-/, '') // Remove leading numbers and dash
+              .replace(/^\(d+\.\d+\)./, '$1 &mdash; ') // Separate leading numbers with mdash
               .replace(/\.md$/, '') // Remove extension
               .replace(/-/g, ' '); // Replace dashes with spaces
             link.addEventListener('click', (e) => {
