@@ -95,13 +95,12 @@
         const html = await response.text();
         hiddenContent.innerHTML = html; // Load content into the hidden div
 
+        const markdownBody = hiddenContent.querySelector('.markdown-body'); // Look for the div with class markdown-body
         // Find the first <h1> child that contains an <a> child and remove it
-        const h1WithAnchor = hiddenContent.querySelector('h1');
+        const h1WithAnchor = markdownBody.querySelector('h1');
         if (h1WithAnchor) {
           hiddenContent.removeChild(h1WithAnchor);
         }
-
-        const markdownBody = hiddenContent.querySelector('.markdown-body'); // Look for the div with class markdown-body
         content.innerHTML = markdownBody ? markdownBody.innerHTML : '<p>Content not found.</p>'; // Extract and set content
         hiddenContent.innerHTML = ''; // Clear the hidden div
         chapterTitle.textContent = fileName
