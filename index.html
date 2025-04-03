@@ -6,6 +6,12 @@
 </head>
 
 <body>
+  <div id="navbar">
+    <button id="prev-chapter" class="nav-button no-print">Previous</button>
+    <h1 id="chapter-title">Antipodean</h1>
+    <button id="next-chapter" class="nav-button no-print">Next</button>
+    <div id="hamburger-menu" class="no-print">&#9776;</div>
+  </div>
   <div id="toc">
     <h2>Table of Contents</h2>
     <ul id="markdown-links"></ul>
@@ -14,20 +20,31 @@
   <div id="hidden-content" style="display: none;"></div> <!-- Hidden div for temporary content -->
 
   <script>
-    // Fetch markdown files from the GitHub repository and link to GitHub Pages
     const repoUrl = "https://api.github.com/repos/PeterWone/Antipodean/contents/";
     const githubPagesBaseUrl = "https://peterwone.github.io/Antipodean/";
-    const toc = document.getElementById('markdown-links');
+    const toc = document.getElementById('toc');
     const content = document.getElementById('content');
     const hiddenContent = document.getElementById('hidden-content');
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const prevButton = document.getElementById('prev-chapter');
+    const nextButton = document.getElementById('next-chapter');
+    const chapterTitle = document.getElementById('chapter-title');
+    let markdownFiles = [];
+    let currentIndex = 0;
+
+    // Toggle between TOC and content on small screens
+    hamburgerMenu.addEventListener('click', () => {
+      toc.classList.toggle('hidden');
+      content.classList.toggle('hidden');
+    });
 
     async function fetchMarkdownFiles() {
       try {
         const response = await fetch(repoUrl);
         const files = await response.json();
-        const markdownFiles = files.filter(file => file.name.endsWith('.md')).sort((a, b) => a.name.localeCompare(b.name));
+        markdownFiles = files.filter(file => file.name.endsWith('.md')).sort((a, b) => a.name.localeCompare(b.name));
 
-        markdownFiles.forEach(file => {
+        markdownFiles.forEach((file, index) => {
           const listItem = document.createElement('li');
           const link = document.createElement('a');
           link.href = "#";
@@ -37,7 +54,7 @@
             .replace(/-/g, ' '); // Replace dashes with spaces
           link.addEventListener('click', (e) => {
             e.preventDefault();
-            loadContent(file.name);
+            loadContent(index);
             localStorage.setItem('lastSelectedPage', file.name); // Save the last selected page
           });
           listItem.appendChild(link);
@@ -46,28 +63,53 @@
 
         // Load the last selected page or the blurb (first chapter file alphabetically)
         const lastSelectedPage = localStorage.getItem('lastSelectedPage');
-        if (lastSelectedPage && markdownFiles.some(file => file.name === lastSelectedPage)) {
-          loadContent(lastSelectedPage);
+        const lastIndex = markdownFiles.findIndex(file => file.name === lastSelectedPage);
+        if (lastIndex !== -1) {
+          loadContent(lastIndex);
         } else if (markdownFiles.length > 0) {
-          loadContent(markdownFiles[0].name);
+          loadContent(0);
         }
       } catch (error) {
         console.error("Error fetching markdown files:", error);
       }
     }
 
-    async function loadContent(fileName) {
+    async function loadContent(index) {
       try {
+        currentIndex = index;
+        const fileName = markdownFiles[index].name;
         const response = await fetch(githubPagesBaseUrl + fileName.replace(/\.md$/, '.html'));
         const html = await response.text();
         hiddenContent.innerHTML = html; // Load content into the hidden div
         const markdownBody = hiddenContent.querySelector('.markdown-body'); // Look for the div with class markdown-body
         content.innerHTML = markdownBody ? markdownBody.innerHTML : '<p>Content not found.</p>'; // Extract and set content
         hiddenContent.innerHTML = ''; // Clear the hidden div
+        chapterTitle.textContent = fileName
+          .replace(/\.md$/, '') // Remove extension
+          .replace(/\.(?=[a-zA-Z])/g, ' ') // Period followed by a letter becomes a space
+          .replace(/-/g, ' '); // Replace dashes with spaces
+        updateNavButtons();
       } catch (error) {
         console.error("Error loading content:", error);
       }
     }
+
+    function updateNavButtons() {
+      prevButton.disabled = currentIndex === 0;
+      nextButton.disabled = currentIndex === markdownFiles.length - 1;
+    }
+
+    prevButton.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        loadContent(currentIndex - 1);
+      }
+    });
+
+    nextButton.addEventListener('click', () => {
+      if (currentIndex < markdownFiles.length - 1) {
+        loadContent(currentIndex + 1);
+      }
+    });
 
     fetchMarkdownFiles();
   </script>
