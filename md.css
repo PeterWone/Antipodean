@@ -16,37 +16,20 @@ body {
   overflow-y: hidden;
 }
 
-#toc,
-#content {
-  width: 100%; /* Full width for both TOC and content */
-  height: calc(100vh - 3.5em); /* Adjust height to account for the navbar */
-  overflow-y: auto;
-  position: absolute;
-  top: 3.5em; /* Position below the navbar */
-  left: 0;
-}
-
 #toc {
-  flex: 0 0 25vw; /* Fixed width of roughly a quarter of the screen */
-  overflow-y: auto;
-  border-right: 1px solid #ccc;
+  flex: none; /* Remove flex behavior */
+  width: 100%; /* Full width */
+  height: calc(100vh - 3.5em); /* Adjust height to account for the navbar */
+  overflow-y: auto; /* Enable vertical scrolling */
   padding: 1em;
-  padding-top: 3.5em; /* Add padding to account for the navbar height */
+  padding-top: 0; /* Remove extra padding */
   box-sizing: border-box;
+  column-width: 300px; /* Set the width of each column to 300px */
+  column-gap: 1.5em; /* Add spacing between columns */
 }
 
-#toc ul {
-  list-style-type: none; /* Remove bullets */
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap; /* Allow items to wrap into columns */
-  gap: 10px; /* Add spacing between items */
-}
-
-#toc li {
-  flex: 1 1 calc(33.333% - 10px); /* Create columns (3 per row) */
-  box-sizing: border-box;
+#toc > * {
+  break-inside: avoid; /* Prevent breaking items across columns */
 }
 
 #toc h3 {
@@ -54,17 +37,22 @@ body {
   margin-top: 20px;
 }
 
-#toc a {
+#toc .toc-item {
+  margin: 0; /* Remove default margin */
+  padding: 5px; /* Add padding for spacing */
+  border: 1px solid #ccc; /* Add a border for better visibility */
+  border-radius: 5px; /* Round the corners */
+  text-align: center;
+  cursor: pointer; /* Indicate interactivity */
+}
+
+#toc .toc-item a {
   text-decoration: none; /* Remove underline from links */
   color: inherit; /* Use inherited text color */
   display: block;
-  padding: 5px;
-  border: 1px solid #ccc; /* Add a border for better visibility */
-  border-radius: 5px;
-  text-align: center;
 }
 
-#toc a:hover {
+#toc .toc-item:hover {
   background-color: #f0f0f0; /* Add hover effect */
 }
 

@@ -58,7 +58,8 @@
         markdownFiles = files.filter(file => file.name.endsWith('.md')).sort((a, b) => a.name.localeCompare(b.name));
 
         markdownFiles.forEach((file, index) => {
-          const listItem = document.createElement('li');
+          const paragraph = document.createElement('p'); // Create a <p> element
+          paragraph.classList.add('toc-item'); // Add a class for styling
           const link = document.createElement('a');
           link.href = "#";
           link.textContent = file.name
@@ -72,8 +73,8 @@
             toc.classList.add('hidden'); // Hide TOC
             content.classList.remove('hidden'); // Show content
           });
-          listItem.appendChild(link);
-          toc.appendChild(listItem);
+          paragraph.appendChild(link);
+          toc.appendChild(paragraph); // Append the <p> to the TOC
         });
 
         // Load the last selected page or the blurb (first chapter file alphabetically)
