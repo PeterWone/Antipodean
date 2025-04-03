@@ -99,7 +99,7 @@
         // Find the first <h1> child that contains an <a> child and remove it
         const h1WithAnchor = markdownBody.querySelector('h1');
         if (h1WithAnchor) {
-          hiddenContent.removeChild(h1WithAnchor);
+          markdownBody.removeChild(h1WithAnchor);
         }
         content.innerHTML = markdownBody ? markdownBody.innerHTML : '<p>Content not found.</p>'; // Extract and set content
         hiddenContent.innerHTML = ''; // Clear the hidden div
