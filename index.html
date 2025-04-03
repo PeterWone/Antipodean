@@ -32,6 +32,14 @@
     let markdownFiles = [];
     let currentIndex = 0;
 
+    // Convert vertical scroll attempts to horizontal scrolling for the content
+    content.addEventListener('wheel', (e) => {
+      if (e.deltaY !== 0) {
+        e.preventDefault();
+        content.scrollLeft += e.deltaY;
+      }
+    });
+
     // Toggle between TOC and content when the title is clicked
     chapterTitle.addEventListener('click', () => {
       toc.classList.toggle('hidden');
