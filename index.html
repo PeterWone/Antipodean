@@ -201,7 +201,9 @@
       shouldAdjustTitle = false;
       const navbar = document.getElementById('navbar');
       const titleElement = document.getElementById('chapter-title');
-      const chapterName = chapterTitle.textContent.split(' ').slice(1).join(' ').trim(); // Extract everything after the first space
+      const chapterName = chapterTitle.contains("-") 
+        ? chapterTitle.textContent.split('—')[1].trim() 
+        : chapterTitle.textContent; 
       const fullTitle = `${repoName} — ${chapterName}`; // Full title with book and chapter
       const buttonWidth = prevButton.offsetWidth + nextButton.offsetWidth; // Total width of the buttons
       const availableWidth = navbar.clientWidth - buttonWidth - (2 * 16); // Subtract button width and 2em padding
