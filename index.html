@@ -201,7 +201,7 @@
       shouldAdjustTitle = false;
       const navbar = document.getElementById('navbar');
       const titleElement = document.getElementById('chapter-title');
-      const chapterName = chapterTitle.textContent.contains("-") 
+      const chapterName = chapterTitle.textContent.includes("-") 
         ? chapterTitle.textContent.split('—')[1].trim() 
         : chapterTitle.textContent; 
       const fullTitle = `${repoName} — ${chapterName}`; // Full title with book and chapter
