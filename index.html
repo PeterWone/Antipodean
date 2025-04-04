@@ -203,7 +203,17 @@
       }
     }
 
-    chapterTitle.addEventListener('DOMSubtreeModified', adjustTitle); // Adjust title dynamically when it changes
+    function observeTitleChanges() {
+      const observer = new MutationObserver(() => {
+        adjustTitle(); // Call adjustTitle when the title changes
+      });
+
+      observer.observe(chapterTitle, { childList: true }); // Observe changes to the title's child nodes
+    }
+
+    // Call the observer function to start observing
+    observeTitleChanges();
+
     window.addEventListener('resize', adjustTitle); // Adjust title on window resize
 
     prevButton.addEventListener('click', () => {
