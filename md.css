@@ -26,7 +26,7 @@ body {
   /* Remove flex behavior */
   width: 100%;
   /* Full width */
-  height: calc(100vh - 4.5em);
+  height: calc(100vh - var(--navbar-height));
   /* Adjust height to account for the navbar */
   overflow-y: auto;
   /* Enable vertical scrolling */
@@ -91,7 +91,7 @@ body {
   /* Remove flex behavior */
   width: 100%;
   /* Full width */
-  height: calc(100vh - 4em);
+  height: calc(100vh - var(--navbar-height));
   /* Adjust height to account for the navbar */
   overflow-y: auto;
   /* Enable vertical scrolling */
@@ -267,7 +267,6 @@ h6 {
   /* Ensure the navbar stretches to the right edge */
   background-color: #333;
   color: white;
-  padding: 0.5em 1em;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   overflow: hidden;
