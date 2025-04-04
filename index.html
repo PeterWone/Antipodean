@@ -71,11 +71,15 @@
       const columnWidth = content.offsetWidth * 0.9; // Match the column width (90% of viewport width)
       const tapX = e.clientX;
       const screenWidth = window.innerWidth;
+      const maxScrollLeft = content.scrollWidth - content.clientWidth;
 
       if (tapX < screenWidth * 0.25) {
         // Tap on the left quarter of the screen
-        if (content.scrollLeft < columnWidth && currentIndex > 0) {
-          loadContent(currentIndex - 1, true, false); // Load the previous chapter
+        if (content.scrollLeft <= 0 && currentIndex > 0) {
+          loadContent(currentIndex - 1).then(() => {
+            suppressScrollHandler = true; // Suppress the scroll handler
+            content.scrollLeft = content.scrollWidth - content.clientWidth; // Set to the end of the previous chapter
+          });
         } else {
           content.scrollBy({
             left: -columnWidth,
@@ -84,14 +88,30 @@
         }
       } else if (tapX > screenWidth * 0.75) {
         // Tap on the right quarter of the screen
-        if (content.scrollLeft + columnWidth > content.scrollWidth && currentIndex < markdownFiles.length - 1) {
-          loadContent(currentIndex + 1, true, true); // Load the next chapter
+        if (content.scrollLeft >= maxScrollLeft && currentIndex < markdownFiles.length - 1) {
+          loadContent(currentIndex + 1).then(() => {
+            suppressScrollHandler = true; // Suppress the scroll handler
+            content.scrollLeft = 0; // Set to the start of the next chapter
+          });
         } else {
           content.scrollBy({
             left: columnWidth,
             behavior: 'smooth',
           });
         }
+      }
+    });
+
+    content.addEventListener('touchend', (e) => {
+      const columnWidth = content.offsetWidth * 0.9; // Match the column width (90% of viewport width)
+      const maxScrollLeft = content.scrollWidth - content.clientWidth;
+
+      if (content.scrollLeft >= maxScrollLeft && currentIndex < markdownFiles.length - 1) {
+        // User swiped past the end of the page
+        loadContent(currentIndex + 1).then(() => {
+          suppressScrollHandler = true; // Suppress the scroll handler
+          content.scrollLeft = 0; // Set to the start of the next chapter
+        });
       }
     });
 
@@ -194,12 +214,6 @@
         loadContent(currentIndex - 1).then(() => {
           suppressScrollHandler = true; // Suppress the scroll handler
           content.scrollLeft = content.scrollWidth - content.clientWidth; // Set to the end of the previous chapter
-        });
-      } else if (scrollLeft >= maxScrollLeft && currentIndex < markdownFiles.length - 1) {
-        // User scrolled past the end of the page
-        loadContent(currentIndex + 1).then(() => {
-          suppressScrollHandler = true; // Suppress the scroll handler
-          content.scrollLeft = 0; // Set to the start of the next chapter
         });
       }
     });
