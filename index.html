@@ -34,6 +34,7 @@
     let markdownFiles = [];
     let currentIndex = 0;
     let chapterScrollPositions = {}; // Object to store scroll positions for each chapter
+    let shouldAdjustTitle = false; // Flag to track if the title should be adjusted
 
     // Convert vertical scroll attempts to horizontal scrolling for the content
     content.addEventListener('wheel', (e) => {
@@ -161,6 +162,7 @@
           .replace(/\.(?=[a-zA-Z])/g, ' ') // Period followed by a letter becomes a space
           .replace(/-/g, ' '); // Replace dashes with spaces
         chapterTitle.textContent = `${repoName} — ${chapterTitleText}`; // Display book title and chapter title
+        shouldAdjustTitle = true; // Set the flag when the chapter changes
         adjustTitle(); // Explicitly call adjustTitle after setting the title
         updateNavButtons();
         highlightCurrentChapter();
@@ -192,6 +194,8 @@
     }
 
     function adjustTitle() {
+      if (!shouldAdjustTitle) return; // Adjust only if the flag is set
+
       const navbar = document.getElementById('navbar');
       const titleElement = document.getElementById('chapter-title');
       const buttonWidth = prevButton.offsetWidth + nextButton.offsetWidth; // Total width of the buttons
@@ -202,8 +206,10 @@
 
       const effectiveTitle = titleElement.scrollWidth < availableWidth ? fullTitle : chapterOnlyTitle; // Use full title if it fits, otherwise use chapter-only title
       if (titleElement.textContent !== effectiveTitle) {
-        titleElement.textContent = effectiveTitle; // Use only the chapter title if it overflows
+        titleElement.textContent = effectiveTitle; // Update the title
       }
+
+      shouldAdjustTitle = false; // Unset the flag after adjusting the title
     }
 
     function observeTitleChanges() {
@@ -217,7 +223,17 @@
     // Call the observer function to start observing
     observeTitleChanges();
 
-    window.addEventListener('resize', adjustTitle); // Adjust title on window resize
+    window.addEventListener('resize', () => {
+      shouldAdjustTitle = true; // Reset the flag on resolution changes
+      adjustTitle(); // Trigger title adjustment
+      adjustContentHeight(); // Trigger content height adjustment
+    });
+
+    window.addEventListener('orientationchange', () => {
+      shouldAdjustTitle = true; // Reset the flag on orientation changes
+      adjustTitle(); // Trigger title adjustment
+      adjustContentHeight(); // Trigger content height adjustment
+    });
 
     prevButton.addEventListener('click', () => {
       if (currentIndex > 0) {
