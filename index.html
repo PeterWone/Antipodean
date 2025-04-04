@@ -35,85 +35,50 @@
     let currentIndex = 0;
     let chapterScrollPositions = {}; // Object to store scroll positions for each chapter
     let shouldAdjustTitle = false; // Flag to track if the title should be adjusted
-    let suppressScrollHandler = false; // Flag to suppress the scroll handler
-
-    // Convert vertical scroll attempts to horizontal scrolling for the content
-    content.addEventListener('wheel', (e) => {
-      if (e.deltaY !== 0) {
-        e.preventDefault();
-        content.scrollLeft += e.deltaY;
-      }
-    });
-
-    // Add touch support for horizontal scrolling
-    let touchStartX = 0;
-    let touchStartY = 0;
-
-    content.addEventListener('touchstart', (e) => {
-      const touch = e.touches[0];
-      touchStartX = touch.clientX;
-      touchStartY = touch.clientY;
-    });
-
-    content.addEventListener('touchmove', (e) => {
-      const touch = e.touches[0];
-      const deltaX = touchStartX - touch.clientX;
-      const deltaY = touchStartY - touch.clientY;
-
-      if (Math.abs(deltaY) > Math.abs(deltaX)) {
-        e.preventDefault();
-        content.scrollLeft += deltaY;
-      }
-    });
 
     // Detect taps on the left or right quarter of the screen and scroll one column left or right, respectively
-    content.addEventListener('click', (e) => {
+    content.addEventListener('click', async (e) => {
       const columnWidth = content.offsetWidth * 0.9; // Match the column width (90% of viewport width)
       const tapX = e.clientX;
       const screenWidth = window.innerWidth;
-      const maxScrollLeft = content.scrollWidth - content.clientWidth;
-
       if (tapX < screenWidth * 0.25) {
-        // Tap on the left quarter of the screen
-        if (content.scrollLeft <= 0 && currentIndex > 0) {
-          loadContent(currentIndex - 1).then(() => {
-            suppressScrollHandler = true; // Suppress the scroll handler
-            content.scrollLeft = content.scrollWidth - content.clientWidth; // Set to the end of the previous chapter
-          });
-        } else {
-          content.scrollBy({
-            left: -columnWidth,
-            behavior: 'smooth',
-          });
-        }
+        await TapLeft();
       } else if (tapX > screenWidth * 0.75) {
-        // Tap on the right quarter of the screen
-        if (content.scrollLeft >= maxScrollLeft && currentIndex < markdownFiles.length - 1) {
-          loadContent(currentIndex + 1).then(() => {
-            suppressScrollHandler = true; // Suppress the scroll handler
-            content.scrollLeft = 0; // Set to the start of the next chapter
-          });
-        } else {
-          content.scrollBy({
-            left: columnWidth,
-            behavior: 'smooth',
-          });
-        }
+        await TapRight();
       }
     });
 
-    content.addEventListener('touchend', (e) => {
+    async function TapLeft() {
+      console.log("TapLeft called");
       const columnWidth = content.offsetWidth * 0.9; // Match the column width (90% of viewport width)
-      const maxScrollLeft = content.scrollWidth - content.clientWidth;
-
-      if (content.scrollLeft >= maxScrollLeft && currentIndex < markdownFiles.length - 1) {
-        // User swiped past the end of the page
-        loadContent(currentIndex + 1).then(() => {
-          suppressScrollHandler = true; // Suppress the scroll handler
-          content.scrollLeft = 0; // Set to the start of the next chapter
+      if (content.scrollLeft <= columnWidth && currentIndex > 0) {
+        console.log("Loading previous chapter");
+        await loadContent(currentIndex - 1);
+        const lastPageOffset = content.scrollWidth - content.clientWidth; // Scroll to the end of the previous chapter
+        content.scrollLeft = lastPageOffset;
+      } else {
+        content.scrollBy({
+          left: -columnWidth,
+          behavior: 'smooth',
         });
       }
-    });
+    }
+    async function TapRight() {
+      console.log("TapRight called");
+      const columnWidth = content.offsetWidth * 0.9; // Match the column width (90% of viewport width)
+      const isAtEnd = content.scrollLeft >= content.scrollWidth - columnWidth; // Check if at the end of the content
+      const isLastPageVisible = LastPageIsVisible(); // Check if the last page is visible
+      if (content.scrollLeft >= content.scrollWidth - columnWidth && currentIndex < markdownFiles.length - 1) {
+        console.log("Loading next chapter");
+        await loadContent(currentIndex + 1);
+        content.scrollLeft = 0; // Set to the start of the next chapter
+      } else {
+        content.scrollBy({
+          left: columnWidth,
+          behavior: 'smooth',
+        });
+      }
+    }
 
     // Toggle between TOC and content when the title is clicked
     chapterTitle.addEventListener('click', () => {
@@ -200,39 +165,17 @@
       }
     }
 
-    content.addEventListener('scroll', () => {
-      if (suppressScrollHandler) {
-        suppressScrollHandler = false; // Reset the flag before exiting
-        return;
-      }
-
-      const scrollLeft = content.scrollLeft;
-      const maxScrollLeft = content.scrollWidth - content.clientWidth;
-
-      if (scrollLeft === 0 && currentIndex > 0) {
-        // User scrolled past the start of the page
-        loadContent(currentIndex - 1).then(() => {
-          suppressScrollHandler = true; // Suppress the scroll handler
-          content.scrollLeft = content.scrollWidth - content.clientWidth; // Set to the end of the previous chapter
-        });
-      }
-    });
-
-    prevButton.addEventListener('click', () => {
+    prevButton.addEventListener('click', async () => {
       if (currentIndex > 0) {
-        loadContent(currentIndex - 1).then(() => {
-          suppressScrollHandler = true; // Suppress the scroll handler
-          content.scrollLeft = chapterScrollPositions[markdownFiles[currentIndex]?.name] ?? 0; // Restore saved position
-        });
+        await loadContent(currentIndex - 1);
+        content.scrollLeft = chapterScrollPositions[markdownFiles[currentIndex]?.name] ?? 0; // Restore saved position
       }
     });
 
-    nextButton.addEventListener('click', () => {
+    nextButton.addEventListener('click', async () => {
       if (currentIndex < markdownFiles.length - 1) {
-        loadContent(currentIndex + 1).then(() => {
-          suppressScrollHandler = true; // Suppress the scroll handler
-          content.scrollLeft = chapterScrollPositions[markdownFiles[currentIndex]?.name] ?? 0; // Restore saved position
-        });
+        await loadContent(currentIndex + 1);
+        content.scrollLeft = chapterScrollPositions[markdownFiles[currentIndex]?.name] ?? 0; // Restore saved position
       }
     });
 
@@ -264,7 +207,7 @@
       const fullTitle = `${repoName} — ${chapterName}`; // Full title with book and chapter
       const buttonWidth = prevButton.offsetWidth + nextButton.offsetWidth; // Total width of the buttons
       const availableWidth = navbar.clientWidth - buttonWidth - (2 * 16); // Subtract button width and 2em padding (16px       titleElement.textContent = fullTitle; // Set the full title
-      const isClipped = titleElement.scrollWidth > availableWidth; 
+      const isClipped = titleElement.scrollWidth >= availableWidth; 
       if (isClipped) {
         titleElement.textContent = chapterName;
       }
@@ -280,18 +223,14 @@
 
     // Call the observer function to start observing
     observeTitleChanges();
-
-    window.addEventListener('resize', () => {
+    function redoLayout() {
       shouldAdjustTitle = true; // Reset the flag on resolution changes
-      adjustTitle(); // Trigger title adjustment
-      adjustContentHeight(); // Trigger content height adjustment
-    });
+      adjustTitle(); // Adjust title
+      adjustContentHeight(); // Adjust content height
+    }
 
-    window.addEventListener('orientationchange', () => {
-      shouldAdjustTitle = true; // Reset the flag on orientation changes
-      adjustTitle(); // Trigger title adjustment
-      adjustContentHeight(); // Trigger content height adjustment
-    });
+    window.addEventListener('resize', redoLayout);
+    window.addEventListener('orientationchange', redoLayout);
 
     function updateNavbarHeight() {
       const navbarHeight = document.getElementById('navbar').offsetHeight; // Get the actual navbar height
@@ -306,6 +245,11 @@
 
       document.getElementById('content').style.height = `${adjustedHeight}px`;
       document.getElementById('toc').style.height = `${adjustedHeight}px`;
+    }
+
+    function LastPageIsVisible() {
+      const maxScrollLeft = content.scrollWidth - content.clientWidth;
+      return content.scrollLeft >= maxScrollLeft;
     }
 
     // Adjust height and navbar height on load and resize
