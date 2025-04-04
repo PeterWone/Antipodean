@@ -166,14 +166,14 @@
     prevButton.addEventListener('click', async () => {
       if (currentIndex > 0) {
         await loadContent(currentIndex - 1);
-        content.scrollLeft = chapterScrollPositions[markdownFiles[currentIndex]?.name] ?? 0; // Restore saved position
+        content.scrollLeft = content.scrollWidth - content.clientWidth - 1;//chapterScrollPositions[markdownFiles[currentIndex]?.name] ?? 0; // Restore saved position
       }
     });
 
     nextButton.addEventListener('click', async () => {
       if (currentIndex < markdownFiles.length - 1) {
         await loadContent(currentIndex + 1);
-        content.scrollLeft = chapterScrollPositions[markdownFiles[currentIndex]?.name] ?? 0; // Restore saved position
+        content.scrollLeft = 0; //chapterScrollPositions[markdownFiles[currentIndex]?.name] ?? 0; // Restore saved position
       }
     });
 
