@@ -204,7 +204,8 @@
       const chapterName = chapterTitle.textContent.split('—')[1].trim(); 
       const fullTitle = `${repoName} — ${chapterName}`; // Full title with book and chapter
       const buttonWidth = prevButton.offsetWidth + nextButton.offsetWidth; // Total width of the buttons
-      const availableWidth = navbar.clientWidth - buttonWidth - (2 * 16); // Subtract button width and 2em padding (16px       titleElement.textContent = fullTitle; // Set the full title
+      const availableWidth = navbar.clientWidth - buttonWidth - (2 * 16); // Subtract button width and 2em padding
+      titleElement.textContent = fullTitle; // Set the full title
       const isClipped = titleElement.scrollWidth >= availableWidth; 
       if (isClipped) {
         titleElement.textContent = chapterName;
@@ -246,7 +247,7 @@
     }
 
     function LastPageIsVisible() {
-      const maxScrollLeft = content.scrollWidth - content.clientWidth + 1;
+      const maxScrollLeft = content.scrollWidth - content.clientWidth - 1;
       return content.scrollLeft >= maxScrollLeft;
     }
 
