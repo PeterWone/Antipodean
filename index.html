@@ -63,6 +63,27 @@
       }
     });
 
+    // Detect taps on the left or right quarter of the screen and scroll one column left or right, respectively
+    content.addEventListener('click', (e) => {
+      const columnWidth = content.offsetWidth * 0.9; // Match the column width (90% of viewport width)
+      const tapX = e.clientX;
+      const screenWidth = window.innerWidth;
+
+      if (tapX < screenWidth * 0.25) {
+        // Tap on the left quarter of the screen
+        content.scrollBy({
+          left: -columnWidth,
+          behavior: 'smooth',
+        });
+      } else if (tapX > screenWidth * 0.75) {
+        // Tap on the right quarter of the screen
+        content.scrollBy({
+          left: columnWidth,
+          behavior: 'smooth',
+        });
+      }
+    });
+
     // Toggle between TOC and content when the title is clicked
     chapterTitle.addEventListener('click', () => {
       toc.classList.toggle('hidden');

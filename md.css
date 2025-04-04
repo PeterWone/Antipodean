@@ -45,6 +45,7 @@ body {
   top: 3.5em;
   /* Position below the navbar */
   left: 0;
+  padding-bottom: 1em; /* Add 1em of bottom padding */
 }
 
 #toc>* {
@@ -110,6 +111,7 @@ body {
   left: 0;
   scroll-snap-type: x mandatory;
   /* Enable horizontal snapping */
+  padding-bottom: 1em; /* Add 1em of bottom padding */
 }
 
 #content>* {
@@ -263,6 +265,7 @@ h6 {
     flex: 0 0 auto;
     width: 100%;
     /* Split height equally */
+    padding-bottom: 1em; /* Add 1em of bottom padding for phones */
   }
 }
 
