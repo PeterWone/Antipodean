@@ -112,7 +112,6 @@ body {
   scroll-snap-type: x mandatory;
   /* Enable horizontal snapping */
   padding-bottom: 2em; /* Increase bottom padding to 2em */
-  padding-left: 0.2em; /* Add left gutter for better legibility */
 }
 
 #content>* {
@@ -231,40 +230,12 @@ h6 {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-@media (max-width: 1200px) {
-  #toc {
-    flex: 0 0 30vw;
-    /* Adjust TOC width for smaller screens */
-  }
-
-  #content {
-    flex: 0 0 70vw;
-    /* Adjust content width for smaller screens */
-  }
-}
-
-@media (max-width: 768px) {
-  #toc {
-    flex: 0 0 40vw;
-    /* Adjust TOC width for even smaller screens */
-  }
-
-  #content {
-    flex: 0 0 60vw;
-    /* Adjust content width for even smaller screens */
-  }
-}
-
 @media (max-width: 480px) {
-  body {
-    flex-direction: column;
-    /* Stack TOC and content vertically on very small screens */
-  }
-
   #toc,
   #content {
     flex: 0 0 auto;
-    width: 100%;
+    left: 1%;
+    width: 99%;
     /* Split height equally */
     padding-bottom: 2em; /* Increase bottom padding to 2em for phones */
   }
@@ -323,6 +294,8 @@ h6 {
   padding: 0.5em 1em;
   cursor: pointer;
   font-size: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
 .nav-button:disabled {

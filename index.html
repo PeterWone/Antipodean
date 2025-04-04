@@ -161,6 +161,7 @@
           .replace(/\.(?=[a-zA-Z])/g, ' ') // Period followed by a letter becomes a space
           .replace(/-/g, ' '); // Replace dashes with spaces
         chapterTitle.textContent = `${repoName} — ${chapterTitleText}`; // Display book title and chapter title
+        adjustTitle(); // Explicitly call adjustTitle after setting the title
         updateNavButtons();
         highlightCurrentChapter();
 
