@@ -195,31 +195,16 @@
 
     function adjustTitle() {
       if (!shouldAdjustTitle) return; // Adjust only if the flag is set
-
+      shouldAdjustTitle = false;
       const navbar = document.getElementById('navbar');
       const titleElement = document.getElementById('chapter-title');
-      const buttonWidth = prevButton.offsetWidth + nextButton.offsetWidth; // Total width of the buttons
-      const availableWidth = navbar.clientWidth - buttonWidth - (2 * 16); // Subtract button width and 2em padding (16px per em)
-
-      // Temporarily disable overflow and ellipsis
-      const originalOverflow = titleElement.style.overflow;
-      const originalTextOverflow = titleElement.style.textOverflow;
-      titleElement.style.overflow = 'visible';
-      titleElement.style.textOverflow = 'clip';
-
-      const fullTitle = `${repoName} — ${chapterTitle.textContent.split('—').pop().trim()}`; // Full title with book and chapter
-      const chapterOnlyTitle = chapterTitle.textContent.split('—').pop().trim(); // Chapter-only title
-
-      const effectiveTitle = titleElement.scrollWidth < availableWidth ? fullTitle : chapterOnlyTitle; // Use full title if it fits, otherwise use chapter-only title
-      if (titleElement.textContent !== effectiveTitle) {
-        titleElement.textContent = effectiveTitle; // Update the title
+      const chapterName = chapterTitle.textContent.split('—')[1].trim(); 
+      const fullTitle = `${repoName} — ${chapterName}`; // Full title with book and chapter
+      titleElement.textContent = fullTitle; // Set the full title
+      const isClipped = titleElement.scrollWidth > navbar.clientWidth; 
+      if (isClipped) {
+        titleElement.textContent = chapterName;
       }
-
-      // Restore original overflow and ellipsis
-      titleElement.style.overflow = originalOverflow;
-      titleElement.style.textOverflow = originalTextOverflow;
-
-      shouldAdjustTitle = false; // Unset the flag after adjusting the title
     }
 
     function observeTitleChanges() {

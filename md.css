@@ -244,7 +244,10 @@ h6 {
   margin: 0 1em; /* Add spacing around the title */
   font-size: 1.5em;
   flex-grow: 1;
+  text-align: center;
   white-space: nowrap; /* Prevent wrapping */
+  overflow: hidden; /* Hide overflowing text */
+  text-overflow: ellipsis; /* Add ellipsis for overflowing text */
 }
 
 @media (max-width: 480px) {
