@@ -262,6 +262,19 @@
     window.addEventListener('load', adjustContentHeight);
     window.addEventListener('resize', adjustContentHeight);
 
+    content.addEventListener('scroll', () => {
+      const scrollLeft = content.scrollLeft;
+      const maxScrollLeft = content.scrollWidth - content.clientWidth;
+
+      if (scrollLeft === 0 && currentIndex > 0) {
+        // User scrolled past the start of the page
+        loadContent(currentIndex - 1);
+      } else if (scrollLeft >= maxScrollLeft && currentIndex < markdownFiles.length - 1) {
+        // User scrolled past the end of the page
+        loadContent(currentIndex + 1);
+      }
+    });
+
     fetchMarkdownFiles();
   </script>
 
