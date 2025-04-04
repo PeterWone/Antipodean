@@ -73,16 +73,24 @@
 
       if (tapX < screenWidth * 0.25) {
         // Tap on the left quarter of the screen
-        content.scrollBy({
-          left: -columnWidth,
-          behavior: 'smooth',
-        });
+        if (content.scrollLeft < columnWidth && currentIndex > 0) {
+          loadContent(currentIndex - 1, true, false); // Load the previous chapter
+        } else {
+          content.scrollBy({
+            left: -columnWidth,
+            behavior: 'smooth',
+          });
+        }
       } else if (tapX > screenWidth * 0.75) {
         // Tap on the right quarter of the screen
-        content.scrollBy({
-          left: columnWidth,
-          behavior: 'smooth',
-        });
+        if (content.scrollLeft + columnWidth > content.scrollWidth && currentIndex < markdownFiles.length - 1) {
+          loadContent(currentIndex + 1, true, true); // Load the next chapter
+        } else {
+          content.scrollBy({
+            left: columnWidth,
+            behavior: 'smooth',
+          });
+        }
       }
     });
 
