@@ -234,8 +234,8 @@ h6 {
   #toc,
   #content {
     flex: 0 0 auto;
-    left: 1%;
-    width: 99%;
+    left: 1em;
+    width: calc(100% - 1em);
     /* Split height equally */
     padding-bottom: 2em; /* Increase bottom padding to 2em for phones */
   }
@@ -275,7 +275,7 @@ h6 {
 }
 
 #navbar h1 {
-  margin: 0;
+  margin: 0 1em; /* Add spacing around the title */
   font-size: 1.5em;
   flex-grow: 1;
   text-align: center;
@@ -294,8 +294,6 @@ h6 {
   padding: 0.5em 1em;
   cursor: pointer;
   font-size: 1em;
-  margin-left: 1em;
-  margin-right: 1em;
 }
 
 .nav-button:disabled {
@@ -314,7 +312,7 @@ h6 {
 
 @media (max-width: 480px) {
   #navbar h1 {
-    font-size: 1.2em;
+    font-size: 1em;
   }
 
   .nav-button {
