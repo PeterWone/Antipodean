@@ -41,9 +41,8 @@ body {
   column-fill: auto;
   /* Disable column balancing */
   position: fixed;
-  /* Fix position to avoid being under the navbar */
-  top: 3.5em;
-  /* Position below the navbar */
+  /* Position content below the navbar with an 8px gap */
+  top: calc(var(--navbar-height) + 8px); 
   left: 0;
   padding-bottom: 2em; /* Increase bottom padding to 2em */
 }
@@ -106,8 +105,7 @@ body {
   /* Disable column balancing */
   position: fixed;
   /* Fix position to avoid being under the navbar */
-  top: 3.5em;
-  /* Position below the navbar */
+  top: calc(var(--navbar-height) + 8px); /* Position content below the navbar with an 8px gap */
   left: 0;
   scroll-snap-type: x mandatory;
   /* Enable horizontal snapping */

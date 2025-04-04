@@ -239,7 +239,7 @@
     function adjustContentHeight() {
       updateNavbarHeight(); // Ensure the navbar height is updated
       const viewportHeight = window.innerHeight; // Get the visible height of the browser
-      const navbarHeight = document.getElementById('navbar').offsetHeight; // Dynamically get the navbar height
+      const navbarHeight = document.getElementById('navbar').offsetHeight + 8; // Dynamically get the navbar height
       const adjustedHeight = viewportHeight - navbarHeight;
 
       document.getElementById('content').style.height = `${adjustedHeight}px`;
