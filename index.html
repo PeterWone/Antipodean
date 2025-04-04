@@ -218,6 +218,19 @@
       }
     });
 
+    function adjustContentHeight() {
+      const viewportHeight = window.innerHeight; // Get the visible height of the browser
+      const navbarHeight = 3.5 * 16; // 3.5em converted to pixels (assuming 16px base font size)
+      const adjustedHeight = viewportHeight - navbarHeight;
+
+      document.getElementById('content').style.height = `${adjustedHeight}px`;
+      document.getElementById('toc').style.height = `${adjustedHeight}px`;
+    }
+
+    // Adjust height on load and resize
+    window.addEventListener('load', adjustContentHeight);
+    window.addEventListener('resize', adjustContentHeight);
+
     fetchMarkdownFiles();
   </script>
 
