@@ -35,6 +35,7 @@
     let currentIndex = 0;
     let chapterScrollPositions = {}; // Object to store scroll positions for each chapter
     let shouldAdjustTitle = false; // Flag to track if the title should be adjusted
+    let suppressScrollHandler = false; // Flag to suppress the scroll handler
 
     // Convert vertical scroll attempts to horizontal scrolling for the content
     content.addEventListener('wheel', (e) => {
@@ -180,17 +181,24 @@
     }
 
     content.addEventListener('scroll', () => {
+      if (suppressScrollHandler) {
+        suppressScrollHandler = false; // Reset the flag before exiting
+        return;
+      }
+
       const scrollLeft = content.scrollLeft;
       const maxScrollLeft = content.scrollWidth - content.clientWidth;
 
       if (scrollLeft === 0 && currentIndex > 0) {
         // User scrolled past the start of the page
         loadContent(currentIndex - 1).then(() => {
+          suppressScrollHandler = true; // Suppress the scroll handler
           content.scrollLeft = content.scrollWidth - content.clientWidth; // Set to the end of the previous chapter
         });
       } else if (scrollLeft >= maxScrollLeft && currentIndex < markdownFiles.length - 1) {
         // User scrolled past the end of the page
         loadContent(currentIndex + 1).then(() => {
+          suppressScrollHandler = true; // Suppress the scroll handler
           content.scrollLeft = 0; // Set to the start of the next chapter
         });
       }
@@ -199,7 +207,8 @@
     prevButton.addEventListener('click', () => {
       if (currentIndex > 0) {
         loadContent(currentIndex - 1).then(() => {
-          content.scrollLeft = chapterScrollPositions[markdownFiles[currentIndex]?.name] || 0; // Restore saved position
+          suppressScrollHandler = true; // Suppress the scroll handler
+          content.scrollLeft = chapterScrollPositions[markdownFiles[currentIndex]?.name] ?? 0; // Restore saved position
         });
       }
     });
@@ -207,7 +216,8 @@
     nextButton.addEventListener('click', () => {
       if (currentIndex < markdownFiles.length - 1) {
         loadContent(currentIndex + 1).then(() => {
-          content.scrollLeft = chapterScrollPositions[markdownFiles[currentIndex]?.name] || 0; // Restore saved position
+          suppressScrollHandler = true; // Suppress the scroll handler
+          content.scrollLeft = chapterScrollPositions[markdownFiles[currentIndex]?.name] ?? 0; // Restore saved position
         });
       }
     });
