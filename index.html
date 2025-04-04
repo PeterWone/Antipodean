@@ -66,9 +66,7 @@
     async function TapRight() {
       console.log("TapRight called");
       const columnWidth = content.offsetWidth * 0.9; // Match the column width (90% of viewport width)
-      const isAtEnd = content.scrollLeft >= content.scrollWidth - columnWidth; // Check if at the end of the content
-      const isLastPageVisible = LastPageIsVisible(); // Check if the last page is visible
-      if (content.scrollLeft >= content.scrollWidth - columnWidth && currentIndex < markdownFiles.length - 1) {
+      if (LastPageIsVisible() && currentIndex < markdownFiles.length - 1) {
         console.log("Loading next chapter");
         await loadContent(currentIndex + 1);
         content.scrollLeft = 0; // Set to the start of the next chapter
