@@ -248,7 +248,8 @@
 
     function LastPageIsVisible() {
       const maxScrollLeft = content.scrollWidth - content.clientWidth - 1;
-      return content.scrollLeft >= maxScrollLeft;
+      const isLastPage = content.scrollLeft >= maxScrollLeft;
+      return isLastPage;
     }
 
     // Adjust height and navbar height on load and resize
