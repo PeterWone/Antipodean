@@ -247,7 +247,7 @@
     }
 
     function LastPageIsVisible() {
-      const maxScrollLeft = content.scrollWidth - content.clientWidth - 1;
+      const maxScrollLeft = content.scrollWidth - columnWidth - 1;
       const isLastPage = content.scrollLeft >= maxScrollLeft;
       return isLastPage;
     }
