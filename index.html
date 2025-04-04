@@ -138,7 +138,7 @@
         // Save the current scroll position for the current chapter
         const currentFileName = markdownFiles[currentIndex]?.name;
         if (currentFileName) {
-          chapterScrollPositions[currentFileName] = content.scrollTop;
+          chapterScrollPositions[currentFileName] = content.scrollLeft; // Use scrollLeft for horizontal scrolling
         }
 
         currentIndex = index;
@@ -166,7 +166,7 @@
         highlightCurrentChapter();
 
         // Restore the scroll position for the selected chapter or default to 0
-        content.scrollTop = chapterScrollPositions[fileName] || 0;
+        content.scrollLeft = chapterScrollPositions[fileName] || 0; // Use scrollLeft for horizontal scrolling
       } catch (error) {
         console.error("Error loading content:", error);
       }
