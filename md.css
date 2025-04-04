@@ -239,10 +239,19 @@ h6 {
   }
 }
 
-/* Styles for the chapter title */
 #chapter-title {
-  cursor: pointer;
-  /* Change cursor to indicate interactivity */
+  cursor: pointer; /* Change cursor to indicate interactivity */
+  margin: 0 1em; /* Add spacing around the title */
+  font-size: 1.5em;
+  flex-grow: 1;
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+@media (max-width: 480px) {
+  #navbar h1, 
+  #chapter-title {
+    font-size: 1em;
+  }
 }
 
 /* Styles for the navbar container */
@@ -271,19 +280,6 @@ h6 {
   /* Prevent content overflow */
 }
 
-#navbar h1 {
-  margin: 0 1em; /* Add spacing around the title */
-  font-size: 1.5em;
-  flex-grow: 1;
-  text-align: center;
-  white-space: nowrap;
-  /* Prevent wrapping */
-  overflow: hidden;
-  /* Hide overflowing text */
-  text-overflow: ellipsis;
-  /* Add ellipsis for overflowing text */
-}
-
 .nav-button {
   background-color: #555;
   color: white;
@@ -308,10 +304,6 @@ h6 {
 }
 
 @media (max-width: 480px) {
-  #navbar h1 {
-    font-size: 1em;
-  }
-
   .nav-button {
     font-size: 0.9em;
     padding: 0.3em 0.8em;

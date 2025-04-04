@@ -201,6 +201,12 @@
       const buttonWidth = prevButton.offsetWidth + nextButton.offsetWidth; // Total width of the buttons
       const availableWidth = navbar.clientWidth - buttonWidth - (2 * 16); // Subtract button width and 2em padding (16px per em)
 
+      // Temporarily disable overflow and ellipsis
+      const originalOverflow = titleElement.style.overflow;
+      const originalTextOverflow = titleElement.style.textOverflow;
+      titleElement.style.overflow = 'visible';
+      titleElement.style.textOverflow = 'clip';
+
       const fullTitle = `${repoName} — ${chapterTitle.textContent.split('—').pop().trim()}`; // Full title with book and chapter
       const chapterOnlyTitle = chapterTitle.textContent.split('—').pop().trim(); // Chapter-only title
 
@@ -208,6 +214,10 @@
       if (titleElement.textContent !== effectiveTitle) {
         titleElement.textContent = effectiveTitle; // Update the title
       }
+
+      // Restore original overflow and ellipsis
+      titleElement.style.overflow = originalOverflow;
+      titleElement.style.textOverflow = originalTextOverflow;
 
       shouldAdjustTitle = false; // Unset the flag after adjusting the title
     }
