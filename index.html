@@ -194,11 +194,14 @@
     function adjustTitle() {
       const navbar = document.getElementById('navbar');
       const titleElement = document.getElementById('chapter-title');
+      const buttonWidth = prevButton.offsetWidth + nextButton.offsetWidth; // Total width of the buttons
+      const availableWidth = navbar.clientWidth - buttonWidth - (2 * 16); // Subtract button width and 2em padding (16px per em)
+
       const fullTitle = `${repoName} — ${chapterTitle.textContent.split('—').pop().trim()}`; // Full title with book and chapter
       const chapterOnlyTitle = chapterTitle.textContent.split('—').pop().trim(); // Chapter-only title
 
       titleElement.textContent = fullTitle;
-      if (titleElement.scrollWidth > navbar.clientWidth) {
+      if (titleElement.scrollWidth > availableWidth) {
         titleElement.textContent = chapterOnlyTitle; // Use only the chapter title if it overflows
       }
     }
