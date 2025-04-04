@@ -328,3 +328,9 @@ h6 {
   display: none !important;
   /* Ensure hidden elements are not displayed */
 }
+
+@media (max-width: 480px) {
+  body {
+    font-size: 16pt; /* Increase font size for small screens */
+  }
+}
