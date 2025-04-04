@@ -142,7 +142,7 @@
       }
     }
 
-    async function loadContent(index, isPaging = false, isPagingForward = true) {
+    async function loadContent(index) {
       try {
         // Save the current scroll position for the current chapter
         const currentFileName = markdownFiles[currentIndex]?.name;
@@ -174,17 +174,43 @@
         adjustTitle(); // Explicitly call adjustTitle after setting the title
         updateNavButtons();
         highlightCurrentChapter();
-
-        // Set the scroll position based on navigation type
-        if (isPaging) {
-          content.scrollLeft = isPagingForward ? 0 : content.scrollWidth - content.clientWidth; // Start or end of chapter
-        } else {
-          content.scrollLeft = chapterScrollPositions[fileName] || 0; // Restore saved position or default to 0
-        }
       } catch (error) {
         console.error("Error loading content:", error);
       }
     }
+
+    content.addEventListener('scroll', () => {
+      const scrollLeft = content.scrollLeft;
+      const maxScrollLeft = content.scrollWidth - content.clientWidth;
+
+      if (scrollLeft === 0 && currentIndex > 0) {
+        // User scrolled past the start of the page
+        loadContent(currentIndex - 1).then(() => {
+          content.scrollLeft = content.scrollWidth - content.clientWidth; // Set to the end of the previous chapter
+        });
+      } else if (scrollLeft >= maxScrollLeft && currentIndex < markdownFiles.length - 1) {
+        // User scrolled past the end of the page
+        loadContent(currentIndex + 1).then(() => {
+          content.scrollLeft = 0; // Set to the start of the next chapter
+        });
+      }
+    });
+
+    prevButton.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        loadContent(currentIndex - 1).then(() => {
+          content.scrollLeft = chapterScrollPositions[markdownFiles[currentIndex]?.name] || 0; // Restore saved position
+        });
+      }
+    });
+
+    nextButton.addEventListener('click', () => {
+      if (currentIndex < markdownFiles.length - 1) {
+        loadContent(currentIndex + 1).then(() => {
+          content.scrollLeft = chapterScrollPositions[markdownFiles[currentIndex]?.name] || 0; // Restore saved position
+        });
+      }
+    });
 
     function updateNavButtons() {
       prevButton.disabled = currentIndex === 0;
@@ -243,18 +269,6 @@
       adjustContentHeight(); // Trigger content height adjustment
     });
 
-    prevButton.addEventListener('click', () => {
-      if (currentIndex > 0) {
-        loadContent(currentIndex - 1); // Navigate to the previous chapter
-      }
-    });
-
-    nextButton.addEventListener('click', () => {
-      if (currentIndex < markdownFiles.length - 1) {
-        loadContent(currentIndex + 1); // Navigate to the next chapter
-      }
-    });
-
     function updateNavbarHeight() {
       const navbarHeight = document.getElementById('navbar').offsetHeight; // Get the actual navbar height
       document.documentElement.style.setProperty('--navbar-height', `${navbarHeight}px`); // Update the CSS variable
@@ -273,19 +287,6 @@
     // Adjust height and navbar height on load and resize
     window.addEventListener('load', adjustContentHeight);
     window.addEventListener('resize', adjustContentHeight);
-
-    content.addEventListener('scroll', () => {
-      const scrollLeft = content.scrollLeft;
-      const maxScrollLeft = content.scrollWidth - content.clientWidth;
-
-      if (scrollLeft === 0 && currentIndex > 0) {
-        // User scrolled past the start of the page
-        loadContent(currentIndex - 1, true, false); // Paging backward
-      } else if (scrollLeft >= maxScrollLeft && currentIndex < markdownFiles.length - 1) {
-        // User scrolled past the end of the page
-        loadContent(currentIndex + 1, true, true); // Paging forward
-      }
-    });
 
     fetchMarkdownFiles();
   </script>
