@@ -201,7 +201,6 @@
       const chapterOnlyTitle = chapterTitle.textContent.split('—').pop().trim(); // Chapter-only title
 
       const effectiveTitle = titleElement.scrollWidth > availableWidth ? fullTitle : chapterOnlyTitle; // Use full title if it fits, otherwise use chapter-only title
-      titleElement.textContent = fullTitle;
       if (titleElement.textContent !== effectiveTitle) {
         titleElement.textContent = effectiveTitle; // Use only the chapter title if it overflows
       }
