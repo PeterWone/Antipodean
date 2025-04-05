@@ -36,20 +36,28 @@
     let chapterScrollPositions = {}; // Object to store scroll positions for each chapter
     let shouldAdjustTitle = false; // Flag to track if the title should be adjusted
 
-    // Detect taps on the left or right quarter of the screen and scroll one column left or right, respectively
-    content.addEventListener('click', async (e) => {
-      const columnWidth = content.offsetWidth * 0.9; // Match the column width (90% of viewport width)
-      const tapX = e.clientX;
-      const screenWidth = window.innerWidth;
-      if (tapX < screenWidth * 0.25) {
-        await TapLeft();
-      } else if (tapX > screenWidth * 0.75) {
-        await TapRight();
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    content.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX; // Record the starting touch position
+    });
+
+    content.addEventListener('touchend', async (e) => {
+      touchEndX = e.changedTouches[0].screenX; // Record the ending touch position
+      const swipeDistance = touchStartX - touchEndX;
+
+      if (swipeDistance > 50) {
+        // Swipe left
+        await GoForward();
+      } else if (swipeDistance < -50) {
+        // Swipe right
+        await GoBack();
       }
     });
 
-    async function TapLeft() {
-      console.log("TapLeft called");
+    async function GoBack() {
+      console.log("GoBack called");
       const columnWidth = content.offsetWidth * 0.9; // Match the column width (90% of viewport width)
       if (content.scrollLeft <= columnWidth && currentIndex > 0) {
         console.log("Loading previous chapter");
@@ -63,8 +71,9 @@
         });
       }
     }
-    async function TapRight() {
-      console.log("TapRight called");
+
+    async function GoForward() {
+      console.log("GoForward called");
       const columnWidth = content.offsetWidth * 0.9; // Match the column width (90% of viewport width)
       if (LastPageIsVisible() && currentIndex < markdownFiles.length - 1) {
         console.log("Loading next chapter");
@@ -77,6 +86,35 @@
         });
       }
     }
+
+    content.addEventListener('click', async (e) => {
+      const columnWidth = content.offsetWidth * 0.9; // Match the column width (90% of viewport width)
+      const tapX = e.clientX;
+      const screenWidth = window.innerWidth;
+      if (tapX < screenWidth * 0.25) {
+        await GoBack();
+      } else if (tapX > screenWidth * 0.75) {
+        await GoForward();
+      }
+    });
+
+    document.addEventListener('keydown', async (e) => {
+      if (e.key === 'ArrowLeft') {
+        await GoBack(); // Page left on left arrow key press
+      } else if (e.key === 'ArrowRight') {
+        await GoForward(); // Page right on right arrow key press
+      } else if (e.key === 'ArrowUp') {
+        if (currentIndex > 0) {
+          await loadContent(currentIndex - 1); // Navigate to the previous chapter
+          content.scrollLeft = chapterScrollPositions[markdownFiles[currentIndex]?.name] ?? content.scrollWidth - content.clientWidth; // Restore saved position or scroll to the end
+        }
+      } else if (e.key === 'ArrowDown') {
+        if (currentIndex < markdownFiles.length - 1) {
+          await loadContent(currentIndex + 1); // Navigate to the next chapter
+          content.scrollLeft = chapterScrollPositions[markdownFiles[currentIndex]?.name] ?? 0; // Restore saved position or scroll to the start
+        }
+      }
+    });
 
     // Toggle between TOC and content when the title is clicked
     chapterTitle.addEventListener('click', () => {
