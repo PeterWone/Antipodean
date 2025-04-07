@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch index.html in Edge",
+      "file": "d:/sam/index.html",
+      "webRoot": "d:/sam",
+      "sourceMaps": true, // Enable source maps for debugging
+      "runtimeArgs": [
+        "--remote-debugging-port=9222" // Allow Edge to be debugged
+      ]
+    }
+  ]
+}

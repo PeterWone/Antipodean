@@ -21,9 +21,18 @@
   <div id="hidden-content" style="display: none;"></div> <!-- Hidden div for temporary content -->
 
   <script>
-    const githubPagesBaseUrl = location.href.split('/').slice(0, -1).join('/') + '/'; // Use location.href to get the base URL
-    const repoName = githubPagesBaseUrl.split('/').slice(-2, -1)[0]; // Extract the repository name from the URL
-    const username = location.hostname.split('.')[0]; // Extract the username from the hostname
+    const githubPagesBaseUrl = location.protocol === 'file:'
+      ? 'https://peterwone.github.io/Antipodean/' // Simulate GitHub Pages base URL
+      : location.href.split('/').slice(0, -1).join('/') + '/'; // Use location.href to get the base URL
+
+    const repoName = location.protocol === 'file:'
+      ? 'Antipodean' // Simulate repository name
+      : githubPagesBaseUrl.split('/').slice(-2, -1)[0]; // Extract the repository name from the URL
+
+    const username = location.protocol === 'file:'
+      ? 'peterwone' // Simulate username
+      : location.hostname.split('.')[0]; // Extract the username from the hostname
+
     const repoUrl = `https://api.github.com/repos/${username}/${repoName}/contents/`; // Construct the GitHub API URL
     const toc = document.getElementById('toc');
     const content = document.getElementById('content');
