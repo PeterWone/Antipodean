@@ -211,7 +211,7 @@
     }
 
     function AdjustSnap() {
-      const columnWidth = window.innerWidth - 16; // Adjust for the gap
+      const columnWidth = window.innerWidth - 10; // Adjust for the gap
       const snappedScrollLeft = Math.round(content.scrollLeft / columnWidth) * columnWidth; 
       content.scrollTo({
         left: snappedScrollLeft,
