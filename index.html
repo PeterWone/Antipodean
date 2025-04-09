@@ -6,6 +6,7 @@
   <link href="./toc.css" rel="stylesheet">
   <link href="./content.css" rel="stylesheet">
   <link href="./content-layout.css" rel="stylesheet">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml"> <!-- Use SVG as favicon -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
@@ -17,222 +18,279 @@
   </div>
   <div id="toc" class="hidden">
   </div>
-  <div id="content"></div>
+  <div id="content"></div> <!-- Restore original #content div -->
   <div id="hidden-content" style="display: none;"></div> <!-- Hidden div for temporary content -->
 
-  <script>
-    const navbarHeight = document.getElementById('navbar').offsetHeight; // Get the actual navbar height
-    document.documentElement.style.setProperty('--navbar-height', `${navbarHeight}px`); // Update the CSS variable
-
-    const githubPagesBaseUrl = location.hostname === 'localhost'
-      ? 'https://peterwone.github.io/Antipodean/' // Simulate GitHub Pages base URL when running on localhost
-      : location.href.split('/').slice(0, -1).join('/') + '/'; // Use location.href to get the base URL
-
-    const repoName = location.hostname === 'localhost'
-      ? 'Antipodean' // Explicitly set the repository name when running on localhost
-      : githubPagesBaseUrl.split('/').slice(-2, -1)[0]; // Extract the repository name from the URL
-
-    const username = location.hostname === 'localhost'
-      ? 'peterwone' // Simulate username when running on localhost
-      : location.hostname.split('.')[0]; // Extract the username from the hostname
-
-    const repoUrl = `https://api.github.com/repos/${username}/${repoName}/contents/`; // Construct the GitHub API URL
-    const toc = document.getElementById('toc');
-    const content = document.getElementById('content');
-    const hiddenContent = document.getElementById('hidden-content');
-    const prevButton = document.getElementById('prev-chapter');
-    const nextButton = document.getElementById('next-chapter');
-    const bookTitle = document.getElementById('book-title');
-    bookTitle.textContent = repoName;
-    let markdownFiles = [];
-    let currentIndex = 0;
-    let chapterScrollPositions = {}; // Object to store scroll positions for each chapter
-
-    // Detect taps on the left or right quarter of the screen and scroll one column left or right, respectively
-    content.addEventListener('click', async (e) => {
-      const screenWidth = window.innerWidth;
-      const scrollDistance = screenWidth - 16; // Calculate the scroll distance based on column width and gap
-      const tapX = e.clientX;
-      if (tapX < screenWidth * 0.25) {
-        await TapLeft(scrollDistance);
-      } else if (tapX > screenWidth * 0.75) {
-        await TapRight(scrollDistance);
-      }
-    });
-
-    async function TapLeft(scrollDistance) {
-      console.log(`TapLeft(${scrollDistance})`);
-      var positionWhenTapped = content.scrollLeft;
-      const targetScrollLeft = Math.max(0, content.scrollLeft - scrollDistance); // Calculate target scroll position
-      content.scrollTo({
-        left: targetScrollLeft,
-        behavior: 'smooth',
-      });
-      if (positionWhenTapped < scrollDistance && currentIndex > 0) {
-        console.log("Loading previous chapter");
-        await loadContent(currentIndex - 1);
-        const lastPageOffset = content.scrollWidth - content.clientWidth; // Scroll to the end of the previous chapter
-        content.scrollLeft = lastPageOffset;
-      }
-    }
-
-    async function TapRight(scrollDistance) {
-      console.log(`TapRight(${scrollDistance})`);
-      var positionWhenTapped = content.scrollLeft;
-      const targetScrollLeft = Math.min(content.scrollWidth - content.clientWidth, content.scrollLeft + scrollDistance); // Calculate target scroll position
-      content.scrollTo({
-        left: targetScrollLeft,
-        behavior: 'smooth',
-      });
-      const maxScrollLeft = content.scrollWidth - content.offsetWidth - 1;
-      if (positionWhenTapped >= maxScrollLeft && currentIndex < markdownFiles.length - 1) {
-        console.log("Loading next chapter");
-        await loadContent(currentIndex + 1);
-        content.scrollLeft = 0; // Set to the start of the next chapter
-      }
-    }
-
-    // Toggle between TOC and content when the title is clicked
-    bookTitle.addEventListener('click', () => {
-      toc.classList.toggle('hidden');
-      content.classList.toggle('hidden');
-      if (!toc.classList.contains('hidden')) {
-        scrollToCurrentChapter(); // Ensure the current chapter is visible
-      }
-    });
-
-    async function fetchMarkdownFiles() {
+  <script src="js/smartquotes.min.js" defer></script>
+  <script defer>
+    async function isLocalServer() {
       try {
-        const response = await fetch(repoUrl);
-        const files = await response.json();
-        markdownFiles = files.filter(file => file.name.endsWith('.md')).sort((a, b) => a.name.localeCompare(b.name));
+        const response = await fetch(location.href, { method: 'HEAD' });
+        return response.headers.get('X-Local-Server') === 'true';
+      } catch (error) {
+        console.error('Error checking for local server:', error);
+        return false;
+      }
+    }
 
-        markdownFiles.forEach((file, index) => {
-          const paragraph = document.createElement('p'); // Create a <p> element
-          paragraph.classList.add('toc-item'); // Add a class for styling
-          paragraph.textContent = file.name
+    (async () => {
+      const isLocal = await isLocalServer();
+      const githubPagesBaseUrl = isLocal
+        ? 'https://peterwone.github.io/Antipodean/' // Simulate GitHub Pages base URL when running locally
+        : location.href.split('/').slice(0, -1).join('/') + '/'; // Use location.href to get the base URL
+
+      const repoName = isLocal
+        ? 'Antipodean' // Explicitly set the repository name when running locally
+        : githubPagesBaseUrl.split('/').slice(-2, -1)[0]; // Extract the repository name from the URL
+
+      const username = isLocal
+        ? 'peterwone' // Simulate username when running locally
+        : location.hostname.split('.')[0]; // Extract the username from the hostname
+
+      const repoUrl = `https://api.github.com/repos/${username}/${repoName}/contents/`; // Construct the GitHub API URL
+
+      const navbarHeight = document.getElementById('navbar').offsetHeight; // Get the actual navbar height
+      document.documentElement.style.setProperty('--navbar-height', `${navbarHeight}px`); // Update the CSS variable
+
+      const toc = document.getElementById('toc');
+      const content = document.getElementById('content');
+      const hiddenContent = document.getElementById('hidden-content');
+      const prevButton = document.getElementById('prev-chapter');
+      const nextButton = document.getElementById('next-chapter');
+      const bookTitle = document.getElementById('book-title');
+      bookTitle.textContent = repoName;
+      let markdownFiles = [];
+      let currentIndex = 0;
+      let chapterScrollPositions = {}; // Object to store scroll positions for each chapter
+
+      let baseFontSize = parseFloat(getComputedStyle(content).fontSize) || 16; // Default font size
+      const savedFontSize = localStorage.getItem('contentFontSize');
+      if (savedFontSize) {
+        baseFontSize = parseFloat(savedFontSize);
+        content.style.fontSize = `${baseFontSize}px`;
+      }
+
+      let lastTouchDistance = null;
+
+      content.addEventListener('touchmove', (e) => {
+        if (e.touches.length === 2) {
+          const touch1 = e.touches[0];
+          const touch2 = e.touches[1];
+          const currentDistance = Math.hypot(
+            touch2.pageX - touch1.pageX,
+            touch2.pageY - touch1.pageY
+          );
+
+          if (lastTouchDistance) {
+            const scale = currentDistance / lastTouchDistance;
+            baseFontSize = Math.max(8, Math.min(32, baseFontSize * scale)); // Clamp font size between 8px (half) and 32px (double)
+            content.style.fontSize = `${baseFontSize}px`;
+            localStorage.setItem('contentFontSize', baseFontSize); // Save the font size
+          }
+
+          lastTouchDistance = currentDistance;
+        }
+      });
+
+      content.addEventListener('touchend', () => {
+        lastTouchDistance = null; // Reset when touch ends
+      });
+
+      // Detect taps on the left or right quarter of the screen and scroll one column left or right, respectively
+      content.addEventListener('click', async (e) => {
+        const screenWidth = window.innerWidth;
+        const scrollDistance = screenWidth - 16; // Calculate the scroll distance based on column width and gap
+        const tapX = e.clientX;
+        if (tapX < screenWidth * 0.25) {
+          await TapLeft(scrollDistance);
+        } else if (tapX > screenWidth * 0.75) {
+          await TapRight(scrollDistance);
+        }
+      });
+
+      async function TapLeft(scrollDistance) {
+        console.log(`TapLeft(${scrollDistance})`);
+        var positionWhenTapped = content.scrollLeft;
+        const targetScrollLeft = Math.max(0, content.scrollLeft - scrollDistance); // Calculate target scroll position
+        content.scrollTo({
+          left: targetScrollLeft,
+          behavior: 'smooth',
+        });
+        if (positionWhenTapped < scrollDistance && currentIndex > 0) {
+          console.log("Loading previous chapter");
+          await loadContent(currentIndex - 1, 'chapter-transition-back');
+          const lastPageOffset = content.scrollWidth - content.clientWidth; // Scroll to the end of the previous chapter
+          content.scrollLeft = lastPageOffset;
+        }
+      }
+
+      async function TapRight(scrollDistance) {
+        console.log(`TapRight(${scrollDistance})`);
+        var positionWhenTapped = content.scrollLeft;
+        const targetScrollLeft = Math.min(content.scrollWidth - content.clientWidth, content.scrollLeft + scrollDistance); // Calculate target scroll position
+        content.scrollTo({
+          left: targetScrollLeft,
+          behavior: 'smooth',
+        });
+        const maxScrollLeft = content.scrollWidth - content.offsetWidth - 1;
+        if (positionWhenTapped >= maxScrollLeft && currentIndex < markdownFiles.length - 1) {
+          console.log("Loading next chapter");
+          await loadContent(currentIndex + 1, 'chapter-transition-forward');
+          content.scrollLeft = 0; // Set to the start of the next chapter
+        }
+      }
+
+      // Toggle between TOC and content when the title is clicked
+      bookTitle.addEventListener('click', () => {
+        toc.classList.toggle('hidden');
+        content.classList.toggle('hidden');
+        if (!toc.classList.contains('hidden')) {
+          scrollToCurrentChapter(); // Ensure the current chapter is visible
+        }
+      });
+
+      async function fetchMarkdownFiles() {
+        try {
+          const response = await fetch(isLocal ? '/api/toc' : repoUrl);
+          const files = await response.json();
+          markdownFiles = isLocal
+            ? files // Use the local API response directly
+            : files.filter(file => file.name.endsWith('.md')).sort((a, b) => a.name.localeCompare(b.name));
+
+          markdownFiles.forEach((file, index) => {
+            const paragraph = document.createElement('p'); // Create a <p> element
+            paragraph.classList.add('toc-item'); // Add a class for styling
+            paragraph.textContent = file.name
+              .replace(/\.md$/, '') // Remove extension
+              .replace(/\.(?=[a-zA-Z])/g, ' ') // Period followed by a letter becomes a space
+              .replace(/-/g, ' '); // Replace dashes with spaces
+            paragraph.addEventListener('click', (e) => {
+              e.preventDefault();
+              loadContent(index);
+              localStorage.setItem('lastSelectedPage', file.name); // Save the last selected page
+              toc.classList.add('hidden'); // Hide TOC
+              content.classList.remove('hidden'); // Show content
+            });
+            toc.appendChild(paragraph); // Append the <p> to the TOC
+          });
+
+          // Load the last selected page or the blurb (first chapter file alphabetically)
+          const lastSelectedPage = localStorage.getItem('lastSelectedPage');
+          const lastIndex = markdownFiles.findIndex(file => file.name === lastSelectedPage);
+          if (lastIndex !== -1) {
+            loadContent(lastIndex);
+          } else if (markdownFiles.length > 0) {
+            loadContent(0);
+          }
+        } catch (error) {
+          console.error("Error fetching markdown files:", error);
+        }
+      }
+
+      async function loadContent(index, transition = null) {
+        try {
+          // Save the current scroll position for the current chapter
+          const currentFileName = markdownFiles[currentIndex]?.name;
+          if (currentFileName) {
+            chapterScrollPositions[currentFileName] = content.scrollLeft; // Use scrollLeft for horizontal scrolling
+          }
+
+          currentIndex = index;
+          const fileName = markdownFiles[index].name;
+          const basePath = isLocal ? './' : githubPagesBaseUrl; // Use "./" for local server
+          const response = isLocal ? await fetch(basePath + fileName) : await fetch(basePath + fileName.replace(/\.md$/, '.html'));
+          const html = await response.text();
+          hiddenContent.innerHTML = html; // Load content into the hidden div
+
+          const markdownBody = hiddenContent.querySelector('.markdown-body'); // Look for the div with class markdown-body
+          // GitHub injects an <h1> with an anchor link at the top of the markdown body, remove it
+          const h1WithAnchor = markdownBody.querySelector('h1');
+          if (h1WithAnchor) {
+            markdownBody.removeChild(h1WithAnchor);
+          }
+          const chapterTitleText = fileName
             .replace(/\.md$/, '') // Remove extension
             .replace(/\.(?=[a-zA-Z])/g, ' ') // Period followed by a letter becomes a space
             .replace(/-/g, ' '); // Replace dashes with spaces
-          paragraph.addEventListener('click', (e) => {
-            e.preventDefault();
-            loadContent(index);
-            localStorage.setItem('lastSelectedPage', file.name); // Save the last selected page
-            toc.classList.add('hidden'); // Hide TOC
-            content.classList.remove('hidden'); // Show content
-          });
-          toc.appendChild(paragraph); // Append the <p> to the TOC
+          content.innerHTML = `<h1>${chapterTitleText}</h1>\n${markdownBody.innerHTML}` ?? '<p>Content not found.</p>';
+          hiddenContent.innerHTML = ''; // Clear the hidden div
+
+          // Apply the appropriate transition effect
+          if (transition) {
+            content.classList.add(transition);
+            setTimeout(() => content.classList.remove(transition), 500);
+          }
+
+          // Apply smartquotes to the loaded content
+          smartquotes(content);
+
+          highlightCurrentChapter();
+          updateNavButtons(); // Update navigation buttons based on current index
+          // if the toc is visible, hide it and show content
+          if (!toc.classList.contains('hidden')) {
+            toc.classList.add('hidden');
+            content.classList.remove('hidden');
+          }
+        } catch (error) {
+          console.error("Error loading content:", error);
+        }
+      }
+
+      prevButton.addEventListener('click', async () => {
+        if (currentIndex > 0) {
+          await loadContent(currentIndex - 1, 'chapter-transition-back'); // Fly-in from left for going back
+          content.scrollLeft = content.scrollWidth - content.clientWidth - 1; // Scroll to the end of the previous chapter
+        }
+      });
+
+      nextButton.addEventListener('click', async () => {
+        if (currentIndex < markdownFiles.length - 1) {
+          await loadContent(currentIndex + 1, 'chapter-transition-forward'); // Fly-in from right for going forward
+          content.scrollLeft = 0; // Scroll to the start of the next chapter
+        }
+      });
+
+      function updateNavButtons() {
+        prevButton.disabled = currentIndex === 0;
+        nextButton.disabled = currentIndex === markdownFiles.length - 1;
+      }
+
+      function highlightCurrentChapter() {
+        const tocItems = toc.querySelectorAll('.toc-item'); // Select all TOC items
+        tocItems.forEach((item, index) => {
+          item.classList.toggle('current-chapter', index === currentIndex); // Highlight the current chapter
         });
-
-        // Load the last selected page or the blurb (first chapter file alphabetically)
-        const lastSelectedPage = localStorage.getItem('lastSelectedPage');
-        const lastIndex = markdownFiles.findIndex(file => file.name === lastSelectedPage);
-        if (lastIndex !== -1) {
-          loadContent(lastIndex);
-        } else if (markdownFiles.length > 0) {
-          loadContent(0);
-        }
-      } catch (error) {
-        console.error("Error fetching markdown files:", error);
       }
-    }
 
-    async function loadContent(index) {
-      try {
-        // Save the current scroll position for the current chapter
-        const currentFileName = markdownFiles[currentIndex]?.name;
-        if (currentFileName) {
-          chapterScrollPositions[currentFileName] = content.scrollLeft; // Use scrollLeft for horizontal scrolling
+      function scrollToCurrentChapter() {
+        const currentChapter = toc.querySelector('.current-chapter');
+        if (currentChapter) {
+          currentChapter.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
-
-        currentIndex = index;
-        const fileName = markdownFiles[index].name;
-        const basePath = location.hostname === 'localhost' ? './' : githubPagesBaseUrl; // Use "./" for localhost
-        const response = location.hostname === 'localhost' ? await fetch(basePath + fileName) : await fetch(basePath + fileName.replace(/\.md$/, '.html'));
-        const html = await response.text();
-        hiddenContent.innerHTML = html; // Load content into the hidden div
-
-        const markdownBody = hiddenContent.querySelector('.markdown-body'); // Look for the div with class markdown-body
-        // GitHub injects an <h1> with an anchor link at the top of the markdown body, remove it
-        const h1WithAnchor = markdownBody.querySelector('h1');
-        if (h1WithAnchor) {
-          markdownBody.removeChild(h1WithAnchor);
-        }
-        const chapterTitleText = fileName
-          .replace(/\.md$/, '') // Remove extension
-          .replace(/\.(?=[a-zA-Z])/g, ' ') // Period followed by a letter becomes a space
-          .replace(/-/g, ' '); // Replace dashes with spaces
-        content.innerHTML = `<h1>${chapterTitleText}</h1>\n${markdownBody.innerHTML}` ?? '<p>Content not found.</p>';
-        hiddenContent.innerHTML = ''; // Clear the hidden div
-
-        highlightCurrentChapter();
-        updateNavButtons(); // Update navigation buttons based on current index
-        // if the toc is visible, hide it and show content
-        if (!toc.classList.contains('hidden')) {
-          toc.classList.add('hidden');
-          content.classList.remove('hidden');
-        }
-      } catch (error) {
-        console.error("Error loading content:", error);
       }
-    }
 
-    prevButton.addEventListener('click', async () => {
-      if (currentIndex > 0) {
-        await loadContent(currentIndex - 1);
-        content.scrollLeft = content.scrollWidth - content.clientWidth - 1;//chapterScrollPositions[markdownFiles[currentIndex]?.name] ?? 0; // Restore saved position
+      function AdjustSnap() {
+        const columnWidth = window.innerWidth - 10; // Adjust for the gap
+        const snappedScrollLeft = Math.round(content.scrollLeft / columnWidth) * columnWidth; 
+        content.scrollTo({
+          left: snappedScrollLeft,
+          behavior: 'smooth',
+        });
       }
-    });
 
-    nextButton.addEventListener('click', async () => {
-      if (currentIndex < markdownFiles.length - 1) {
-        await loadContent(currentIndex + 1);
-        content.scrollLeft = 0; //chapterScrollPositions[markdownFiles[currentIndex]?.name] ?? 0; // Restore saved position
-      }
-    });
-
-    function updateNavButtons() {
-      prevButton.disabled = currentIndex === 0;
-      nextButton.disabled = currentIndex === markdownFiles.length - 1;
-    }
-
-    function highlightCurrentChapter() {
-      const tocItems = toc.querySelectorAll('.toc-item'); // Select all TOC items
-      tocItems.forEach((item, index) => {
-        item.classList.toggle('current-chapter', index === currentIndex); // Highlight the current chapter
+      // Add an event listener for the scroll event
+      let isScrolling;
+      content.addEventListener('scroll', () => {
+        clearTimeout(isScrolling); // Clear any existing timeout
+        isScrolling = setTimeout(() => {
+          AdjustSnap(); // Call AdjustSnap when scrolling settles
+        }, 100); // Adjust timeout as needed
       });
-    }
 
-    function scrollToCurrentChapter() {
-      const currentChapter = toc.querySelector('.current-chapter');
-      if (currentChapter) {
-        currentChapter.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    }
-
-    function AdjustSnap() {
-      const columnWidth = window.innerWidth - 10; // Adjust for the gap
-      const snappedScrollLeft = Math.round(content.scrollLeft / columnWidth) * columnWidth; 
-      content.scrollTo({
-        left: snappedScrollLeft,
-        behavior: 'smooth',
-      });
-    }
-
-    // Add an event listener for the scroll event
-    let isScrolling;
-    content.addEventListener('scroll', () => {
-      clearTimeout(isScrolling); // Clear any existing timeout
-      isScrolling = setTimeout(() => {
-        AdjustSnap(); // Call AdjustSnap when scrolling settles
-      }, 100); // Adjust timeout as needed
-    });
-
-    fetchMarkdownFiles();
+      fetchMarkdownFiles();
+    })();
   </script>
 
-  <script src="js/smartquotes.min.js"></script>
-  <script>smartquotes();</script>
 </body>
 
 </html>

@@ -6,6 +6,12 @@ const marked = require('marked'); // Use the marked library to render Markdown
 const app = express();
 const PORT = 3000;
 
+// Middleware to inject a custom header for local server
+app.use((req, res, next) => {
+  res.setHeader('X-Local-Server', 'true');
+  next();
+});
+
 // Fallback to serve index.html for any unmatched routes or render Markdown files
 app.use(async (req, res, next) => {
   if (req.path === '/') {
@@ -31,6 +37,23 @@ app.use(async (req, res, next) => {
   }
 });
 
+// Endpoint to emulate GitHub API for TOC data
+app.get('/api/toc', (req, res) => {
+  const directoryPath = path.join(__dirname);
+  fs.readdir(directoryPath, (err, files) => {
+    if (err) {
+      console.error('Error reading directory:', err);
+      return res.status(500).json({ error: 'Internal Server Error' });
+    }
+
+    const markdownFiles = files
+      .filter(file => file.endsWith('.md'))
+      .map(file => ({ name: file }));
+
+    res.json(markdownFiles);
+  });
+});
+
 // Serve static files from the current directory
 app.use(express.static(path.join(__dirname)));
 
@@ -40,6 +63,6 @@ app.use((req, res) => {
 });
 
 // Start the server
-app.listen(PORT, () => {
-  console.log(`Server is running at http://localhost:${PORT}`);
+app.listen(3000, '0.0.0.0', () => {
+  console.log('Server is running on port 3000');
 });
