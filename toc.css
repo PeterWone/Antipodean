@@ -1,0 +1,53 @@
+/* TOC styles */
+#toc {
+  width: 100%;
+  height: calc(100vh - var(--navbar-height));
+  overflow-y: auto;
+  padding: 1em 1em 2em;
+  box-sizing: border-box;
+  column-width: 300px;
+  column-gap: 1.5em;
+  column-fill: auto;
+}
+
+#toc>* {
+  break-inside: avoid;
+}
+
+#toc h3 {
+  width: 100%;
+  margin-top: 20px;
+}
+
+#toc .toc-item {
+  margin: 0;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#toc .toc-item a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+#toc .toc-item:hover {
+  background-color: #f0f0f0;
+}
+
+#toc .current-chapter {
+  background-color: #ddd;
+  font-weight: bold;
+  border-color: #999;
+}
+
+@media (max-width: 480px) {
+  #toc {
+    flex: 0 0 auto;
+    left: 1em;
+    width: 100%;
+    padding-bottom: 2em;
+  }
+}

@@ -1,0 +1,15 @@
+/* General styles */
+html, body {
+  background-color: white;
+  font-family: 'Libre Baskerville', 'Times New Roman', Times, serif;
+  font-size: 14pt;
+}
+
+/* Removed body layout styles */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  page-break-after: avoid;
+  page-break-inside: avoid;
+}
+

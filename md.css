@@ -1,336 +1,54 @@
-html,
-body {
+/* General styles */
+html, body {
   margin: 0;
   padding: 0;
   background-color: white;
-  font-family: serif;
+  font-family: 'Libre Baskerville', 'Times New Roman', Times, serif;
   font-size: 14pt;
-  widows: 1;
-  /* Disable widow control */
-  orphans: 1;
-  /* Disable orphan control */
+  height: 100%;
 }
 
 body {
   display: flex;
-  flex-direction: row;
-  margin: 0;
-  height: 100vh;
+  flex-direction: column;
   overflow-x: auto;
-  /* Enable horizontal scrolling */
   overflow-y: hidden;
 }
 
-#toc {
-  flex: none;
-  /* Remove flex behavior */
-  width: 100%;
-  /* Full width */
-  height: calc(100vh - var(--navbar-height));
-  /* Adjust height to account for the navbar */
-  overflow-y: auto;
-  /* Enable vertical scrolling */
-  padding: 1em;
-  padding-top: 0;
-  /* Remove extra padding */
-  box-sizing: border-box;
-  column-width: 300px;
-  /* Set the width of each column to 300px */
-  column-gap: 1.5em;
-  /* Add spacing between columns */
-  column-fill: auto;
-  /* Disable column balancing */
-  position: fixed;
-  /* Position content below the navbar with an 8px gap */
-  top: calc(var(--navbar-height) + 8px); 
-  left: 0;
-  padding-bottom: 2em; /* Increase bottom padding to 2em */
-}
-
-#toc>* {
-  break-inside: avoid;
-  /* Prevent breaking items across columns */
-}
-
-#toc h3 {
-  width: 100%;
-  /* Ensure headers span the full width */
-  margin-top: 20px;
-}
-
-#toc .toc-item {
-  margin: 0;
-  /* Remove default margin */
-  padding: 5px;
-  /* Add padding for spacing */
-  border: 1px solid #ccc;
-  /* Add a border for better visibility */
-  border-radius: 5px;
-  /* Round the corners */
-  /* text-align: center; */
-  cursor: pointer;
-  /* Indicate interactivity */
-}
-
-#toc .toc-item a {
-  text-decoration: none;
-  /* Remove underline from links */
-  color: inherit;
-  /* Use inherited text color */
-  display: block;
-}
-
-#toc .toc-item:hover {
-  background-color: #f0f0f0;
-  /* Add hover effect */
-}
-
+/* Content styles */
 #content {
   flex: none;
-  /* Remove flex behavior */
   width: 100%;
-  /* Full width */
   height: calc(100vh - var(--navbar-height));
-  /* Adjust height to account for the navbar */
   overflow-y: auto;
-  /* Enable vertical scrolling */
-  padding: 1em;
-  padding-top: 0;
-  /* Remove extra padding */
+  padding: 1em 1em 2em;
   box-sizing: border-box;
   column-width: 90vw;
-  /* Set column width to 90% of the viewport width */
   column-gap: 1.5em;
   column-fill: auto;
-  /* Disable column balancing */
-  position: fixed;
-  /* Fix position to avoid being under the navbar */
-  top: calc(var(--navbar-height) + 8px); /* Position content below the navbar with an 8px gap */
-  left: 0;
   scroll-snap-type: x mandatory;
-  /* Enable horizontal snapping */
-  padding-bottom: 2em; /* Increase bottom padding to 2em */
 }
 
 #content>* {
   scroll-snap-align: start;
-  /* Snap to the start of each column */
 }
 
-h1 {
-  margin-top: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   page-break-after: avoid;
   page-break-inside: avoid;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-td,
-th {
-  border-bottom: thin solid silver;
-  padding: 3px;
-  text-align: left;
-}
-
-code {
-  text-wrap: wrap;
-}
-
-div.left pre.mermaid {
-  float: left;
-  margin: 0.6em 0.6em 0 0;
-}
-
-div.right pre.mermaid {
-  float: right;
-  margin: 0.6em 0 0 0.6em;
-}
-
-div.centre {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-div.fill pre.mermaid svg {
-  max-width: none !important;
-  /* mermaid puts a style directly on the svg node, !important overrides it */
-}
-
-.language-diagram-error {
-  background-color: blue;
-  color: yellow;
-  display: block;
-  padding: 1em;
-}
-
-@media print {
-  .no-print {
-    visibility: hidden;
-  }
-}
-
-@media screen {
-  body {
-    padding: 0.2em;
-  }
-
-  .xref-highlight {
-    background-color: yellow;
-  }
-}
-
-.hljs {
-  background-color: transparent;
-}
-
-.line-number,
-.line-text,
-h3.filepath {
-  hyphens: auto;
-  hyphenate-character: "↩";
-}
-
-pre.plaintext {
-  hyphens: auto;
-  padding-bottom: 3px;
-  white-space: pre-wrap;
-}
-
-.code-box {
-  background-color: #f8f8f8;
-  border-radius: 0.5em;
-  border: thin solid silver;
-  white-space: pre-wrap;
-}
-
-body {
-  font-family: 'Libre Baskerville', 'Times New Roman', Times, serif;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
+/* Responsive adjustments */
 @media (max-width: 480px) {
-  #toc,
   #content {
     flex: 0 0 auto;
     left: 1em;
     width: calc(100% - 1em);
-    /* Split height equally */
-    padding-bottom: 2em; /* Increase bottom padding to 2em for phones */
+    padding-bottom: 2em;
   }
 }
 
-#chapter-title {
-  cursor: pointer; /* Change cursor to indicate interactivity */
-  margin: 0 1em; /* Add spacing around the title */
-  font-size: 1.5em;
-  flex-grow: 1;
-  text-align: center;
-  white-space: nowrap; /* Prevent wrapping */
-  overflow: hidden; /* Hide overflowing text */
-  text-overflow: ellipsis; /* Add ellipsis for overflowing text */
-}
-
-@media (max-width: 480px) {
-  #navbar h1, 
-  #chapter-title {
-    font-size: 1em;
-  }
-}
-
-/* Styles for the navbar container */
-#navbar-container {
-  width: 100%;
-  /* Ensure the navbar container spans the full width */
-  overflow: hidden;
-  /* Prevent clipping */
-}
-
-/* Styles for the navbar */
-#navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  /* Ensure the navbar stretches to the right edge */
-  background-color: #333;
-  color: white;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  /* Prevent content overflow */
-}
-
-.nav-button {
-  background-color: #555;
-  color: white;
-  border: none;
-  padding: 0.5em 1em;
-  cursor: pointer;
-  font-size: 1em;
-}
-
-.nav-button:disabled {
-  background-color: #777;
-  cursor: not-allowed;
-}
-
-.nav-button:hover {
-  background-color: #777;
-  /* Change background color on hover */
-  color: white;
-  /* Ensure text remains visible */
-  cursor: pointer;
-  /* Show pointer cursor */
-}
-
-@media (max-width: 480px) {
-  .nav-button {
-    font-size: 0.9em;
-    padding: 0.3em 0.8em;
-  }
-}
-
-/* Styles to highlight the current chapter in the TOC */
-#toc .current-chapter {
-  background-color: #ddd;
-  /* Highlight background */
-  font-weight: bold;
-  /* Make text bold */
-  border-color: #999;
-  /* Darken the border for emphasis */
-}
-
-/* Ensure the hidden class works consistently across all screen sizes */
 .hidden {
   display: none !important;
-  /* Ensure hidden elements are not displayed */
-}
-
-@media (max-width: 480px) {
-  body {
-    font-size: 16pt; /* Increase font size for small screens */
-  }
 }

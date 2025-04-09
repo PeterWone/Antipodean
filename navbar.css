@@ -1,0 +1,46 @@
+/* Navbar styles */
+#navbar {
+  display: flex; /* Use flexbox for horizontal layout */
+  align-items: center; /* Vertically center items */
+  justify-content: space-between; /* Space out controls and title */
+  background-color: #333;
+  color: white;
+}
+
+.nav-button {
+  background-color: #555;
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.nav-button:disabled {
+  background-color: #777;
+  cursor: not-allowed;
+}
+
+.nav-button:hover {
+  background-color: #777;
+}
+
+#chapter-title-container {
+  flex-grow: 1; /* Allow the title to take up remaining space */
+  text-align: center; /* Center the title horizontally */
+}
+
+#chapter-title {
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .nav-button {
+    font-size: 0.9em;
+    padding: 0.3em 0.8em;
+  }
+
+  #navbar h1, #chapter-title {
+    font-size: 1em;
+  }
+}

@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "chrome",
+      "type": "msedge",
       "request": "launch",
       "name": "Launch index.html in Edge",
       "file": "d:/sam/index.html",
@@ -11,6 +11,22 @@
       "runtimeArgs": [
         "--remote-debugging-port=9222" // Allow Edge to be debugged
       ]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Server",
+      "program": "${workspaceFolder}/server.js",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "node",
+      "console": "integratedTerminal",
+      "preLaunchTask": "open-browser"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Launch Server and Browser",
+      "configurations": ["Launch Server"]
     }
   ]
 }
