@@ -51,7 +51,7 @@
     // Detect taps on the left or right quarter of the screen and scroll one column left or right, respectively
     content.addEventListener('click', async (e) => {
       const screenWidth = window.innerWidth;
-      const scrollDistance = screenWidth - 8; // Calculate the scroll distance based on column width and gap
+      const scrollDistance = screenWidth - 8.5; // Calculate the scroll distance based on column width and gap
       const tapX = e.clientX;
       if (tapX < screenWidth * 0.25) {
         await TapLeft(scrollDistance);
