@@ -14,7 +14,7 @@ body {
   width: 100%;
   height: calc(100vh - var(--navbar-height));
   overflow-y: auto;
-  padding: 0.5em 1em 0 1em;
+  padding: 0.5em 1em 2em 1em;
   box-sizing: border-box;
   column-width: calc(90vw - 2em);
   /* Adjusted for padding */
