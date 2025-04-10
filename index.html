@@ -112,15 +112,19 @@
         console.log(`TapLeft(${scrollDistance})`);
         var positionWhenTapped = content.scrollLeft;
         const targetScrollLeft = Math.max(0, content.scrollLeft - scrollDistance); // Calculate target scroll position
-        content.scrollTo({
-          left: targetScrollLeft,
-          behavior: 'smooth',
-        });
+
         if (positionWhenTapped < scrollDistance && currentIndex > 0) {
           console.log("Loading previous chapter");
-          await loadContent(currentIndex - 1, 'chapter-transition-back');
+          content.classList.add('chapter-transition-back'); // Add transition class
+          await loadContent(currentIndex - 1);
           const lastPageOffset = content.scrollWidth - content.clientWidth; // Scroll to the end of the previous chapter
           content.scrollLeft = lastPageOffset;
+          setTimeout(() => content.classList.remove('chapter-transition-back'), 500); // Remove transition class after animation
+        } else {
+          content.scrollTo({
+            left: targetScrollLeft,
+            behavior: 'smooth',
+          });
         }
       }
 
@@ -128,15 +132,19 @@
         console.log(`TapRight(${scrollDistance})`);
         var positionWhenTapped = content.scrollLeft;
         const targetScrollLeft = Math.min(content.scrollWidth - content.clientWidth, content.scrollLeft + scrollDistance); // Calculate target scroll position
-        content.scrollTo({
-          left: targetScrollLeft,
-          behavior: 'smooth',
-        });
+
         const maxScrollLeft = content.scrollWidth - content.offsetWidth - 1;
         if (positionWhenTapped >= maxScrollLeft && currentIndex < markdownFiles.length - 1) {
           console.log("Loading next chapter");
-          await loadContent(currentIndex + 1, 'chapter-transition-forward');
+          content.classList.add('chapter-transition-forward'); // Add transition class
+          await loadContent(currentIndex + 1);
           content.scrollLeft = 0; // Set to the start of the next chapter
+          setTimeout(() => content.classList.remove('chapter-transition-forward'), 500); // Remove transition class after animation
+        } else {
+          content.scrollTo({
+            left: targetScrollLeft,
+            behavior: 'smooth',
+          });
         }
       }
 
@@ -187,7 +195,7 @@
         }
       }
 
-      async function loadContent(index, transition = null) {
+      async function loadContent(index) {
         try {
           // Save the current scroll position for the current chapter
           const currentFileName = markdownFiles[currentIndex]?.name;
@@ -215,12 +223,6 @@
           content.innerHTML = `<h1>${chapterTitleText}</h1>\n${markdownBody.innerHTML}` ?? '<p>Content not found.</p>';
           hiddenContent.innerHTML = ''; // Clear the hidden div
 
-          // Apply the appropriate transition effect
-          if (transition) {
-            content.classList.add(transition);
-            setTimeout(() => content.classList.remove(transition), 500);
-          }
-
           // Apply smartquotes to the loaded content
           smartquotes(content);
 
@@ -238,14 +240,14 @@
 
       prevButton.addEventListener('click', async () => {
         if (currentIndex > 0) {
-          await loadContent(currentIndex - 1, 'chapter-transition-back'); // Fly-in from left for going back
+          await loadContent(currentIndex - 1); // Remove transition argument
           content.scrollLeft = content.scrollWidth - content.clientWidth - 1; // Scroll to the end of the previous chapter
         }
       });
 
       nextButton.addEventListener('click', async () => {
         if (currentIndex < markdownFiles.length - 1) {
-          await loadContent(currentIndex + 1, 'chapter-transition-forward'); // Fly-in from right for going forward
+          await loadContent(currentIndex + 1); // Remove transition argument
           content.scrollLeft = 0; // Scroll to the start of the next chapter
         }
       });
