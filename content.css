@@ -3,6 +3,8 @@ html, body {
   background-color: white;
   font-family: 'Libre Baskerville', 'Times New Roman', Times, serif;
   font-size: 16pt;
+  margin: 0;
+  padding: 0;
 }
 
 /* Removed body layout styles */
@@ -13,35 +15,9 @@ h1, h2, h3, h4, h5, h6 {
   page-break-inside: avoid;
 }
 
-/* Fly-in from left effect for going back */
-.chapter-transition-back {
-  animation: flyInFromLeft 0.5s ease-in-out;
+#content {
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
-
-@keyframes flyInFromLeft {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-/* Fly-in from right effect for going forward */
-.chapter-transition-forward {
-  animation: flyInFromRight 0.5s ease-in-out;
-}
-
-@keyframes flyInFromRight {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-

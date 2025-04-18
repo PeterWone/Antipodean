@@ -3,11 +3,12 @@
 <head>
   <title>Antipodean</title>
   <link href="./navbar.css" rel="stylesheet">
+  <link href="./shared.css" rel="stylesheet">
   <link href="./toc.css" rel="stylesheet">
   <link href="./content.css" rel="stylesheet">
-  <link href="./content-layout.css" rel="stylesheet">
+  <link href="./content-mobile.css" rel="stylesheet">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml"> <!-- Use SVG as favicon -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 
 <body>
@@ -47,9 +48,13 @@
         ? 'peterwone' // Simulate username when running locally
         : location.hostname.split('.')[0]; // Extract the username from the hostname
 
-      const repoUrl = `https://api.github.com/repos/${username}/${repoName}/contents/`; // Construct the GitHub API URL
+      const screenWidth = window.innerWidth;
+      const columnWidth = screenWidth - 11.5; // Calculate the scroll distance based on column width and gap
 
-      const navbarHeight = document.getElementById('navbar').offsetHeight; // Get the actual navbar height
+      const repoUrl = `https://api.github.com/repos/${username}/${repoName}/contents/`; // Construct the GitHub API URL
+      const navbar = document.getElementById('navbar');
+      const navbarHeight = navbar.offsetHeight; // Get the actual navbar height
+      const vw = navbar.offsetWidth; // should be the same as window.innerWidth
       document.documentElement.style.setProperty('--navbar-height', `${navbarHeight}px`); // Update the CSS variable
 
       const toc = document.getElementById('toc');
@@ -59,6 +64,7 @@
       const nextButton = document.getElementById('next-chapter');
       const bookTitle = document.getElementById('book-title');
       bookTitle.textContent = repoName;
+
       let markdownFiles = [];
       let currentIndex = 0;
       let chapterScrollPositions = {}; // Object to store scroll positions for each chapter
@@ -83,7 +89,7 @@
 
           if (lastTouchDistance) {
             const scale = currentDistance / lastTouchDistance;
-            baseFontSize = Math.max(8, Math.min(32, baseFontSize * scale)); // Clamp font size between 8px (half) and 32px (double)
+            baseFontSize = Math.max(16, Math.min(32, baseFontSize * scale));
             content.style.fontSize = `${baseFontSize}px`;
             localStorage.setItem('contentFontSize', baseFontSize); // Save the font size
           }
@@ -98,13 +104,11 @@
 
       // Detect taps on the left or right quarter of the screen and scroll one column left or right, respectively
       content.addEventListener('click', async (e) => {
-        const screenWidth = window.innerWidth;
-        const scrollDistance = screenWidth - 16; // Calculate the scroll distance based on column width and gap
         const tapX = e.clientX;
         if (tapX < screenWidth * 0.25) {
-          await TapLeft(scrollDistance);
+          await TapLeft(columnWidth);
         } else if (tapX > screenWidth * 0.75) {
-          await TapRight(scrollDistance);
+          await TapRight(columnWidth);
         }
       });
 
@@ -133,7 +137,7 @@
         var positionWhenTapped = content.scrollLeft;
         const targetScrollLeft = Math.min(content.scrollWidth - content.clientWidth, content.scrollLeft + scrollDistance); // Calculate target scroll position
 
-        const maxScrollLeft = content.scrollWidth - content.offsetWidth - 1;
+        const maxScrollLeft = content.scrollWidth - content.offsetWidth - 16;
         if (positionWhenTapped >= maxScrollLeft && currentIndex < markdownFiles.length - 1) {
           console.log("Loading next chapter");
           content.classList.add('chapter-transition-forward'); // Add transition class
@@ -272,10 +276,10 @@
       }
 
       function AdjustSnap() {
-        const columnWidth = window.innerWidth - 10; // Adjust for the gap
-        const snappedScrollLeft = Math.round(content.scrollLeft / columnWidth) * columnWidth; 
+        // Adjust the scroll position to snap to the nearest column
+        const quantisedScrollLeft = Math.round(content.scrollLeft / columnWidth) * columnWidth;
         content.scrollTo({
-          left: snappedScrollLeft,
+          left: quantisedScrollLeft,
           behavior: 'smooth',
         });
       }

@@ -1,0 +1,64 @@
+@media (max-width: 768px) {
+  /* Mobile styles */
+
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  /* Content layout styles */
+  #content {
+    flex: none;
+    width: 100%;
+    height: calc(100vh - var(--navbar-height));
+    overflow-y: auto;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 12px;
+    padding-bottom: 110px;
+    box-sizing: border-box;
+    column-width: 99vw;
+    /* Adjusted for padding */
+    column-gap: 12px;
+    column-fill: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  /* Chapter transition styles */
+  .chapter-transition-back {
+    animation: flyInFromLeft 0.5s ease-in-out;
+  }
+
+  @keyframes flyInFromLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .chapter-transition-forward {
+    animation: flyInFromRight 0.5s ease-in-out;
+  }
+
+  @keyframes flyInFromRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}
