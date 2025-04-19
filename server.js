@@ -39,7 +39,7 @@ app.use(async (req, res, next) => {
 
 // Endpoint to emulate GitHub API for TOC data
 app.get('/api/toc', (req, res) => {
-  const directoryPath = path.join(__dirname);
+  const directoryPath = path.join(__dirname, "src");
   fs.readdir(directoryPath, (err, files) => {
     if (err) {
       console.error('Error reading directory:', err);
