@@ -1,0 +1,1 @@
+In a house in the forest there lived a hermit. She considered living in a hole, but the location was chosen for a microclimate with high rainfall, so it would have been a nasty, dirty, wet hole, filled with leeches and an oozy smell. 
