@@ -212,7 +212,7 @@
           const basePath = isLocal ? './src/' : githubPagesBaseUrl + 'src/'; // Adjust base path to include src
           const response = await fetch(basePath + (isLocal ? fileName : fileName.replace(/\.md$/, '.html'))); // Change .md to .html for GitHub
           const html = await response.text();
-          hiddenContent.innerHTML = html; // Load content into the hidden div
+          hiddenContent.innerHTML = html.replace(/<img\s+([^>]*?)src=["']\.\/([^"']+)["']/g, '<img $1src="src/$2"'); // Update image paths
 
           const markdownBody = hiddenContent.querySelector('.markdown-body'); // Look for the div with class markdown-body
           // GitHub injects an <h1> with an anchor link at the top of the markdown body, remove it
