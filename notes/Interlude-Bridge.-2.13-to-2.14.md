@@ -25,10 +25,10 @@ But the world beyond never truly vanished. Its shadow lingered at the edge of ev
         - **Beeswax**: Useful for waterproofing and as a soft sealant, though supplies are limited by the number of hives.
         - **Tallow**: Rendered animal fat, used for soft seals and as a component in mixtures.
         - **Clay**: For temporary or low-pressure seals, especially in plumbing or storage.
-        - **Bitumen (if available)**: Natural asphalt, sticky and waterproof, but not always present in the valley.
+        - **Bitumen (if available)**: Natural asphalt, sticky and waterproof, but not always present in the valley. Most bitumen is salvaged from old roads, parking lots, or derelict infrastructure left by the state. It requires labor-intensive collection and reprocessing, and may contain gravel or debris that must be removed before use in seals or waterproofing.
         - **Oiled paper or cloth**: Used for gaskets and as a flexible barrier, though not as durable as rubber.
         - **Plant fiber (felted wool, flax, hemp)**: Can be compressed to form gaskets or packing.
-        - **Cement or lime putty**: For rigid, permanent seals in masonry or ceramic work.
+        - **Cement or lime putty**: For rigid, permanent seals in masonry or ceramic work. The community can produce lime by calcining (heating) local limestone or shells in a kiln, then slaking it with water to make lime putty. True cement (Portland cement) is more complex, requiring a blend of limestone and clay fired at high temperatures, but basic lime mortars and plasters are achievable with valley resources. Salvaged cement from abandoned construction sites may also supplement supplies. Stale or set cement from old bags can sometimes be reprocessed by crushing and remixing, though its strength and reliability are reduced compared to fresh cement.
         - **Recycled materials**: Old rubber, plastics, or synthetic sealants from scavenged sources, used sparingly and with care. Plastics are readily salvaged from the vast quantities discarded by the state, providing a valuable—if finite—resource for gaskets, containers, and improvised parts.
     - Pine resin, in particular, is highlighted as the valley’s most practical and abundant sealant, with the community developing techniques for collecting, purifying, and applying it to a variety of sealing and waterproofing tasks.
     - Pine resin is the valley’s primary sealant: abundant pine trees allow for large-scale collection and processing. Pine resin can be used as-is for waterproofing, or combined with beeswax, tallow, or plant oils to make more flexible or adhesive sealants. It is suitable for gaskets, waterproofing, and as a base for varnishes and glues.
@@ -41,6 +41,15 @@ But the world beyond never truly vanished. Its shadow lingered at the edge of ev
             - Cement or lime putty: for rigid, permanent seals.
             - Recycled rubber or plastics (if any are salvaged): limited supply.
     - Pine resin is highlighted as the most practical and scalable solution for the valley’s needs, with other materials supplementing as available.
+- Grain crops are impractical to harvest without monoculture and mechanization. The community explores alternative sources for breadmaking and staple foods:
+        - **Root crops**: Potatoes, sweet potatoes, yams, and cassava can be grown in small plots and processed into flour or starch for flatbreads and dumplings.
+        - **Legumes**: Beans, lentils, and chickpeas can be ground into meal for dense breads or pancakes, and provide protein.
+        - **Chestnuts and acorns**: Both can be foraged or cultivated, then dried and ground into flour for baking. Leaching is required to remove tannins from acorns.
+        - **Plantains and green bananas**: In suitable climates, these can be dried and milled into flour.
+        - **Sago, arrowroot, or other starchy plants**: If available, these can be processed into flour or starch.
+        - **Amaranth, quinoa, buckwheat**: Pseudocereals that grow well in diverse conditions and can be hand-harvested, then ground into flour.
+        - **Wild seeds**: Some native grasses and wild plants produce edible seeds that can be collected and ground, though yields are low and labor-intensive.
+    - These alternatives allow the community to produce bread-like foods and staples without relying on large-scale grain monoculture.
 
 **Personal Arcs:**
 - Forest deals with leadership fatigue, perhaps a health scare or a personal loss.
@@ -56,4 +65,4 @@ But the world beyond never truly vanished. Its shadow lingered at the edge of ev
 - The lumber jacket, the brass knob, and other symbols recur in new contexts.
 - The nursery, the smithy, and the communal table as recurring settings.
 
-[This bridge is intended to be expanded into several interlude chapters, focusing on community building, personal arcs, and the slow return of external tension before the Tamworth incursion.]
+[This bridge is intended to be expanded into several interlude chapters, focusing on community building, personal arcs, and the slow return of external tension before the Glen Innes incursion.]
