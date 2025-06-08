@@ -48,10 +48,10 @@ Here’s how you can structure this inevitability and Sophia’s realization, us
 
 She staggered back, a freezing vertigo in the back of her skull. Then Autumn’s voice _inside_ her head...
 
-> _Initialising...yes, there we are. Right, I'm not going to explain this to you, it's a game you've been playing for some time now. You're a Vanguard now. You have Forest to blame for that, he convinced me to pass the torch to you. You get 100 getting-started points, 10 points a day and a caretaker stipend for the project. Unusually for a newly minted Vanguard, you aren't wounded. You are also very much better equipped than most. He left you all his toys._
+> _Initialising...yes, there we are. Right, I'm not going to explain this to you, it's a game you've been playing for some time now. You're a Vanguard now. You have Forest to blame for that, he convinced me to pass the torch to you. You get 100 getting-started points, 10 points a day and a caretaker stipend for the project. Unusually for a newly minted Vanguard, you aren't wounded. You are also very much better equipped: he left you all his toys._
 
 "I'm not sure the lumberjacket would fit me."
 
-> _It would fit you better than you know. Unfortunately it has been eaten._
+> _It would fit you better than you know. Unfortunately, it has been eaten._
 
 
