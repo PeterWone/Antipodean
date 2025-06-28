@@ -3,7 +3,7 @@
 ## User Notes
 - Evacuation is completely impractical: six thousand people, nowhere more secure than the current shelters.
 - What they need to do is secure an area and build much better long-term shelters.
-- This can be done with points; Dusty is a legend in the Vanguard and probably has the deep pocket required.
+- This can be done with points; Dusty is a legend among antipodean Vanguard and probably has the deep pocket required.
 - The long game: get people to a secure shelter, build another, and so on, while mounting defensive actions.
 - Need ten shelters with capacity for 600 each.
 - Sophia is an administrator of people, strong in logistics and resource management.
@@ -29,8 +29,8 @@
 - **Narrative Opportunities:**
   - Tension between urgency (building fast) and quality (making shelters truly safe).
   - Moments of hope as new shelters come online.
-  - Setbacks: supply chain issues, sabotage, or major antithesis assault.
-  - Character growth: Sophia’s leadership, Dusty’s legend, Forest’s resilience, Greaser’s ingenuity.
+  - Setbacks: major antithesis assault.
+  - Character growth: Sophia’s leadership, Dusty’s legend, Greaser’s ingenuity.
 - **Victory Condition:** All ten shelters operational, population safe, sustainable enclave established.
 - **Ongoing Threat:** Antithesis may adapt, requiring new strategies and possibly leading to a final confrontation with the command-type.
 
