@@ -1,0 +1,1 @@
+// todo Forest building a communal ablutions block, showers, toilets, washing machines, wide verandas with shutters, with an open fireplace in the shower. Because he hates cold bathrooms. It also has a boiler for hot water. Invite ground team for pig on a spit and try out the sauna (not all at once it's not that big).
