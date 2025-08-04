@@ -42,7 +42,7 @@ She paused, remembering her message. As though to herself, "Oh yes, the warning.
 
 "For example..." Sophia raised a hand theatrically. Outside there was a terrific _CRUMP_ and the lights went out. Her departing footfalls were impossibly clear and confident in the padded dark. 
 
-It was a hour before power returned. The lights did not. When they shuffled out by the light of cellphones. The water was off, too. Only to a small area, they discovered, which was itself a lesson in mercy; it would have been much easier to wreck the system.
+It was a hour before power returned. The lights did not. They shuffled out by the light of cellphones. The water was off, too. Only to a small area, they discovered, which was itself a lesson in mercy; it would have been much easier to wreck the system.
 
 In the wall by the main doors, glowing soft in the last light of day, a message graven deep into stone. It ran the length of the wall: "Efficiency is a curse built of single points of failure." Beneath it, in an elegant hand _in stone,_ framed like an epigraph and attributed: "I see everything you do. &mdash Death of Shadows."
 

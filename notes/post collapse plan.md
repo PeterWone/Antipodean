@@ -54,7 +54,9 @@ The look on their faces was too suddenly accepting. He knew he had his work cut 
 
 ...
 
-Don't look embarrased. That was yesterday's mistake. Look around you, do you think any of them could have lasted that long debating this? Mr Fenaluci here has no homework beyond writing up this debate. The rest of you will be doing that _and_ preparing to convince us you understood. The two of us will be up the front, explaining each other's position.
+Don't look embarrassed. That was yesterday's mistake. Look around you, do you think any of them could have lasted that long debating this? Mr Fenaluci here has no homework beyond writing up this debate. The rest of you will be doing that _and_ preparing to convince us you understood. The two of us will be up the front, explaining each other's position.
+
+People were fidgeting so they went outside and put arrows into butts until enough broke that it was time for some fletching. They went to visit the witch, who was making soap and glue in great cast cauldrons over a partially enclosed fire. She smiled at the boys, all of whose glands made them stand taller in response. Young and beautiful with responsibility matched only by her incredible knowledge of herbs and practical chemistry, she made them buy the glue for their arrows with answers to questions she knew were in the material science curriculum, because she wrote it. Or amended some of it. Much came from her predecessors, checked relentlessly against ancient tomes currently being copied by another village.
 
 ---
 
