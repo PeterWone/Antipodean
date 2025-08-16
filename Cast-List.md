@@ -19,8 +19,6 @@
 
 ## Chapter 1.03: The Public Interest
 - **CSIRO Researcher** - One of the government/corporate delegation, gets defensive about being called a novice
-
-## Chapter 1.04: Ends and Beginnings
 - **The Macintyre Boys** - Cattle farmers, owners of prize bull Banana
 - **Banana** - The Macintyre's prize bull, gets infected by antithesis worm
 - **Hettie** - Janna's sow that survived the antithesis attack
@@ -131,8 +129,13 @@
 ---
 
 ## Notes:
-- Some characters may be the same person referred to by different names (e.g., "Ken" in different chapters)
 - Several characters are mentioned but not physically present in scenes
-- The valley appears to have a population of approximately 200 people
+- The valley appears to have a population of approximately 200 people (at the upper limit for social cohesion without formal hierarchy)
+- The Reboot catalogue's long-term plan calls for 40 villages of ~500 people each (~250 adults, ~250 children per village = 20,000 total) to ensure genetic viability and technological specialization
+- This provides ~10,000 adults total across the network, with ~2,500-5,000 in prime breeding years - sufficient for long-term genetic diversity
+- Additional villages beyond 40 are acceptable if there's practical justification (resource exploitation, geographic necessity, specialization overflow, refugee integration) - they don't expand for expansion's sake but won't refuse beneficial opportunities
+- Population growth is deliberately controlled through education and social pressure - these communities understand the difference between sex for pleasure and procreation
+- Property ownership follows Polynesian-inspired division: women own homes (essential infrastructure), men own tools/handle warfare - critically, this gives women effective veto power over male actions since they control the base of operations
+- This dynamic mirrors the Forest/Autumn relationship: Forest has weapons and tactical control, but Autumn controls the technological infrastructure that makes everything possible
 - Children and adults often share surnames, suggesting family units
 - Many characters have specialized skills that benefit the community
