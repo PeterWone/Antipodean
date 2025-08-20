@@ -55,7 +55,7 @@ The valley children are growing up with skills and attitudes that make them inde
 ## Extended Family
 Every adult in the valley has become an aunt or uncle to every child. Not through legal arrangement or institutional program, but through natural human bonding. Trix feeds them, Janna teaches them about ecosystems, Oleksiy trains them for defense.
 
-This isn't replacing parental authority—it's supporting it with community wisdom and diverse expertise.
+This isn't replacing parental authority. Quite the opposite. They support and augment us. You know that African saying about it takes a village to raise a child. I never realised how true it was till Salvo was mauled. While I was busy holding his hand and crying my child was fed, entertained and kept busy with other children. I don't think he knows how bad it was. But they had those incredible medicine kits, and the men at his side did not hesitate to give him their second chances when one was not enough. I guess they mean it when they say they are brothers in arms.
 
 ## The Future We're Creating
 When I watch Aiden and Scott planning their games with military precision, when I see Lisa correcting older boys about equipment maintenance, when I observe children taking genuine responsibility for community welfare, I see hope.
