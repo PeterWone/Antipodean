@@ -10,7 +10,7 @@ To that end we have prepared thirty-six plans to cripple energy, transport, wate
 
 A government reaction to this would inevitably be: "We must act immediately to neutralise them." Thus Sophia's letter will continue: 
 
-We know that your idiotic reaction to the news that you are going to lose a fight will be to immediately start the fight. On this basis we are already in position and waiting only for you to demonstrate your stupidity. You really only have three options: acknowledge our independent soverignty, surrender to us, or be destroyed. It is possible you will be able to also destroy us, but we have decided to live _and_ die free, and unlike you we have prepared for this. 
+We know that your idiotic reaction to the news that you are going to lose a fight will be to immediately start the fight. On this basis we are already in position and waiting only for you to demonstrate your stupidity. You really only have three options: acknowledge our independent sovereignty, surrender to us, or be destroyed. It is possible you will be able to also destroy us, but we have decided to live _and_ die free, and unlike you we have prepared for this. 
 
 The age of policing under the pretense of consent has ended. Whether civilisation has also ended is up to you. We certainly don't need it.
 
@@ -22,17 +22,19 @@ There's more to our plans, but this isn't a villain's monologue so all I'm going
 
 People of the cities: if they stand down and leave us be, nothing will happen. We know some of you like your cities. To each their own. When it all goes to hell, take it up with your own administration. Theoretically, they answer to you.
 
-The cascase occurs
+The cascade occurs
 
 Military: Deploying to protect the wrong targets Intelligence: Frantically analyzing the one plan they have instead of looking for the others
 
 Police: Overwhelming security around decoy sites 
 
-Politicians: Giving speeches about how they've "neutralized the threat" Media: Breathless reporting that actually helps the Protectorate by confirming the misdirection is working
+Politicians: Giving speeches about how they've "neutralized the threat" 
+
+Media: Breathless reporting that actually helps the rebellion by confirming the misdirection is working
 
 Then the rebels set off one of the plans, except this one doesn't actually destroy anything, the charges are paint bombs to show they were places and detonated.
 
-And use graffiti drones in the night to write NEXT TIME WON'T BE PAINT on Parliament House
+They use graffiti drones in the night to write NEXT TIME WON'T BE PAINT on Parliament House
 
 In smaller text under NEXT TIME WON'T BE PAINT:
 
