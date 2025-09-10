@@ -20,11 +20,9 @@ The humans and bots paused, waiting for the inevitable disaster.
 
 Instead, Dalek-Bruce reached down, hitched up his makeshift skirt, and strode down the steps with perfect robotic grace.
 
-Dusty groaned. “Show-off.”
+Dusty rolled his eyes. “Bruce, you are a bad example.”
 
-Sophia burst out laughing. “That’s not canon, Bruce!”
 
-Dalek-Bruce spun his dome and replied, “Upgrades, meatbags. Upgrades.”
 
 ---
 (Dusty is bossy and rides roughshod over Bruce's attempt to add something. Bruce engages in malicious compliance by doing what is asked, effectively, efficiently and with a maximum of parade-ground goose-stepping squads.)
@@ -49,6 +47,24 @@ Bruce, who for obvious reasons had nigh ubiquitous hearing, swivelled one gleami
 "Hey Bruce, what time is it?"
 
 "At the third stroke, the time will be twelve, fifty-three and ten seconds. pip...pip...pip."
+
+---
+
+At this point, Bruce apparently decided that words weren't sufficient. From various corners of the workshop, half a dozen different chassis suddenly activated in perfect synchronization. The terminator chassis took center stage while a spider-bot, two repair drones, a modified roomba, and what looked suspiciously like a disco ball on legs formed a backup formation.
+
+The opening bass line began emanating from speakers throughout the building as Bruce launched into an elaborate choreographed performance to "Bad." The terminator chassis moon-walked backwards while the spider-bot provided percussion with its legs, the repair drones executed synchronized spins, and the disco ball threw glittering light patterns across the entire scene.
+
+Bruce's voice synthesizer had somehow acquired perfect pitch and rhythm as he belted out the song with mechanical precision, complete with synchronized head tilts and arm movements that would have made the King of Pop proud. The maid outfit's frilly skirt swirled with each spin.
+
+"I'm bad! I'm bad! I'm naughty! I'm bad!" Bruce declared with theatrical robotic flair, striking poses between each proclamation while his backup chassis provided perfectly timed mechanical sound effects.
+
+The humans stood transfixed, somewhere between horrified fascination and grudging admiration.
+
+"Who's bad?" Bruce concluded with a perfect robotic lean, all six chassis striking final poses in unison.
+
+Forest slow-clapped. "Well, that happened."
+
+"I hate all of you," Dusty muttered, but he was grinning.
 
 ---
 
