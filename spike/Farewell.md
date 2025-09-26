@@ -32,7 +32,7 @@ Darkness fell, and so fell the heavens, into the woods about them, for it was Oc
 
 They retreated to his longhouse, which crowded though it was, seemed empty. The lads from team charlie took fireblankets off coals and built them up, fanning to flame, unwrapping the lamb already spitted and half cooked. They broke out drinks and a quiet toast was raised, unvoiced.
 
-A lad said gave voice to it: "I can't believe he's not here."
+A lad gave voice to it: "I can't believe he's not here."
 
 Oleksiy began to laugh, bitter at first but growing in strength. He caught the young one by his lumberjack, hoisting him into the air.
 
