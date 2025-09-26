@@ -66,7 +66,7 @@ In a corner two women grieved in different ways. They were drinking a robust red
 
 Trixie wondered whether he'd fully honoured her objection to augmentations, but that time was past so she let it go.
 
-"What will you do now?"
+"But you can. Maybe you should give demonstrations." She changed the subject. "What will you do now?"
 
 > _You haven't told her yet, have you._
 
