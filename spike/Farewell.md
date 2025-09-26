@@ -48,7 +48,7 @@ He carried the lad to a stool by the fire and seated him, picking up a knife and
 
 Then a strange thing happened. The lad's friends started to treat him like he was Forest: "Tell us about your dog!"
 
-And he did. They all knew the story, heard so many time. He spoke from the heart, like the first teller of the tale, and they listened. When he was done, another lumberjacket wearing youth rose and spoke of cane harvesters and corporate folly. By turns they remembered a man's life in his own voice. When they paused, others remembered in their own words, and through their own eyes.
+And he did. They all knew the story, told so many times. He spoke from the heart, like the first teller of the tale, and they listened. When he was done, another lumberjacket wearing youth rose and spoke of cane harvesters and corporate folly. By turns they remembered a man's life in his own voice. When they paused, others remembered in their own words, and through their own eyes.
 
 In a corner two women grieved in different ways. They were drinking a robust red wine that neither of them liked.
 
