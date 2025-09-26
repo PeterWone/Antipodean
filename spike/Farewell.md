@@ -100,4 +100,8 @@ One of them approached the fire.
 
 For a frozen heartbeat the old monster was on the back foot. Then his smile returned and he gestured wide and dramatic: "He is gone, and now he is _everywhere!_"
 
-At the same moment, Sophia answered. Thumping her breast she barked "Here!" as though trying to convince herself.
+At the same moment, Sophia answered. Thumping her breast she barked "Here!" as though trying to convince herself. After that she felt slightly self-conscious, wondering why she'd responded with such vehemence to a child. Trixie put an understanding arm around her. They abandoned Forest's red wine for a late harvest wine. Strangely it was also Forest's. With enough alcohol to strip paint, it was thick and golden, lambent on the tongue, sweet and fruity.
+
+Trixie raised her flute and Sophia matched her, saying "You're not getting away that easily, you old bastard. I'll see you in hell!"
+
+They refilled and sipped. Somehow it was empty and they retired.
