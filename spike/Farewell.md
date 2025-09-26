@@ -22,7 +22,7 @@ She walked over, reverently disentangling what was left from the jacket, straigh
 
 Late the next day two women stood by a tower stacked of cut timber. Atop it lay a bier, underneath neat little teepees of kindling laid with the casual competence of people who cooked on woodfires. A small fire blazed in a brazier, beside it two sticks wound at one end with cloth, wired in place, soaking in motor oil. They were on the level pad outside Forest's workshop, surrounded by his half-finished projects. Behind them, facing the setting sun, the ground teams in full kit ranged like a living amphitheatre of destruction.
 
-As one, the girls took up a torch holding them over the brazier. They blazed bright and hot, droplets of flame falling as the two women walked together and lit the pyre.
+As one, the girls took up torches, holding them over the brazier. They blazed bright and hot, droplets of flame falling as the women walked together and lit the pyre.
 
 In silence they stood witness to the passing of a friend.
 
