@@ -10,7 +10,7 @@ His eyes looked into hers, gentler than she remembered.
 
 "You cannot im&mdash;" she interrupted herself, revised, "Maybe you can. _They_ cannot imagine how _angry_ I am."
 
-Eric was there, and Shorty. They all were. In her haste, she'd left them all behind. He opened the bag. The remnants of a lumberjacket, sodden with half-dried blood, torn and tangled with the half eaten remnant of a man. What remained was scorched, cooked almost. He guessed she come too late and unleash the wrath of god to get them off what was left, to reclaim _something._
+Eric was there, and Shorty. They all were. In her haste, she'd left them all behind. He opened the bag. The remnants of a lumberjacket, sodden with half-dried blood, torn and tangled with the half eaten remnant of a man. What remained was scorched, cooked almost. He guessed she'd come too late, and unleashed the wrath of god to get them off what was left, to reclaim _something._
 
 She walked over, reverently disentangling what was left from the jacket, straightening body and... soul? The outward manifestation, maybe. A half smile emerged. She'd brought him home.
 
