@@ -86,7 +86,7 @@ Trixie laughed, grimly.
 
 Autumn's presence drone had finally arrived and she had a face now, but her knowing smile hid his secrets like a Swiss bank vault. Vanguard AIs were famously tight-lipped when it came to Vanguard privacy and this was no exception.
 
-> _It actually made a lot of sense. Most Vanguard have no training or experience and when they become Vanguard  they're normally in more shit than Biggles on Sunday. Sophia by contrast has years of experience and Class II armour out of the gate._
+> _It actually made a lot of sense. Most Vanguard have no training or experience and when they become Vanguard they're normally in more shit than Biggles on Sunday. Sophia by contrast has years of experience and Class II armour out of the gate._
 >
 > _Oh, while I think of it, Sophia, I have to remind you we're back to zero on catalogues. Not my rule, and not negotiable. We'll have to plan your choices and work on that. But you still have everything he provided for the ground teams. And the Galya, of course._
 
@@ -104,7 +104,11 @@ At the same moment, Sophia answered. Thumping her breast she barked "Here!" as t
 
 Trixie raised her flute and Sophia matched her, saying "You're not getting away that easily, you old bastard. I'll see you in hell!"
 
-They refilled and sipped, more than once. Somehow the bottle was empty and they retired. When the sun finally rose it burned away the mountain mist and welcomed them to a brand new day. Sophia groaned and activated her nanites, which was the best kind of cheating. It certainly made his memory golden. She heard his voice and chuffed: "You _could_ just have a glass of water. But hey, why not."
+They refilled and sipped, more than once. Somehow the bottle was empty and they retired. 
+
+---
+
+When the sun finally rose, it burned away the mountain mist and welcomed them to a brand new day. Sophia groaned and activated her nanites, which was the best kind of cheating. It certainly made his memory golden. She heard his voice and chuffed: "You _could_ just have a glass of water. But hey, why not."
 
 They stumbled out into the centre of the longhouse, blessing whatever saints had already cleared away the festivities. Eric was there, nursing a water and a hair of the dog. He looked a little the worse for wear, but hadn't let that stop him from setting up the boiler espresso he and Forest had built from an old pressure cooker and a group head assembly. 
 
@@ -120,11 +124,15 @@ She sighed. "Did Janna tell you I asked her for beetroots?"
 
 "OK?"
 
-"So sugar for coffee. It's less work than cane and it will grow up here in the hills."
+"So sugar for coffee. It's less work than cane and it will grow up here in the hills. And you harvest it with a knife, he'd love that, full circle."
 
 "I see." She wondered would she ever be as good at thinking about the needs of her people. The boots were too big. But he'd given them to her. To _her._
 
 > _You'll do fine. And before you ask how I know what you're feeling, you're full of nanites that tell me everything from hormone levels to pituitary action, because on their own they can't make holistic health assessments. I process it and instruct them, and as a bonus I have a pretty good read on your mood._
+
+She grinned. "He did tell me you were a manipulative little minx."
+
+> _That's ridiculous. I'm not little._
 >
 > _You'll do fine. Quit second guessing yourself and just be, O child of dog._
 
