@@ -84,9 +84,9 @@ Trixie laughed, grimly.
 
 "He's dead and he's _still_ trying to change the world."
 
-Autumn's presence drone had finally arrived and she had a face now, but behind a knowing smile she remained silent. Vanguard AIs were famously tight-lipped when it came to Vanguard privacy and this was no exception.
+Autumn's presence drone had finally arrived and she had a face now, but her knowing smile hid his secrets like a Swiss bank vault. Vanguard AIs were famously tight-lipped when it came to Vanguard privacy and this was no exception.
 
-> _It actually made a lot of sense. Most Vanguard have no training or experience and they're in more shit than Biggles on Sunday when they become Vanguard. Sophia has years of experience and that armour is Class II._
+> _It actually made a lot of sense. Most Vanguard have no training or experience and when they become Vanguard  they're normally in more shit than Biggles on Sunday. Sophia by contrast has years of experience and Class II armour out of the gate._
 >
 > _Oh, while I think of it, Sophia, I have to remind you we're back to zero on catalogues. Not my rule, and not negotiable. We'll have to plan your choices and work on that. But you still have everything he provided for the ground teams. And the Galya, of course._
 
@@ -104,4 +104,28 @@ At the same moment, Sophia answered. Thumping her breast she barked "Here!" as t
 
 Trixie raised her flute and Sophia matched her, saying "You're not getting away that easily, you old bastard. I'll see you in hell!"
 
-They refilled and sipped. Somehow it was empty and they retired.
+They refilled and sipped, more than once. Somehow the bottle was empty and they retired. When the sun finally rose it burned away the mountain mist and welcomed them to a brand new day. Sophia groaned and activated her nanites, which was the best kind of cheating. It certainly made his memory golden. She heard his voice and chuffed: "You _could_ just have a glass of water. But hey, why not."
+
+They stumbled out into the centre of the longhouse, blessing whatever saints had already cleared away the festivities. Eric was there, nursing a water and a hair of the dog. He looked a little the worse for wear, but hadn't let that stop him from setting up the boiler espresso he and Forest had built from an old pressure cooker and a group head assembly. 
+
+Everything she knew about coffee, which was quite a lot, said that it should run too hot and produce bitter coffee with no crema, but the boys had so much faith in their own ability they'd collapsed the quantum wave into the only universe Forest cared about, the one in which this ridiculous contraption produced sublime coffee on demand over an open fire. The damn thing had a steamer. A good one.
+
+He put a steaming mug in her hands, then gave another to Trixie, who surprised both of them by shedding a tear, though she said nothing. It wasn't the coffee. The wrong person gave it to her.
+
+She sighed. "Did Janna tell you I asked her for beetroots?"
+
+"No?" Sophie looked askance at the out of context question, waiting.
+
+"Apparently all that sugar Europe was dumping came from beets. You know, the cane harvester thing."
+
+"OK?"
+
+"So sugar for coffee. It's less work than cane and it will grow up here in the hills."
+
+"I see." She wondered would she ever be as good at thinking about the needs of her people. The boots were too big. But he'd given them to her. To _her._
+
+> _You'll do fine. And before you ask how I know what you're feeling, you're full of nanites that tell me everything from hormone levels to pituitary action, because on their own they can't make holistic health assessments. I process it and instruct them, and as a bonus I have a pretty good read on your mood._
+>
+> _You'll do fine. Quit second guessing yourself and just be, O child of dog._
+
+She sank into herself, mind still, enjoying the coffee and the warmth of the rekindled flame. Far beneath the surface, fury unquenched glowed hot, banked coals waiting to be raked and fed.
