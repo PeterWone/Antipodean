@@ -1,0 +1,67 @@
+{
+  "title": "Antipodean",
+  "author": "Pete",
+  "version": "1.0.0",
+  "source": "./src",
+  "outpath": "./output",
+  "cssFile": "./templates/book.css",
+  "settings": {
+    "toc": true,
+    "numbering": true,
+    "theme": "default",
+    "chapterBreaks": "right"
+  },
+  "chapterTitles": {
+    "includeNumbers": true,
+    "source": "content",
+    "injectTitles": true
+  },
+  "templates": {
+    "document": {
+      "header": {
+        "left": "",
+        "center": "",
+        "right": "{{title}}"
+      },
+      "footer": {
+        "left": "{{chapter}}",
+        "center": "",
+        "right": ""
+      }
+    },
+    "sections": {
+      "covers": {
+        "header": {
+          "left": "",
+          "center": "",
+          "right": ""
+        },
+        "footer": {
+          "left": "",
+          "center": "",
+          "right": ""
+        },
+        "pageNumbering": "none"
+      },
+      "frontMatter": {
+        "header": {
+          "left": "",
+          "center": "",
+          "right": ""
+        },
+        "footer": {
+          "left": "",
+          "center": "",
+          "right": ""
+        },
+        "pageNumbering": "roman"
+      },
+      "chapters": {
+        "pageNumbering": "arabic"
+      },
+      "end-matter": {
+        "pageNumbering": "arabic"
+      }
+    }
+  }
+}

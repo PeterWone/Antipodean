@@ -130,10 +130,10 @@ She sighed. "Did Janna tell you I asked her for beetroots?"
 
 > _You'll do fine. And before you ask how I know what you're feeling, you're full of nanites that tell me everything from hormone levels to pituitary action, because on their own they can't make holistic health assessments. I process it and instruct them, and as a bonus I have a pretty good read on your mood._
 
-She grinned. "He did tell me you were a manipulative little minx."
+Sophia grinned. "He did tell me you were a manipulative little minx."
 
 > _That's ridiculous. I'm not little._
 >
 > _You'll do fine. Quit second guessing yourself and just be, O child of dog._
 
-She sank into herself, mind still, enjoying the coffee and the warmth of the rekindled flame. Far beneath the surface, fury unquenched glowed hot, banked coals waiting to be raked and fed.
+She sank into herself, mind still, enjoying the coffee and the warmth of the rekindled flame. Far beneath the surface, fury unquenched glowed hot. Not banked coals waiting to be raked and fed, tractable and civilised. Magma, wild, ungovernable, ready to cleave the earth and blacken the skies, unflinching of the cost.

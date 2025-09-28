@@ -1,0 +1,441 @@
+/* BC Book Compiler - PagedJS CSS Template */
+
+/* Basic page setup */
+@page {
+    size: A4;
+    margin: 2cm 2cm 3cm 2cm;
+}
+
+/* Left (even) pages */
+@page :left {
+    @top-left {
+        content: string(header-left);
+        font-size: 10pt;
+        color: #666;
+        font-style: italic;
+    }
+    @top-center {
+        content: string(header-center);
+        font-size: 10pt;
+        color: #666;
+        font-style: italic;
+    }
+    @top-right {
+        content: string(header-right);
+        font-size: 10pt;
+        color: #666;
+        font-style: italic;
+    }
+    @bottom-left {
+        content: string(footer-left);
+        font-size: 10pt;
+        color: #666;
+    }
+    @bottom-center {
+        content: string(footer-center);
+        font-size: 10pt;
+        color: #666;
+    }
+    @bottom-right {
+        content: string(footer-right);
+        font-size: 10pt;
+        color: #666;
+    }
+}
+
+/* Right (odd) pages */
+@page :right {
+    @top-left {
+        content: string(header-left);
+        font-size: 10pt;
+        color: #666;
+        font-style: italic;
+    }
+    @top-center {
+        content: string(header-center);
+        font-size: 10pt;
+        color: #666;
+        font-style: italic;
+    }
+    @top-right {
+        content: string(header-right);
+        font-size: 10pt;
+        color: #666;
+        font-style: italic;
+    }
+    @bottom-left {
+        content: string(footer-left);
+        font-size: 10pt;
+        color: #666;
+    }
+    @bottom-center {
+        content: string(footer-center);
+        font-size: 10pt;
+        color: #666;
+    }
+    @bottom-right {
+        content: string(footer-right);
+        font-size: 10pt;
+        color: #666;
+    }
+}
+
+/* Cover pages - no headers/footers */
+@page cover {
+    @top-left { content: none; }
+    @top-center { content: none; }
+    @top-right { content: none; }
+    @bottom-left { content: none; }
+    @bottom-center { content: none; }
+    @bottom-right { content: none; }
+}
+
+/* Title page - no headers/footers/page numbers */
+@page title {
+    @top-left { content: none; }
+    @top-center { content: none; }
+    @top-right { content: none; }
+    @bottom-left { content: none; }
+    @bottom-center { content: none; }
+    @bottom-right { content: none; }
+}
+
+/* Front matter pages - roman numerals only */
+@page front-matter {
+    @top-left { content: none; }
+    @top-center { content: none; }
+    @top-right { content: none; }
+    @bottom-left { content: none; }
+    @bottom-center { content: none; }
+    @bottom-right {
+        content: counter(page, lower-roman);
+        font-size: 10pt;
+        color: #666;
+    }
+}
+
+/* Chapter pages - arabic numerals */
+@page chapter {
+    @bottom-right {
+        content: counter(page);
+        font-size: 10pt;
+        color: #666;
+    }
+}
+
+/* Named page assignments */
+.covers {
+    page: cover;
+    page-break-after: always;
+}
+
+.front-matter, .frontMatter {
+    page: front-matter;
+    page-break-before: always;
+    counter-reset: page 1;
+}
+
+.chapters {
+    page: chapter;
+    page-break-before: always;
+    counter-reset: page 1;
+}
+
+.end-matter, .endMatter {
+    page: chapter; /* Use same as chapters, don't reset counter */
+    page-break-before: always;
+}
+
+/* Chapter page break controls */
+.page-break-left {
+    page-break-before: left;
+}
+
+.page-break-right {
+    page-break-before: right;
+}
+
+.page-break-always {
+    page-break-before: always;
+}
+
+/* Running elements for dynamic content */
+.header-left {
+    string-set: header-left content();
+}
+
+.header-center {
+    string-set: header-center content();
+}
+
+.header-right {
+    string-set: header-right content();
+}
+
+.footer-left {
+    string-set: footer-left content();
+}
+
+.footer-center {
+    string-set: footer-center content();
+}
+
+.footer-right {
+    string-set: footer-right content();
+}
+
+/* Legacy support for existing templates */
+.book-title {
+    string-set: book-title content(), header-right content();
+}
+
+.book-author {
+    string-set: book-author content(), header-left content();
+}
+
+.chapter-title {
+    string-set: chapter-title content(), footer-left content();
+    font-family: 'Times New Roman', serif;
+    font-size: 24pt;
+    padding-top: 9em;
+    text-align: right;
+    border-bottom: thin solid silver;
+    padding-bottom: 0.5em;
+    margin-bottom: 2em;
+}
+
+/* Typography */
+body {
+    font-family: 'Times New Roman', 'Liberation Serif', serif;
+    font-size: 11pt;
+    line-height: 1.6;
+    color: #333;
+    hyphens: auto;
+}
+
+/* Title page styling */
+.title-page {
+    page: title;
+    text-align: center;
+    page-break-after: always;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80vh;
+}
+
+.title-page h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    font-weight: normal;
+    page-break-inside: avoid;
+}
+
+.title-page .author {
+    font-size: 1.2em;
+    color: #666;
+    font-style: italic;
+    margin-top: 2em;
+}
+
+/* Section styling */
+.section {
+    page-break-inside: avoid;
+}
+
+.section-covers {
+    text-align: center;
+}
+
+.section-covers .content {
+    page-break-after: always;
+}
+
+.section-frontMatter .content,
+.section-chapters .content,
+.section-endMatter .content {
+    page-break-before: always;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    color: #333;
+    page-break-after: avoid;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: normal;
+    page-break-before: always;
+    margin-top: 0;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-top: 1.5em;
+}
+
+h3 {
+    font-size: 1.2em;
+    margin-top: 1.2em;
+}
+
+/* Paragraphs */
+p {
+    margin-bottom: 1em;
+    text-align: justify;
+    orphans: 2;
+    widows: 2;
+}
+
+/* Lists */
+ul, ol {
+    margin-bottom: 1em;
+    padding-left: 2em;
+}
+
+li {
+    margin-bottom: 0.5em;
+    page-break-inside: avoid;
+}
+
+/* Code blocks */
+pre {
+    background: #f8f8f8;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-size: 0.9em;
+    page-break-inside: avoid;
+    margin: 1em 0;
+}
+
+code {
+    background: #f0f0f0;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+/* Blockquotes */
+blockquote {
+    border-left: 4px solid #ddd;
+    margin: 1em 0;
+    padding-left: 1em;
+    color: #666;
+    font-style: italic;
+    page-break-inside: avoid;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+    page-break-inside: avoid;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 0.5em;
+    text-align: left;
+}
+
+th {
+    background: #f5f5f5;
+    font-weight: bold;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    page-break-inside: avoid;
+    margin: 1em 0;
+}
+
+/* Horizontal rules */
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 2em 0;
+    page-break-after: avoid;
+}
+
+/* Print optimizations */
+@media print {
+    body {
+        font-size: 10pt;
+    }
+    
+    a {
+        color: #000;
+        text-decoration: none;
+    }
+    
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #666;
+    }
+}
+
+/* Chapter numbering (if enabled) */
+.chapter-number {
+    font-size: 0.8em;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5em;
+}
+
+/* Table of contents styling */
+.toc {
+    page-break-before: always;
+}
+
+.toc-entry {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5em;
+    page-break-inside: avoid;
+}
+
+.toc-title {
+    flex-grow: 1;
+}
+
+.toc-page {
+    margin-left: 1em;
+    font-weight: normal;
+}
+
+.toc-chapter {
+    font-weight: bold;
+    margin-top: 1em;
+}
+
+.toc-section {
+    margin-left: 1em;
+    font-weight: normal;
+}
+
+/* Index styling */
+.index {
+    page-break-before: always;
+    columns: 2;
+    column-gap: 2em;
+}
+
+.index-entry {
+    page-break-inside: avoid;
+    margin-bottom: 0.3em;
+}
+
+.index-subentry {
+    margin-left: 1em;
+    font-size: 0.9em;
+}
