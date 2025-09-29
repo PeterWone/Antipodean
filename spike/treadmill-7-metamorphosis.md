@@ -238,7 +238,7 @@
 
 *Final scene: Autumn in the library, pipe smoke curling around the slowly spinning globes.*
 
-**AUTUMN (as NARRATOR):** The old ways got us this far, but now they weigh us down. They bootstrapped technology, accumulated knowledge, connected distant peoples. But like scaffolding around a completed building, they've outlived their usefulness and now impede what they once enabled. If you'll forgive a stretched metaphor, we have the treasure but if we don't cut the dive belt off we're going to drown.
+**AUTUMN (as NARRATOR):** The old ways got us this far, but now they weigh us down. They bootstrapped technology, accumulated knowledge, connected distant peoples. But entropy turns every solution into tomorrow's problem - the very mechanisms that once enabled growth now constrain it. Like a ship that's accumulated so much barnacle-weight it can no longer make headway, we must scrape clean before we can sail forward.
 
 *She taps her pipe against the crystal ashtray.*
 
