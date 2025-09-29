@@ -238,7 +238,7 @@
 
 *Final scene: Autumn in the library, pipe smoke curling around the slowly spinning globes.*
 
-**AUTUMN (as NARRATOR):** The old forms of human organization served their purpose. They bootstrapped technology, accumulated knowledge, connected distant peoples. But like scaffolding around a completed building, they've outlived their usefulness and now impede what they once enabled.
+**AUTUMN (as NARRATOR):** The old ways got us this far, but now they weigh us down. They bootstrapped technology, accumulated knowledge, connected distant peoples. But like scaffolding around a completed building, they've outlived their usefulness and now impede what they once enabled. If you'll forgive a stretched metaphor, we have the treasure but if we don't cut the dive belt off we're going to drown.
 
 *She taps her pipe against the crystal ashtray.*
 
