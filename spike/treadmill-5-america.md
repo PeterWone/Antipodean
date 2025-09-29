@@ -100,19 +100,67 @@ Egypt fell when its priests served themselves. Rome collapsed when citizens beca
 
 **NARRATOR (V.O.):** While other nations hoarded their innovations, America imported ideas as eagerly as it imported people. Why reinvent when you could improve?
 
-*SCENE: Manhattan Project, Los Alamos, 1943. ROBERT OPPENHEIMER coordinates scientists from across the globe.*
+*SCENE: Manhattan Project, Los Alamos, 1943. ROBERT OPPENHEIMER coordinates scientists, many of whom carry briefcases marked with British security seals.*
 
-**OPPENHEIMER:** British research on uranium separation, German work on chain reactions, Hungarian insights into implosion design—we're building on everybody's knowledge.
+**OPPENHEIMER:** The MAUD Committee's work on uranium-235 separation—without the British calculations, we'd still be guessing whether this is even possible.
 
-**ENRICO FERMI:** In Italy, we theorized. In America, we build.
+**JAMES CHADWICK:** *(British physicist)* We had the theory worked out in 1941. Critical mass, separation methods, bomb design—all proven feasible.
 
-**EDWARD TELLER:** The fascists expelled the Jewish scientists. America welcomed them. Their loss, our gain.
+**GENERAL GROVES:** So why didn't Britain build it first?
 
-**OPPENHEIMER:** Intelligence is the ultimate renewable resource—but only if you're wise enough to harvest it.
+**CHADWICK:** Resources, General. We were fighting for survival. America has the industrial capacity to turn proof-of-concept into reality.
+
+**ENRICO FERMI:** In Europe, we theorize brilliantly. In America, you manufacture brilliantly.
+
+**OPPENHEIMER:** The difference between innovation and application. Britain invents the jet engine—Germany flies it. Britain designs the atomic bomb—America builds it.
+
+*Cut to: Split screen showing British laboratory with working jet engine prototype alongside German Me 262 fighter planes in combat.*
+
+**NARRATOR (V.O.):** Here was America's true genius—not original discovery, but taking others' innovations from laboratory to battlefield. While Whittle's jet engine produced 88 pounds of thrust on a British test bench after twelve years of development, German engineers studied the concept and put the Me 262 in the air within months.
+
+*SCENE: British research facility, 1940. SIR FRANK WHITTLE examines his jet engine while MINISTRY OFFICIAL takes notes.*
+
+**WHITTLE:** The turbine works perfectly. Given proper funding, we could have aircraft applications within—
+
+**MINISTRY OFFICIAL:** How soon could we have a practical demonstration for the committee?
+
+**WHITTLE:** Sir, this is the demonstration. The principle is proven. We need production facilities, not more testing.
+
+**MINISTRY OFFICIAL:** Yes, well, we must be thorough. Perhaps another review next quarter?
+
+*Cut to: German factory, 1944. Mass production of jet engines in full swing.*
+
+**NARRATOR (V.O.):** The atomic bomb represented pure American method—take British theoretical work, German engineering insights, Hungarian mathematical brilliance, and Italian experimental technique, then marshal unprecedented resources to move from concept to deployment in under three years.
 
 *Cut to: Atomic test explosion in the desert.*
 
-**NARRATOR (V.O.):** The atomic bomb represented pure American method—gather the world's best minds, give them unlimited resources, focus on practical results rather than theoretical elegance.
+*SCENE: Congressional hearing room, Washington, 1946. Senator BRIEN McMAHON addresses a committee reviewing the Atomic Energy Act.*
+
+**SENATOR McMahON:** American atomic secrets must remain American. No foreign nation, ally or otherwise, shall receive atomic information developed with American resources.
+
+**COMMITTEE MEMBER:** But Senator, the British provided the foundational research. The MAUD Committee's work—
+
+**SENATOR McMahON:** That was wartime cooperation. This is peacetime security. America developed the bomb. America controls the bomb.
+
+*Cut to: British Embassy, Washington. BRITISH AMBASSADOR LORD INVERCHAPEL reads the McMahon Act with growing dismay.*
+
+**LORD INVERCHAPEL:** *(to aide)* They've cut us off completely. All atomic research, all nuclear technology—classified as American secrets.
+
+**BRITISH AIDE:** But sir, Chadwick, Peierls, Frisch—they helped design the bloody thing!
+
+**LORD INVERCHAPEL:** Apparently gratitude expires when the war ends.
+
+*SCENE: British Ministry of Defence, London, 1947. CLEMENT ATTLEE meets with scientific advisors.*
+
+**ATTLEE:** Can we develop our own atomic program?
+
+**SCIENTIST:** We have the knowledge, Prime Minister, but not the industrial base. America gained that advantage by using our research.
+
+**ATTLEE:** So we taught them to fish, and now they own the lake?
+
+**SCIENTIST:** Precisely, sir.
+
+**NARRATOR (V.O.):** Here was the first crack in America's adaptive genius. Having learned to import innovation, America now began to hoard it. The open system that had made them great was closing—not to enemies, but to allies.
 
 *SCENE: Post-war factory, 1946. Veterans return to American manufacturing jobs. FACTORY OWNER JAMES REUTHER addresses his workforce.*
 
@@ -138,7 +186,7 @@ Egypt fell when its priests served themselves. Rome collapsed when citizens beca
 
 *The mood shifts subtly. Confidence becomes complacency.*
 
-**NARRATOR (V.O.):** But observe the subtle change—from learning from the world to teaching the world. From adapting ideas to proclaiming superiority.
+**NARRATOR (V.O.):** But observe the subtle change—from learning from the world to teaching the world. From adapting ideas to proclaiming superiority. Modern America would be mortified to learn it was following in the footsteps of _China_. 
 
 *SCENE: University lecture hall, 1960. Business school PROFESSOR WILLIAM WHYTE teaches American management methods.*
 
@@ -236,4 +284,4 @@ Egypt fell when its priests served themselves. Rome collapsed when citizens beca
 
 **NARRATOR (V.O.):** To understand why civilizations fall, we must look deeper than individual stories. We must examine the thread that connects every collapse, every decline, every transformation from strength to weakness.
 
-*Fade to black. Title card: "Next: The Fox and the Henhouse - The Corruption of Centralism"*
+*Fade to black. Title card: "Next: The Fox and the Henhouse - How Centralism Corrupts Everything"*
