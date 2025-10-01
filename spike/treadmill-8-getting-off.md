@@ -98,19 +98,27 @@
 
 **WARREN:** But what about coordination for really big projects? Space exploration, medical research, climate infrastructure?
 
-**DR. CHEN:** *(pause, considering)* That's where it gets interesting. Look at how SpaceX changed space exploration—not by creating a bigger NASA, but by creating competition for NASA. Look at how mRNA vaccines were developed—not by one centralized lab, but by networks of researchers sharing information and competing to solve the same problem.
+**DR. CHEN:** *(pause, considering)* That's where it gets interesting. Look at how SpaceX changed space exploration—not by creating a bigger NASA, but by creating competition for NASA. Look at how the Human Genome Project succeeded—not through one massive government program, but through competing teams sharing data while racing to decode different sections.
 
 *SCENE: Montage showing modern distributed research—labs around the world sharing data, competing companies pushing each other to innovate, open-source hardware projects.*
 
 **NARRATOR (V.O.):** The pattern that emerges is clear: centralization for coordination, but distribution for implementation. Standards for interoperability, but autonomy for innovation. Cooperation for shared goals, but competition for better solutions.
 
-*Cut to: Interview with epidemiologist DR. JENNIFER NUZIO.*
+*Cut to: Interview with genomics researcher DR. HELEN WANG.*
 
-**DR. NUZIO:** During COVID, the fastest vaccine development happened when companies competed while sharing basic research. We got multiple solutions instead of one bureaucratically-approved approach. If any single vaccine had failed, we had alternatives. If any single company had captured the process, innovation would have slowed.
+**DR. WANG:** The Human Genome Project worked because teams competed while sharing fundamental discoveries. Each lab focused on different chromosomes, but when someone found a breakthrough technique, it spread rapidly. We got the complete sequence years ahead of schedule with multiple verification pathways. No single point of failure.
 
 **INTERVIEWER:** But didn't that create duplication of effort? Wasn't it wasteful?
 
-**DR. NUZIO:** Only if you assume that bureaucratic resource allocation is more efficient than market resource allocation. But the evidence suggests the opposite. Multiple parallel approaches gave us solutions faster than any centralized program ever has.
+**DR. WANG:** Only if you assume that bureaucratic resource allocation is more efficient than distributed expertise. But the evidence suggests the opposite. Multiple parallel approaches with shared standards gave us both speed and accuracy that no centralized program could match.
+
+**INTERVIEWER:** What about counter-examples? Cases where centralized control supposedly worked better?
+
+**DR. WANG:** *(grimly)* Look at mRNA vaccine development during COVID. Centralized regulatory agencies, emergency powers bypassing normal checks, guaranteed profits with zero liability for manufacturers. That's not distributed innovation—that's regulatory capture. Corporations got the benefits, the public bore the risks, and we're still discovering the consequences.
+
+**INTERVIEWER:** You sound like you're thinking of something specific.
+
+**DR. WANG:** *(pauses, then sighs)* Well, there's the SV40 contamination issue, the cardiac effects in young people, the complete lack of long-term safety data, the suppression of early treatment alternatives that might have made the whole program unnecessary... *(catches herself)* But honestly, discussing this in detail isn't exactly a great career move for someone who still needs research funding.
 
 *Back to lecture hall.*
 
@@ -123,6 +131,14 @@
 *She writes: "Functions of Government" on the board.*
 
 **DR. CHEN:** Defense, dispute resolution, resource allocation, standard-setting, infrastructure coordination. These are legitimate needs. The question is whether centralized monopolistic institutions are the only way—or even the best way—to address them.
+
+**WARREN:** *(looking up from his notes)* Professor, did you just say "legitimate needs"? Legitimate according to whom? Isn't that exactly the kind of thinking you've been warning us about—accepting that something is necessary just because authority says it is?
+
+**DR. CHEN:** *(pausing, then smiling ruefully)* Warren, you just caught me falling into the very trap I've been describing. You're absolutely right. I should have said "real needs"—things that human societies actually require to function, not things that governments declare necessary to justify their existence.
+
+*She erases "legitimate" and writes "real" on the board.*
+
+**DR. CHEN:** Thank you. That's exactly the kind of critical thinking that makes distributed systems work—questioning authority even when it comes from your professor.
 
 *SCENE: Historical example - medieval Iceland's Althing, showing decentralized legal system.*
 
@@ -183,6 +199,22 @@
 **DR. MARTINEZ:** Those require cooperation, but not necessarily centralization. The Montreal Protocol eliminated ozone-depleting chemicals through international agreements between sovereign nations, not through world government. When everyone benefits from solving a problem, they'll cooperate to solve it.
 
 *Back to lecture hall.*
+
+**WARREN:** *(interrupting with obvious skepticism)* Professor, with all due respect, universities competing for better long-term planning? The math, the science and the fundamental engineering never changes. But universities are always fighting the last war anyway. They're still preparing students for the economy that existed when the curriculum was written, not the one that'll exist when we graduate. *(voice becoming more bitter)* And let's be honest—we don't come here to learn, we come here for an entry ticket for a pay-to-play game. Even moreso the med students.
+
+**DR. CHEN:** *(pausing, then nodding)* Warren, that's actually a perfect example of why distributed systems work better than centralized ones. You're absolutely right that universities often lag behind reality—they're optimizing for bureaucratic approval rather than practical outcomes. *(a distant look crosses her face)* You know, that reminds me of someone. He cherry-picked subjects across disciplines—metallurgy, electronics, botany, psychology—whatever he thought would be enabling. He drove them crazy, and he never did get a degree, he was far too busy learning. He loved solving the impossible problems and leaving a proof of concept for others to finish. *(a slight smile)* He used to say "I'm too lazy to do this badly." I thought he _was_ lazy but maybe he was teaching.
+
+*She pauses, then refocuses on the present.*
+
+**DR. CHEN:** But notice what happens when alternatives emerge.
+
+*She points to examples on the board.*
+
+**DR. CHEN:** Coding bootcamps emerged because computer science departments weren't producing job-ready programmers. Online courses proliferated because traditional lectures weren't effective for many learning styles. Professional certifications gained value because degrees weren't reliable signals of competence. The system corrects itself, but only when alternatives are allowed to compete.
+
+**WARREN:** So distributed systems work because they let the dinosaurs die off naturally?
+
+**DR. CHEN:** *(smiling)* Exactly. Instead of trying to reform institutions that have no incentive to change, you create new institutions that serve people better. The old ones can keep doing what they're doing until they become irrelevant.
 
 **DR. CHEN:** So we have models for distributed systems that handle innovation, coordination, resource allocation, accountability, and even long-term strategic planning. The question is: what would a entire civilization look like if it were built on these principles from the ground up?
 
