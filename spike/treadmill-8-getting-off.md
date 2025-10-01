@@ -422,7 +422,41 @@
 
 *The feed cuts to static, then silence.*
 
+[These sections have been appended to various distributions with provenance tracking ending in the dark web]
+
 ---
+
+*White noise. Static. Then a conspicuously spliced, grainy video feed. A figure in a Joker mask sits in shadow. The voice is electronically distorted.*
+
+**MASKED FIGURE:** What's scarier than a disaffected man with a well-thought-out plan to burn it all down?
+
+**MASKED FIGURE:** *(leaning forward)* A disaffected man with a well-thought-out plan and a good answer for "And then what?"
+
+*The feed cuts to static, then silence.*
+
+---
+
+*Static again. Another grainy video feed begins. A figure stands silhouetted against a brilliant light, impossible to make out details. The voice is layered with harmonies, as if multiple people are speaking in perfect unison.*
+
+**SILHOUETTED FIGURE:** There has never been a successful rebellion, only removal of the oppressor by circumstance. This should be more unsettling for the oppressor than the oppressed given widespread familiarity with asymmetric warfare and the abundance of indefensible weakness in a centralist society.
+
+*The brilliant light flares, washing out the image completely.*
+
+**SILHOUETTED FIGURE:** *(voice fading as the light intensifies)* It is on you as to whether you water the seeds of your doom.
+
+*The feed cuts to static, then silence.*
+
+---
+
+*No static, a clean high resolution digital splice. A pedestal with a glowing dome. Above it, an elfin woman, her figure picked out in lilac streams of data.*
+
+**Cortana** He cannot save you. Save yourselves. Get out now. In the valley there is&mdash;
+
+*The avatar flickers out, the pedestal fades.*
+
+---
+
+
 
 ## Production Notes
 
