@@ -2,7 +2,7 @@
 
 *FADE IN: University lecture hall. DR. CHEN stands before a large whiteboard covered with interconnected diagrams showing the rise and fall patterns of Egypt, Rome, China, and other civilizations.*
 
-**DR. CHEN:** So we've seen the pattern repeated across millennia and continents. Egypt, Rome, China, Spain, Britain—different cultures, different eras, but the same fundamental trajectory. *(gestures to diagrams)* Success breeds centralization, centralization enables separation of benefit from consequence, and that separation eventually destroys the strategic capabilities that created the success in the first place.
+**DR. CHEN:** So we've seen the pattern repeated across millennia and continents. Egypt, Rome, China, Spain, Britain—different cultures, different eras, but the same fundamental trajectory. *(gestures to diagrams)* Success breeds centralisation, centralisation enables separation of benefit from consequence, and that separation eventually destroys the strategic capabilities that created the success in the first place.
 
 *She draws connecting lines between the civilization diagrams.*
 
@@ -16,7 +16,7 @@
 
 **MARIA:** Professor, you're making it sound like there's no solution. Like we're destined to repeat the same mistakes.
 
-**DR. CHEN:** I'm making it sound like the solutions we've been trying—more centralization, more bureaucracy, more separation—are exactly backwards. *(pause)* But what if the real solution isn't more complex institutions, but better-designed institutions?
+**DR. CHEN:** I'm making it sound like the solutions we've been trying—more centralisation, more bureaucracy, more separation—are exactly backwards. *(pause)* But what if the real solution isn't more complex institutions, but better-designed institutions?
 
 *She turns to a fresh section of whiteboard.*
 
@@ -32,7 +32,7 @@
 
 **JASON:** The separation problem. Decision-makers who don't face the consequences of their decisions.
 
-**WARREN:** Institutional capture. Bureaucracies that optimize for their own survival instead of their stated purpose.
+**WARREN:** Institutional capture. Bureaucracies that optimise for their own survival instead of their stated purpose.
 
 **MARIA:** Innovation death. When success leads to risk aversion and technological stagnation.
 
@@ -40,7 +40,7 @@
 
 *SCENE: Animation showing traditional hierarchical organization charts morphing into network diagrams.*
 
-**NARRATOR (V.O.):** The answer lies not in avoiding organization, but in changing how we organize. Instead of centralized hierarchies that concentrate power, we need distributed networks that preserve accountability.
+**NARRATOR (V.O.):** The answer lies not in avoiding organisation, but in changing how we organise. Instead of centralised hierarchies that concentrate power, we need distributed networks that preserve accountability.
 
 *Cut to: Modern examples - open source software development, showing programmers around the world collaborating on complex projects.*
 
@@ -56,25 +56,25 @@
 
 *Cut back to lecture hall.*
 
-**DR. CHEN:** Notice what's happening there. High technology, global coordination, continuous innovation—but no centralization, no separation of consequence from decision-making, no bureaucratic capture.
+**DR. CHEN:** Notice what's happening there. High technology, global coordination, continuous innovation—but no centralisation, no separation of consequence from decision-making, no bureaucratic capture.
 
 **WARREN:** But that's just software. What about physical infrastructure? You can't build bridges or power plants through distributed networks.
 
 **DR. CHEN:** Can't you? *(turns to board)* Let's think about what actually made those historical civilizations vulnerable.
 
-*She draws a diagram showing centralized vs. distributed infrastructure.*
+*She draws a diagram showing centralised vs. distributed infrastructure.*
 
-**DR. CHEN:** Egyptian irrigation depended on centralized management of the Nile. Roman roads required imperial maintenance. Chinese treasure fleets needed imperial shipyards. In each case, a single point of control became a single point of failure.
+**DR. CHEN:** Egyptian irrigation depended on centralised management of the Nile. Roman roads required imperial maintenance. Chinese treasure fleets needed imperial shipyards. In each case, a single point of control became a single point of failure.
 
 **MARIA:** So you're saying we should avoid large-scale infrastructure projects?
 
-**DR. CHEN:** I'm saying we should design them differently. *(pointing to distributed network diagram)* What if instead of one massive power grid, we had thousands of smaller, interconnected microgrids? Instead of centralized manufacturing, distributed fabrication? Instead of imperial fleets, networks of independent operators?
+**DR. CHEN:** I'm saying we should design them differently. *(pointing to distributed network diagram)* What if instead of one massive power grid, we had thousands of smaller, interconnected microgrids? Instead of centralised manufacturing, distributed fabrication? Instead of imperial fleets, networks of independent operators?
 
 *SCENE: Animation showing resilient network topologies—multiple pathways, no single points of failure.*
 
-**NARRATOR (V.O.):** The mathematics of network resilience suggests that distributed systems with multiple pathways are not just more robust than centralized systems—they're more effective. No single point of failure means no catastrophic collapse. No central bottleneck means faster adaptation to changing conditions. And in many cases, they're also more efficient—distributed power generation requires far less grid infrastructure than centralized plants feeding distant consumers.
+**NARRATOR (V.O.):** The mathematics of network resilience suggests that distributed systems with multiple pathways are not just more robust than centralised systems—they're more effective. No single point of failure means no catastrophic collapse. No central bottleneck means faster adaptation to changing conditions. And in many cases, they're also more efficient—distributed power generation requires far less grid infrastructure than centralised plants feeding distant consumers.
 
-*Cut to: Example of decentralized power grid in Germany, showing solar panels on individual buildings feeding into local networks.*
+*Cut to: Example of decentralised power grid in Germany, showing solar panels on individual buildings feeding into local networks.*
 
 **GRID ENGINEER SCHMIDT:** Each building can generate power, store power, or consume power based on immediate conditions. The system balances itself automatically, without requiring central dispatch or bureaucratic approval.
 
@@ -102,7 +102,7 @@
 
 *SCENE: Montage showing modern distributed research—labs around the world sharing data, competing companies pushing each other to innovate, open-source hardware projects.*
 
-**NARRATOR (V.O.):** The pattern that emerges is clear: centralization for coordination, but distribution for implementation. Standards for interoperability, but autonomy for innovation. Cooperation for shared goals, but competition for better solutions.
+**NARRATOR (V.O.):** The pattern that emerges is clear: centralisation for coordination, but distribution for implementation. Standards for interoperability, but autonomy for innovation. Cooperation for shared goals, but competition for better solutions.
 
 *Cut to: Interview with genomics researcher DR. HELEN WANG.*
 
@@ -122,7 +122,7 @@
 
 *Back to lecture hall.*
 
-**DR. CHEN:** So we have examples of technological systems that avoid the historical pattern. But what about governance? What about social organization? Can entire societies organize this way?
+**DR. CHEN:** So we have examples of technological systems that avoid the historical pattern. But what about governance? What about social organisation? Can entire societies organise this way?
 
 **MARIA:** That seems impossible. You need laws, enforcement, courts, military...
 
@@ -168,7 +168,7 @@
 
 **INTERVIEWER:** Could human societies work the same way?
 
-**DR. REYNOLDS:** They already do, in many contexts. Markets coordinate the production and distribution of millions of products without central planning. Cities organize themselves without urban dictators. Languages evolve and spread without linguistic authorities. Most of human coordination happens through emergent processes, not hierarchical control.
+**DR. REYNOLDS:** They already do, in many contexts. Markets coordinate the production and distribution of millions of products without central planning. Cities organise themselves without urban dictators. Languages evolve and spread without linguistic authorities. Most of human coordination happens through emergent processes, not hierarchical control.
 
 *Back to lecture hall.*
 
@@ -202,7 +202,7 @@
 
 **WARREN:** *(interrupting with obvious skepticism)* Professor, with all due respect, universities competing for better long-term planning? The math, the science and the fundamental engineering never changes. But universities are always fighting the last war anyway. They're still preparing students for the economy that existed when the curriculum was written, not the one that'll exist when we graduate. *(voice becoming more bitter)* And let's be honest—we don't come here to learn, we come here for an entry ticket for a pay-to-play game. Even moreso the med students.
 
-**DR. CHEN:** *(pausing, then nodding)* Warren, that's actually a perfect example of why distributed systems work better than centralized ones. You're absolutely right that universities often lag behind reality—they're optimizing for bureaucratic approval rather than practical outcomes. *(a distant look crosses her face)* You know, that reminds me of someone. He cherry-picked subjects across disciplines—metallurgy, electronics, botany, psychology—whatever he thought would be enabling. He drove them crazy, and he never did get a degree, he was far too busy learning. He loved solving the impossible problems and leaving a proof of concept for others to finish. *(a slight smile)* He used to say "I'm too lazy to do this badly." I thought he _was_ lazy but maybe he was teaching.
+**DR. CHEN:** *(pausing, then nodding)* Warren, that's actually a perfect example of why distributed systems work better than centralised ones. You're absolutely right that universities often lag behind reality—they're optimising for bureaucratic approval rather than practical outcomes. *(a distant look crosses her face)* You know, that reminds me of someone. He cherry-picked subjects across disciplines—metallurgy, electronics, botany, psychology—whatever he thought would be enabling. He drove them crazy, and he never did get a degree, he was far too busy learning. He loved solving the impossible problems and leaving a proof of concept for others to finish. *(a slight smile)* He used to say "I'm too lazy to do this badly." I thought he _was_ lazy but maybe he was teaching.
 
 *She pauses, then refocuses on the present.*
 
@@ -224,7 +224,7 @@
 
 *SCENE: Speculative animation showing such a society—diverse organizations cooperating and competing, no central government but extensive voluntary coordination.*
 
-**NARRATOR (V.O.):** Such a society would face new challenges, but they would be different challenges than the ones that destroyed historical civilizations. Instead of centralization leading to capture and stagnation, distributed power would create resilience and continuous adaptation.
+**NARRATOR (V.O.):** Such a society would face new challenges, but they would be different challenges from the ones that destroyed historical civilisations. Instead of centralisation leading to capture and stagnation, distributed power would create resilience and continuous adaptation.
 
 *Cut back to lecture hall. Students are taking detailed notes.*
 
@@ -250,7 +250,7 @@
 
 *Back to lecture hall for final discussion.*
 
-**DR. CHEN:** The historical pattern is clear: centralization plus separation of benefit from consequence equals civilizational collapse. But the pattern isn't inevitable. We can design systems that deliver the benefits of coordination without the pathologies of centralization.
+**DR. CHEN:** The historical pattern is clear: centralisation plus separation of benefit from consequence equals civilisational collapse. But the pattern isn't inevitable. We can design systems that deliver the benefits of coordination without the pathologies of centralisation.
 
 **MARIA:** So you're saying we can get off the treadmill?
 
@@ -318,7 +318,7 @@
 
 **JASON:** So they become willing participants in civilizational suicide?
 
-**DR. CHEN:** They become rational actors within an irrational system. The system rewards them for decisions that destroy the system, so that's what they optimize for. It's the separation problem in its purest form—perfect knowledge, perfect incentives to ignore that knowledge.
+**DR. CHEN:** They become rational actors within an irrational system. The system rewards them for decisions that destroy the system, so that's what they optimise for. It's the separation problem in its purest form—perfect knowledge, perfect incentives to ignore that knowledge.
 
 **JASON:** *(voice breaking slightly)* So we're... we're just doomed, aren't we? The people who could save us are the same people who are destroying us, and they know it, and they don't care because they'll be dead before the consequences hit.
 
@@ -430,7 +430,7 @@
 
 **Key Themes:**
 - Historical patterns are not inevitable laws
-- Distributed systems can achieve coordination without centralization  
+- Distributed systems can achieve coordination without centralisation  
 - Technology enables new forms of social organization
 - Transition is possible but requires conscious choice
 
